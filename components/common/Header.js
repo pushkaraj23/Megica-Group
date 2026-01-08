@@ -28,6 +28,7 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* LOGO */}
           <Link href="/" className="group flex items-center gap-1">
+          <img src="/megica-logo1.png" className="h-8" alt="logo" />
             <span className="font-heading text-xl font-extrabold text-brand-deep tracking-tight">
               Megica
             </span>
