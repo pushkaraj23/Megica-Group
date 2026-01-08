@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ================================
+   MEGICA DESIGN TOKENS
+   ================================ */
+@theme {
+  /* Fonts */
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-manrope);
+
+  /* Brand Colors */
+  --color-brand-deep: #001d39;
+  --color-brand-primary: #0a4174;
+  --color-brand-secondary: #49769f;
+  --color-brand-muted: #4e8ea2;
+  --color-brand-soft: #6ea2b3;
+  --color-brand-accent: #7bbde8;
+
+  /* Backgrounds */
+  --color-bg-main: #ffffff;
+  --color-bg-light: #bdd8e9;
+  --color-bg-section: #f4f9fc;
+  --color-bg-dark: #001d39;
+
+  /* Text */
+  --color-text-primary: #001d39;
+  --color-text-secondary: #0a4174;
+  --color-text-muted: #5c7c99;
+  --color-text-inverse: #ffffff;
+
+  /* Borders */
+  --color-border-light: #dbe7f1;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(0, 29, 57, 0.08);
+  --shadow-card: 0 20px 50px rgba(0, 29, 57, 0.12);
+}
+
+/* ================================
+   BASE STYLES
+   ================================ */
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg-main);
+    color: var(--color-text-primary);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text-primary);
+  }
+}
+
+/* ================================
+   COLOR UTILITIES (CLEAN SYNTAX)
+   ================================ */
+@layer utilities {
+  /* Backgrounds */
+  .bg-brand-deep {
+    background-color: var(--color-brand-deep);
+  }
+  .bg-brand-primary {
+    background-color: var(--color-brand-primary);
+  }
+  .bg-brand-secondary {
+    background-color: var(--color-brand-secondary);
+  }
+  .bg-brand-accent {
+    background-color: var(--color-brand-accent);
+  }
+  .bg-bg-light {
+    background-color: var(--color-bg-light);
+  }
+  .bg-bg-section {
+    background-color: var(--color-bg-section);
+  }
+
+  /* Text */
+  .text-brand-deep {
+    color: var(--color-brand-deep);
+  }
+  .text-brand-primary {
+    color: var(--color-brand-primary);
+  }
+  .text-brand-accent {
+    color: var(--color-brand-accent);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-inverse {
+    color: var(--color-text-inverse);
+  }
+
+  /* Borders */
+  .border-light {
+    border-color: var(--color-border-light);
+  }
+  .border-brand-accent {
+    border-color: var(--color-brand-accent);
+  }
+}
