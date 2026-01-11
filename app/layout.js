@@ -2,6 +2,7 @@ import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import InfinityLoader from "@/components/common/InfinityLoader";
 
 /* ------------------------------
    FONT SETUP
@@ -36,15 +37,20 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        {/* Header */}
+        {/* =====================
+            GLOBAL LOADER
+        ===================== */}
+        <InfinityLoader />
+
+        {/* =====================
+            SITE STRUCTURE
+        ===================== */}
         <Header />
 
-        {/* Main Content */}
         <main className="min-h-[calc(100svh-64px)] overflow-x-hidden">
           {children}
         </main>
 
-        {/* Optional: Footer later */}
         <Footer />
       </body>
     </html>

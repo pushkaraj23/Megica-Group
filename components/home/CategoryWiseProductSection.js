@@ -59,7 +59,7 @@ export default function CategoryWiseProductsSection() {
       {/* Ambient Glow */}
       <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-brand-accent/20 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 py-20">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-6 pt-20">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

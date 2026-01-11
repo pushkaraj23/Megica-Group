@@ -45,7 +45,7 @@ export default function HeroBanner() {
   }, []);
 
   return (
-    <section className="relative h-[95vh] overflow-hidden bg-bg-main">
+    <section className="relative h-svh overflow-hidden bg-bg-main">
       {/* ================= BACKGROUND SLIDES ================= */}
       {banners.map((b, i) => (
         <div
@@ -70,7 +70,7 @@ export default function HeroBanner() {
       ))}
 
       {/* ================= CONTENT ================= */}
-      <div className="relative z-10 flex h-full items-center max-sm:h-5/6">
+      <div className="relative z-10 flex h-full items-center">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-6">
           <div className="max-w-3xl">
             {/* Animated Accent Line */}

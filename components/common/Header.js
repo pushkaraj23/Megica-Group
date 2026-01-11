@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,128 +24,164 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-bg-main/90 backdrop-blur-md border-b border-light">
-      <div className="mx-auto max-w-7xl px-5 sm:px-6">
-        <div className="flex h-16 items-center justify-between">
-          {/* LOGO */}
-          <Link href="/" className="group flex items-center gap-1">
-          <img src="/megica-logo1.png" className="h-8" alt="logo" />
-            <span className="font-heading text-xl font-extrabold text-brand-deep tracking-tight">
-              Megica
-            </span>
-            <span className="font-heading text-xl font-semibold text-brand-primary">
-              Group
-            </span>
-            <span className="text-brand-accent text-2xl leading-none">•</span>
-          </Link>
+    <header className="fixed top-0 z-50 w-full">
+      {/* GLASS BAR */}
+      <div className="bg-bg-main/75 backdrop-blur-xl border-b border-light shadow-soft">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6">
+          <div className="flex h-16 items-center justify-between">
+            {/* LOGO */}
+            <Link
+              href="/"
+              className="group flex items-center gap-3 rounded-xl px-2 py-1 transition hover:bg-bg-section"
+            >
+              <img
+                src="/megica-logo1.png"
+                className="h-8 transition-transform duration-300 group-hover:scale-105"
+                alt="Megica Group"
+              />
+              <div className="leading-tight">
+                <div className="font-heading text-lg font-extrabold text-brand-deep">
+                  Megica
+                </div>
+                <div className="text-xs font-semibold text-brand-primary tracking-wide">
+                  Group of Companies
+                </div>
+              </div>
+              <span className="text-brand-accent text-2xl leading-none">•</span>
+            </Link>
 
-          {/* DESKTOP NAV */}
-          <nav className="hidden lg:flex items-center gap-10">
-            <NavLink href="/">Home</NavLink>
+            {/* DESKTOP NAV */}
+            <nav className="hidden lg:flex items-center gap-3">
+              <NavPill href="/">Home</NavPill>
 
-            <HoverDropdown label="About">
-              {aboutLinks.map((item) => (
-                <DropdownLink key={item.href} {...item} />
-              ))}
-            </HoverDropdown>
+              <HoverDropdown label="About">
+                {aboutLinks.map((item) => (
+                  <DropdownLink key={item.href} {...item} />
+                ))}
+              </HoverDropdown>
 
-            <HoverDropdown label="Product Portfolio">
-              {productLinks.map((item) => (
-                <DropdownLink key={item.href} {...item} />
-              ))}
-            </HoverDropdown>
+              <HoverDropdown label="Product Portfolio">
+                {productLinks.map((item) => (
+                  <DropdownLink key={item.href} {...item} />
+                ))}
+              </HoverDropdown>
 
-            <NavLink href="/global-presence">Global Presence</NavLink>
-            <NavLink href="/e-catalogue">E-Catalogue</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
-          </nav>
+              <NavPill href="/global-presence">Global Presence</NavPill>
+              <NavPill href="/e-catalogue">E-Catalogue</NavPill>
+              <NavPill href="/contact" accent>
+                Contact
+              </NavPill>
+            </nav>
 
-          {/* MOBILE TOGGLE */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden rounded-md border border-light px-3 py-2 text-brand-deep"
-          >
-            ☰
-          </button>
+            {/* MOBILE TOGGLE */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden rounded-xl border border-light px-3 py-2 text-brand-deep hover:bg-bg-section"
+            >
+              ☰
+            </button>
+          </div>
         </div>
       </div>
 
       {/* MOBILE MENU */}
-      {mobileOpen && (
-        <div className="lg:hidden border-t border-light bg-bg-main">
-          <div className="px-5 py-4 space-y-3">
-            <MobileLink href="/">Home</MobileLink>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="lg:hidden bg-bg-main border-b border-light shadow-soft"
+          >
+            <div className="px-5 py-5 space-y-3">
+              <MobileLink href="/">Home</MobileLink>
 
-            <MobileAccordion
-              title="About"
-              open={openSub === "about"}
-              onClick={() => setOpenSub(openSub === "about" ? null : "about")}
-            >
-              {aboutLinks.map((l) => (
-                <MobileSubLink key={l.href} {...l} />
-              ))}
-            </MobileAccordion>
+              <MobileAccordion
+                title="About"
+                open={openSub === "about"}
+                onClick={() => setOpenSub(openSub === "about" ? null : "about")}
+              >
+                {aboutLinks.map((l) => (
+                  <MobileSubLink key={l.href} {...l} />
+                ))}
+              </MobileAccordion>
 
-            <MobileAccordion
-              title="Product Portfolio"
-              open={openSub === "products"}
-              onClick={() =>
-                setOpenSub(openSub === "products" ? null : "products")
-              }
-            >
-              {productLinks.map((l) => (
-                <MobileSubLink key={l.href} {...l} />
-              ))}
-            </MobileAccordion>
+              <MobileAccordion
+                title="Product Portfolio"
+                open={openSub === "products"}
+                onClick={() =>
+                  setOpenSub(openSub === "products" ? null : "products")
+                }
+              >
+                {productLinks.map((l) => (
+                  <MobileSubLink key={l.href} {...l} />
+                ))}
+              </MobileAccordion>
 
-            <MobileLink href="/global-presence">Global Presence</MobileLink>
-            <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
-            <MobileLink href="/contact">Contact</MobileLink>
-          </div>
-        </div>
-      )}
+              <MobileLink href="/global-presence">Global Presence</MobileLink>
+              <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
+              <MobileLink href="/contact">Contact</MobileLink>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
 
 /* =====================
    DESKTOP COMPONENTS
-   ===================== */
+===================== */
 
-function NavLink({ href, children }) {
+function NavPill({ href, children, accent }) {
   return (
     <Link
       href={href}
-      className="relative font-medium text-text-primary transition hover:text-brand-primary
-        after:absolute after:left-0 after:-bottom-1 after:h-[2px]
-        after:w-0 after:bg-brand-accent after:transition-all
-        hover:after:w-full"
+      className={`
+        relative rounded-xl px-4 py-2 text-sm font-semibold transition
+        ${
+          accent
+            ? "bg-brand-accent text-brand-deep hover:opacity-90"
+            : "text-text-primary hover:bg-bg-section hover:text-brand-primary"
+        }
+      `}
     >
       {children}
     </Link>
   );
 }
 
-/* ✅ FIXED HOVER DROPDOWN */
 function HoverDropdown({ label, children }) {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="group relative">
-      {/* Trigger */}
-      <span className="cursor-pointer font-medium text-text-primary transition group-hover:text-brand-primary">
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <span className="cursor-pointer rounded-xl px-4 py-2 text-sm font-semibold text-text-primary transition hover:bg-bg-section hover:text-brand-primary">
         {label}
       </span>
 
-      {/* Hover Buffer + Dropdown */}
-      <div
-        className="absolute left-0 top-full pt-3 w-64 opacity-0 translate-y-2
-        pointer-events-none transition-all duration-200
-        group-hover:opacity-100 group-hover:translate-y-0
-        group-hover:pointer-events-auto"
-      >
-        <div className="rounded-xl bg-bg-main border border-light shadow-card">
-          <div className="p-4 space-y-1">{children}</div>
-        </div>
-      </div>
+      <div className="absolute left-0 top-full h-3 w-full" />
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 14, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 14, scale: 0.96 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="absolute left-0 top-full mt-4 w-72 z-50"
+          >
+            <div className="rounded-2xl bg-bg-main/95 backdrop-blur-xl border border-light shadow-card">
+              <div className="p-4 space-y-1">{children}</div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -153,8 +190,7 @@ function DropdownLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="block rounded-md px-3 py-2 text-sm text-text-secondary
-        transition hover:bg-bg-section hover:text-brand-primary"
+      className="block rounded-lg px-3 py-2 text-sm text-text-secondary transition hover:bg-bg-section hover:text-brand-primary"
     >
       {label}
     </Link>
@@ -163,13 +199,13 @@ function DropdownLink({ href, label }) {
 
 /* =====================
    MOBILE COMPONENTS
-   ===================== */
+===================== */
 
 function MobileLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="block rounded-md px-3 py-2 font-medium text-text-primary hover:bg-bg-section"
+      className="block rounded-xl px-3 py-2 font-semibold text-text-primary hover:bg-bg-section"
     >
       {children}
     </Link>
@@ -181,17 +217,25 @@ function MobileAccordion({ title, open, onClick, children }) {
     <div>
       <button
         onClick={onClick}
-        className="flex w-full items-center justify-between rounded-md px-3 py-2 font-medium text-text-primary hover:bg-bg-section"
+        className="flex w-full items-center justify-between rounded-xl px-3 py-2 font-semibold text-text-primary hover:bg-bg-section"
       >
         {title}
         <span className="text-sm">{open ? "−" : "+"}</span>
       </button>
 
-      {open && (
-        <div className="ml-3 mt-2 space-y-1 border-l border-light pl-3">
-          {children}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="ml-3 mt-2 space-y-1 border-l border-light pl-3"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
