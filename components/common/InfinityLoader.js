@@ -24,7 +24,7 @@ export default function InfinityLoader() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="
-            fixed inset-0 z-[9999]
+            fixed inset-0 z-9999
             flex items-center justify-center
             bg-bg-main
             pointer-events-auto
