@@ -74,7 +74,7 @@ export default function ProductUSPSection() {
                 />
               </video>
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-tr from-black/60 via-black/20 to-transparent" />
             </div>
             {/* Floating Label */}
             <div className="absolute bottom-5 left-5 rounded-full bg-bg-main/90 backdrop-blur px-4 py-1.5 text-xs font-semibold text-brand-primary shadow-soft">
@@ -103,7 +103,7 @@ export default function ProductUSPSection() {
                   className="flex gap-4 rounded-xl bg-white/5 backdrop-blur border items-center border-white/10 p-4"
                 >
                   {/* Accent Dot */}
-                  <div className="mt-1 h-3 w-3 rounded-full bg-brand-accent flex-shrink-0" />
+                  <div className="mt-1 h-3 w-3 rounded-full bg-brand-accent shrink-0" />
 
                   <div>
                     <h4 className="font-semibold text-text-inverse">

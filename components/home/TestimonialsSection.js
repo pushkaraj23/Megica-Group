@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
   return (
     <section className="relative bg-bg-section overflow-hidden">
       {/* Ambient depth */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-bg-light blur-3xl" />
+      <div className="pointer-events-none absolute -top-40 -left-40 h-130 w-130 rounded-full bg-bg-light blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 py-24">
         {/* =====================

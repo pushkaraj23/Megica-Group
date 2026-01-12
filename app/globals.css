@@ -134,3 +134,7 @@
   stroke-dashoffset: 0;
   animation: infinity-draw 1.6s ease-in-out infinite;
 }
+
+section[id] {
+  scroll-margin-top: 96px; /* header height + breathing space */
+}

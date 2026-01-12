@@ -9,13 +9,14 @@ export default function Header() {
   const [openSub, setOpenSub] = useState(null);
 
   const aboutLinks = [
-    { label: "About Megica Group", href: "/about/megica-group" },
-    { label: "Why Megica Group", href: "/about/why-megica" },
-    { label: "Megica Workshop", href: "/about/workshop" },
-    { label: "Why Megica Dealership", href: "/about/dealership" },
-    { label: "CSR Activities", href: "/about/csr" },
-    { label: "Client Testimonials", href: "/about/testimonials" },
-    { label: "Certifications", href: "/about/certifications" },
+    { label: "About Megica Group", href: "/about#about-megica" },
+    { label: "Why Megica Group", href: "/about#why-megica" },
+    { label: "Workshop & Manufacturing", href: "/about#workshop" },
+    { label: "Certifications & Compliance", href: "/about#certifications" },
+    { label: "Make In India", href: "/about#make-in-india" },
+    { label: "CSR Activities", href: "/about#csr" },
+    { label: "Client Testimonials", href: "/about#testimonials" },
+    { label: "Enquiry Form", href: "/about#enquiry" },
   ];
 
   const productLinks = [
