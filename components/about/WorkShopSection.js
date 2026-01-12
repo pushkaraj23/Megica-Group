@@ -124,7 +124,7 @@ export default function MegicaWorkshopSection() {
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
               </div>
             ))}
           </motion.div>

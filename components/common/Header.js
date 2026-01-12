@@ -54,13 +54,13 @@ export default function Header() {
             <nav className="hidden lg:flex items-center gap-3">
               <NavPill href="/">Home</NavPill>
 
-              <HoverDropdown label="About">
+              <HoverDropdown label="About" href="/about">
                 {aboutLinks.map((item) => (
                   <DropdownLink key={item.href} {...item} />
                 ))}
               </HoverDropdown>
 
-              <HoverDropdown label="Product Portfolio">
+              <HoverDropdown label="Product Portfolio" href="/products">
                 {productLinks.map((item) => (
                   <DropdownLink key={item.href} {...item} />
                 ))}
@@ -152,7 +152,7 @@ function NavPill({ href, children, accent }) {
   );
 }
 
-function HoverDropdown({ label, children }) {
+function HoverDropdown({ label, href, children }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -161,12 +161,28 @@ function HoverDropdown({ label, children }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <span className="cursor-pointer rounded-xl px-4 py-2 text-sm font-semibold text-text-primary transition hover:bg-bg-section hover:text-brand-primary">
+      {/* LABEL AS LINK */}
+      <Link
+        href={href}
+        className="
+          inline-flex items-center gap-1
+          cursor-pointer
+          rounded-xl px-4 py-2
+          text-sm font-semibold
+          text-text-primary
+          transition
+          hover:bg-bg-section
+          hover:text-brand-primary
+        "
+      >
         {label}
-      </span>
+        <span className="text-xs text-muted">▾</span>
+      </Link>
 
+      {/* Hover buffer (important) */}
       <div className="absolute left-0 top-full h-3 w-full" />
 
+      {/* DROPDOWN */}
       <AnimatePresence>
         {open && (
           <motion.div

@@ -69,7 +69,7 @@ export default function ProductUSPSection() {
                 playsInline
               >
                 <source
-                  src="/videos/megica-product-showcase.mp4"
+                  src="https://www.pexels.com/download/video/4036034/"
                   type="video/mp4"
                 />
               </video>
