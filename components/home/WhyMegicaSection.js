@@ -72,7 +72,7 @@ export default function WhyMegicaSection() {
             </p>
           </div>
 
-          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep">
+          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep">
             A Trusted Global Manufacturing Partner
           </h2>
 
@@ -115,7 +115,7 @@ export default function WhyMegicaSection() {
 
               {/* CONTENT */}
               <div className="relative p-6">
-                <h3 className="font-heading text-lg sm:text-xl font-bold text-brand-deep leading-snug">
+                <h3 className="font-heading text-lg font-medium text-brand-deep leading-snug">
                   {item.title}
                 </h3>
 
@@ -151,11 +151,11 @@ export default function WhyMegicaSection() {
           </div>
 
           <div className="relative p-8 sm:p-10 lg:p-12">
-            <h3 className="font-heading text-2xl text-white sm:text-3xl font-extrabold">
+            <h3 className="font-heading text-2xl text-white sm:text-3xl">
               Looking for a Reliable Export Partner?
             </h3>
 
-            <p className="mt-3 max-w-2xl text-bg-light text-sm sm:text-base">
+            <p className="mt-3 max-w-2xl text-bg-light/75 text-sm sm:text-base">
               Connect with Megica Group to explore long-term sourcing,
               dealership, or private-label manufacturing opportunities.
             </p>

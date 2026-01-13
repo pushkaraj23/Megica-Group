@@ -21,13 +21,13 @@ export default function ProductCategoriesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl"
+          className="max-full"
         >
-          <p className="text-sm font-semibold tracking-wide text-brand-primary">
+          <p className="text-sm font-semibold tracking-wide text-brand-accent">
             OUR PRODUCT CATEGORIES
           </p>
 
-          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+          <h2 className="mt-4 font-heading text-3xl sm:text-4xl uppercase text-brand-deep leading-tight">
             Manufactured for Performance.{" "}
             <span className="text-brand-primary">
               Designed for Modern Applications.
@@ -128,7 +128,7 @@ function CategoryRow({ image, title, desc, highlights, link, align }) {
       >
         <motion.h3
           variants={fadeUpSoft}
-          className="font-heading text-2xl sm:text-3xl font-extrabold text-brand-deep"
+          className="font-heading text-3xl uppercase text-brand-deep"
         >
           {title}
         </motion.h3>

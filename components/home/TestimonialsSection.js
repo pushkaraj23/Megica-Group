@@ -47,11 +47,11 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <p className="text-sm font-semibold tracking-wide text-brand-primary">
+          <p className="text-sm font-semibold tracking-wide text-brand-accent">
             GLOBAL TRUST
           </p>
 
-          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep leading-tight">
             Trusted by Distributors,
             <br />
             Importers & Project Partners

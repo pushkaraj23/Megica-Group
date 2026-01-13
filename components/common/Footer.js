@@ -6,14 +6,13 @@ export default function Footer() {
       {/* =======================
           TOP FOOTER
       ======================= */}
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
+      <div className="mx-auto px-6 py-16">
+        <div className="grid gap-20 max-sm:gap-10 md:grid-cols-5">
           {/* BRAND */}
-          <div>
-            <h3 className="font-heading text-2xl text-white font-extrabold">
-              Megica Group
-              <span className="text-brand-accent">.</span>
-            </h3>
+          <div className="col-span-1 md:col-span-2">
+            <div className="p-3 bg-bg-section w-3/4 rounded-3xl mb-5">
+              <img src="/megica-logo1.png" />
+            </div>
 
             <p className="mt-4 text-sm text-bg-light leading-relaxed">
               Megica Group of Companies is a globally focused manufacturer and
@@ -29,7 +28,7 @@ export default function Footer() {
 
           {/* ABOUT LINKS */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">
+            <h4 className="font-heading text-lg text-brand-muted font-semibold mb-4">
               About Us
             </h4>
             <ul className="space-y-2 text-sm text-bg-light">
@@ -48,7 +47,7 @@ export default function Footer() {
 
           {/* PRODUCTS */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">
+            <h4 className="font-heading text-brand-muted text-lg font-semibold mb-4">
               Product Portfolio
             </h4>
             <ul className="space-y-2 text-sm text-bg-light">
@@ -63,7 +62,9 @@ export default function Footer() {
 
           {/* CONTACT & CTA */}
           <div>
-            <h4 className="font-heading text-lg font-semibold mb-4">Contact</h4>
+            <h4 className="font-heading text-lg text-brand-muted font-semibold mb-4">
+              Contact
+            </h4>
 
             <p className="text-sm text-bg-light leading-relaxed">
               Megica Group of Companies

@@ -66,7 +66,7 @@ export default function AboutMegicaSection() {
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-28 -left-24 h-72 w-72 rounded-full bg-bg-light blur-3xl opacity-60" />
         <div className="absolute -bottom-24 -right-20 h-80 w-80 rounded-full bg-brand-accent blur-3xl opacity-20" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(123,189,232,0.22),transparent_45%),radial-gradient(circle_at_80%_10%,rgba(189,216,233,0.45),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%, bg-brand-muted/50, transparent_45%), radial-gradient(circle_at_80%_10%, bg-white,transparent_50%)]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 py-14 sm:py-16 lg:py-20">
@@ -94,7 +94,7 @@ export default function AboutMegicaSection() {
 
             <motion.h2
               variants={fadeUp}
-              className="mt-5 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-brand-deep"
+              className="mt-5 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-brand-deep"
             >
               Built in India.{" "}
               <span className="text-brand-primary">Trusted Worldwide.</span>
@@ -120,7 +120,7 @@ export default function AboutMegicaSection() {
             >
               <Link
                 href="/products"
-                className="group relative overflow-hidden w-fit rounded-lg bg-brand-accent px-5 py-3 text-sm sm:text-base font-semibold text-brand-deep shadow-card transition hover:scale-[1.02] active:scale-[0.99]"
+                className="group relative overflow-hidden w-fit rounded-lg bg-brand-accent px-5 py-3 text-sm sm:text-base font-medium text-brand-deep shadow-card transition hover:scale-[1.02] active:scale-[0.99]"
               >
                 <span className="relative z-10">Explore Product Portfolio</span>
                 <span className="absolute inset-0 translate-y-full bg-white/25 transition-transform duration-300 group-hover:translate-y-0" />
@@ -128,7 +128,7 @@ export default function AboutMegicaSection() {
 
               <Link
                 href="/contact"
-                className="rounded-lg w-fit border border-light bg-bg-main/60 backdrop-blur px-5 py-3 text-sm sm:text-base font-semibold text-brand-primary transition hover:bg-bg-main"
+                className="rounded-lg w-fit border border-light bg-bg-main/60 backdrop-blur px-5 py-3 text-sm sm:text-base font-medium text-brand-primary transition hover:bg-bg-main"
               >
                 Talk to Our Team
               </Link>
@@ -208,7 +208,7 @@ export default function AboutMegicaSection() {
                         <span className="h-2.5 w-2.5 rounded-full bg-brand-accent" />
                       </div>
                       <div>
-                        <h3 className="font-heading text-lg sm:text-xl font-bold text-brand-deep">
+                        <h3 className="font-heading text-lg sm:text-xl font-normal text-brand-deep">
                           {b.title}
                         </h3>
                         <p className="mt-2 text-sm sm:text-base text-muted leading-relaxed">
@@ -279,7 +279,7 @@ export default function AboutMegicaSection() {
                 <p className="text-xs font-semibold tracking-wider text-bg-light">
                   OUR COMMITMENT
                 </p>
-                <h3 className="mt-2 font-heading text-2xl text-white sm:text-3xl font-extrabold">
+                <h3 className="mt-2 font-heading text-2xl text-white sm:text-3xl uppercase">
                   Reliable manufacturing.
                   <br />
                   Premium bathroom solutions.

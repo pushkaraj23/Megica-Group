@@ -79,7 +79,7 @@ export default function HeroBanner() {
             {/* Title */}
             <h1
               key={banners[active].title}
-              className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-inverse animate-[fadeSlideUp_0.7s_ease-out]"
+              className="font-heading text-4xl sm:text-5xl lg:text-6xl uppercase leading-tight text-inverse animate-[fadeSlideUp_0.7s_ease-out]"
             >
               <span className="bg-linear-to-r from-brand-accent to-white bg-clip-text text-transparent">
                 {banners[active].title}
@@ -89,7 +89,7 @@ export default function HeroBanner() {
             {/* Subtitle */}
             <p
               key={banners[active].subtitle}
-              className="mt-6 max-w-2xl text-base sm:text-lg text-bg-light animate-[fadeSlideUp_0.9s_ease-out]"
+              className="mt-6 max-w-2xl text-base font-light sm:text-lg text-bg-light animate-[fadeSlideUp_0.9s_ease-out]"
             >
               {banners[active].subtitle}
             </p>

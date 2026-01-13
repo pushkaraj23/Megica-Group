@@ -23,7 +23,7 @@ export default function FullEnquirySection() {
               ENQUIRY FORM
             </p>
 
-            <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+            <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep leading-tight">
               Let’s Discuss Your
               <br />
               Product Requirements
@@ -137,7 +137,7 @@ export default function FullEnquirySection() {
             <div className="relative mt-7">
               <button
                 type="submit"
-                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm sm:text-base font-semibold text-brand-deep shadow-soft transition hover:scale-[1.02] active:scale-[0.98] "
+                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm sm:text-base uppercase font-medium text-brand-deep shadow-soft transition hover:scale-[1.02] active:scale-[0.98] "
               >
                 Send Enquiry
               </button>

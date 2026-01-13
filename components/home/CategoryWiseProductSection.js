@@ -72,7 +72,7 @@ export default function CategoryWiseProductsSection() {
             CATEGORY WISE PRODUCTS
           </p>
 
-          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
+          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase font-semibold text-white">
             Explore Our Product Categories
           </h2>
 
@@ -140,7 +140,7 @@ export default function CategoryWiseProductsSection() {
                   {/* CONTENT */}
                   <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8">
                     {/* Title */}
-                    <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+                    <h3 className="font-heading text-2xl sm:text-3xl uppercase font-semibold text-white leading-tight">
                       {cat.title}
                     </h3>
 
@@ -247,7 +247,7 @@ export default function CategoryWiseProductsSection() {
           transition={{ duration: 0.6 }}
           className="mt-20 rounded-3xl bg-brand-deep/80 backdrop-blur p-8 sm:p-10 text-center shadow-card"
         >
-          <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+          <h3 className="font-heading text-2xl sm:text-3xl uppercase text-white">
             Looking for Bulk Sourcing or Private Labeling?
           </h3>
 

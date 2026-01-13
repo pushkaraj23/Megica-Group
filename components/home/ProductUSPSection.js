@@ -48,7 +48,7 @@ export default function ProductUSPSection() {
               PRODUCT USP
             </p>
 
-            <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-inverse leading-tight">
+            <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-text-inverse leading-tight">
               Designed for Global Markets.
               <br />
               Built to Perform.

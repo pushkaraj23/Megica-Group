@@ -49,7 +49,7 @@ export default function ProductHeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-white">
               Complete Range of{" "}
               <span className="text-brand-accent">Sanitaryware</span> &{" "}
               <span className="text-brand-accent">Bathroom Fittings</span>
@@ -60,13 +60,13 @@ export default function ProductHeroSection() {
             </h1>
 
             {/* Description */}
-            <p className="mt-6 text-bg-light text-base sm:text-lg leading-relaxed">
+            <p className="mt-6 text-bg-light font-light text-base sm:text-lg leading-relaxed">
               Megica Group of Companies offers a comprehensive portfolio of
               sanitaryware and bathroom fittings manufactured in India and
               supplied to domestic and international markets.
             </p>
 
-            <p className="mt-4 text-bg-light/90 text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 text-bg-light/90 font-light text-sm sm:text-base leading-relaxed">
               Designed for residential, commercial, hospitality, and
               infrastructure projects — combining durability, functionality, and
               export-ready quality standards.

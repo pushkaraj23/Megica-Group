@@ -20,8 +20,30 @@ export default function Header() {
   ];
 
   const productLinks = [
-    { label: "Category Wise Products", href: "/products/categories" },
-    { label: "All Products", href: "/products" },
+    {
+      label: "Product Overview",
+      href: "/products#products-hero",
+    },
+    {
+      label: "Product Categories",
+      href: "/products#product-categories",
+    },
+    {
+      label: "Featured Products",
+      href: "/products#featured-products",
+    },
+    {
+      label: "Dealership Opportunity",
+      href: "/products#dealership",
+    },
+    {
+      label: "Why Megica",
+      href: "/products#why-megica",
+    },
+    {
+      label: "Send Enquiry",
+      href: "/products#enquiry",
+    },
   ];
 
   return (
@@ -132,7 +154,7 @@ function NavPill({ href, children, accent }) {
     <Link
       href={href}
       className={`
-        relative rounded-xl px-4 py-2 text-sm font-semibold transition
+        relative rounded-xl px-4 py-2 text-sm transition
         ${
           accent
             ? "bg-brand-accent text-brand-deep hover:opacity-90"
@@ -161,7 +183,7 @@ function HoverDropdown({ label, href, children }) {
           inline-flex items-center gap-1
           cursor-pointer
           rounded-xl px-4 py-2
-          text-sm font-semibold
+          text-sm
           text-text-primary
           transition
           hover:bg-bg-section
