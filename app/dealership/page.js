@@ -144,41 +144,43 @@ export default function MegicaDealershipPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="font-heading text-3xl lg:text-4xl font-extrabold text-brand-deep mb-16"
+            className="font-heading text-3xl lg:text-4xl text-center font-extrabold text-brand-deep mb-16"
           >
             Simple & Transparent Application Process
-          </motion.h2>
+            <div className="relative mt-20">
+              {/* DESKTOP TIMELINE */}
+              <div className="hidden lg:block">
+                {/* CENTER LINE */}
+                <div className="absolute left-0 right-0 top-1/2 h-[2px] bg-brand-accent/30" />
 
-          <div className="relative">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                "Submit Dealership Enquiry",
-                "Territory & Eligibility Review",
-                "Commercial Discussion",
-                "Onboarding & Business Launch",
-              ].map((step, i) => (
-                <div key={step} className="relative">
-                  {/* STEP CARD */}
-                  <VisualStep step={i + 1} title={step} />
-
-                  {/* ARROW – DESKTOP */}
-                  {i < 3 && (
-                    <div className="hidden lg:flex absolute top-1/2 -right-7 -translate-y-1/2 items-center">
-                      <span className="h-[2px] w-8 bg-brand-accent/60" />
-                      <span className="ml-1 text-brand-accent text-lg">➜</span>
-                    </div>
-                  )}
-
-                  {/* ARROW – MOBILE */}
-                  {i < 3 && (
-                    <div className="flex lg:hidden justify-center mt-4">
-                      <span className="text-brand-accent text-xl">↓</span>
-                    </div>
-                  )}
+                <div className="relative grid grid-cols-4 gap-8">
+                  {[
+                    "Submit Dealership Enquiry",
+                    "Territory & Eligibility Review",
+                    "Commercial Discussion",
+                    "Onboarding & Business Launch",
+                  ].map((title, i) => (
+                    <TimelineStep key={title} index={i} title={title} />
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* MOBILE TIMELINE */}
+              <div className="lg:hidden relative pl-10 space-y-10">
+                {/* VERTICAL LINE */}
+                <div className="absolute left-4 top-0 h-full bottom-0 w-[2px] bg-brand-accent/30" />
+
+                {[
+                  "Submit Dealership Enquiry",
+                  "Territory & Eligibility Review",
+                  "Commercial Discussion",
+                  "Onboarding & Business Launch",
+                ].map((title, i) => (
+                  <MobileTimelineStep key={title} step={i + 1} title={title} />
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.h2>
         </div>
       </section>
 
@@ -249,33 +251,52 @@ function BenefitImageCard({ title, desc, img }) {
   );
 }
 
-function VisualStep({ step, title }) {
+function TimelineStep({ index, title }) {
+  const isTop = index % 2 === 0;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: isTop ? -40 : 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: step * 0.05 }}
-      className="
-        group relative
-        rounded-3xl
-        bg-bg-main
-        border border-light
-        shadow-soft
-        p-6
-        text-center
-        transition
-        hover:shadow-card
-      "
+      transition={{ duration: 0.7, delay: index * 0.08 }}
+      className={`relative flex flex-col items-center ${
+        isTop ? "pb-20" : "pt-20"
+      }`}
     >
-      {/* STEP CIRCLE */}
-      <div className="mx-auto mb-4 h-12 w-12 rounded-2xl bg-brand-accent text-brand-deep font-extrabold grid place-items-center shadow">
+      {/* CONTENT CARD */}
+      <div className="rounded-2xl bg-bg-main border border-light shadow-soft px-6 py-4 text-center w-full max-w-[220px] hover:shadow-card transition">
+        <h3 className="font-heading text-sm font-bold text-brand-deep">
+          {title}
+        </h3>
+      </div>
+
+      {/* NODE */}
+      <div className="absolute top-1/2 -translate-y-1/2 h-5 w-5 rounded-full bg-brand-accent ring-4 ring-brand-accent/20" />
+    </motion.div>
+  );
+}
+
+function MobileTimelineStep({ step, title }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: step * 0.05 }}
+      className="relative flex gap-6 items-start"
+    >
+      {/* NODE */}
+      <div className="relative z-10 mt-1 flex justify-center text-xl items-center w-9 h-9 rounded-xl bg-brand-accent text-brand-deep font-bold shadow">
         {step}
       </div>
 
-      <h3 className="font-heading text-base font-bold text-brand-deep">
-        {title}
-      </h3>
+      {/* CONTENT */}
+      <div className="rounded-2xl bg-bg-main border border-light shadow-soft px-5 py-4">
+        <h3 className="font-heading text-sm font-bold text-brand-deep">
+          {title}
+        </h3>
+      </div>
     </motion.div>
   );
 }

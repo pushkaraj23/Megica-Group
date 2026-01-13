@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import InfinityLoader from "@/components/common/InfinityLoader";
+import CustomCursor from "@/components/common/CustomPointer";
 
 /* ------------------------------
    FONT SETUP
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         <Header />
 
         <main className="min-h-[calc(100svh-64px)] overflow-x-hidden">
+          <CustomCursor />
           {children}
         </main>
 

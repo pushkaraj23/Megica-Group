@@ -8,38 +8,50 @@
   --font-body: var(--font-inter);
   --font-heading: var(--font-manrope);
 
-  /* Brand Colors */
-  --color-brand-deep: #001d39;
-  --color-brand-primary: #0a4174;
-  --color-brand-secondary: #49769f;
-  --color-brand-muted: #4e8ea2;
-  --color-brand-soft: #6ea2b3;
-  --color-brand-accent: #7bbde8;
+  /* Primary Brand */
+  --color-brand-deep: #000000; /* Absolute Black – Authority */
+  --color-brand-primary: #1a1a1a; /* Charcoal Black – UI headers */
+  --color-brand-secondary: #2f2f2f; /* Dark Gray – secondary areas */
 
-  /* Backgrounds */
-  --color-bg-main: #ffffff;
-  --color-bg-light: #bdd8e9;
-  --color-bg-section: #f4f9fc;
-  --color-bg-dark: #001d39;
+  /* Accent System */
+  --color-brand-accent: #fca235; /* Logo Gold / CTA */
+  --color-brand-soft: #ffd8a1; /* Soft gold highlights */
+  --color-brand-muted: #b37a2a; /* Muted gold for subtle emphasis */
 
-  /* Text */
-  --color-text-primary: #001d39;
-  --color-text-secondary: #0a4174;
-  --color-text-muted: #5c7c99;
-  --color-text-inverse: #ffffff;
+  /* ================================
+     BACKGROUNDS
+     ================================ */
+  --color-bg-main: #ffffff; /* Main background */
+  --color-bg-section: #fafafa; /* Section separation */
+  --color-bg-light: #f5f5f5; /* Light cards */
+  --color-bg-dark: #000000; /* Dark sections / footer */
 
-  /* Borders */
-  --color-border-light: #dbe7f1;
+  /* ================================
+     TEXT COLORS
+     ================================ */
+  --color-text-primary: #1a1a1a; /* Main text */
+  --color-text-secondary: #2f2f2f; /* Headings / strong text */
+  --color-text-muted: #6b6b6b; /* Descriptions */
+  --color-text-inverse: #ffffff; /* On dark backgrounds */
 
-  /* Radius */
+  /* ================================
+     BORDERS
+     ================================ */
+  --color-border-light: #e5e5e5; /* Dividers */
+
+  /* ================================
+     RADIUS
+     ================================ */
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 32px;
 
-  /* Shadows */
-  --shadow-soft: 0 10px 30px rgba(0, 29, 57, 0.08);
-  --shadow-card: 0 20px 50px rgba(0, 29, 57, 0.12);
+  /* ================================
+     SHADOWS
+     ================================ */
+  --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
 /* ================================

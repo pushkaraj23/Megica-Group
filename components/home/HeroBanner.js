@@ -65,7 +65,7 @@ export default function HeroBanner() {
           />
 
           {/* Brand cinematic overlay */}
-          <div className="absolute inset-0 bg-linear-to-br from-[rgba(0,29,57,0.85)] via-[rgba(0,29,57,0.55)] to-[rgba(0,29,57,0.9)]" />
+          <div className="absolute inset-0 bg-linear-to-br from-bg-dark to-brand-muted/40" />
         </div>
       ))}
 

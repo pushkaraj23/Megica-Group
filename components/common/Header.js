@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 w-full">
       {/* GLASS BAR */}
-      <div className="bg-bg-main/75 backdrop-blur-xl border-b border-light shadow-soft">
+      <div className="bg-white backdrop-blur-xl border-b border-light shadow-soft">
         <div className="mx-auto max-w-7xl px-5 sm:px-6">
           <div className="flex h-16 items-center justify-between">
             {/* LOGO */}
@@ -40,14 +40,6 @@ export default function Header() {
                 className="h-8 transition-transform duration-300 group-hover:scale-105"
                 alt="Megica Group"
               />
-              <div className="leading-tight">
-                <div className="font-heading text-lg font-extrabold text-brand-deep">
-                  Megica
-                </div>
-                <div className="text-xs font-semibold text-brand-primary tracking-wide">
-                  Group of Companies
-                </div>
-              </div>
               <span className="text-brand-accent text-2xl leading-none">•</span>
             </Link>
 
