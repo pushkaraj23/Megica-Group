@@ -117,7 +117,7 @@ export default function GlobalDemandMap() {
       <div className="mx-auto max-w-7xl px-6">
         {/* ================= HEADER ================= */}
         <div className="grid gap-12 lg:grid-cols-3 mb-16">
-          {/* LEFT CONTEXT */}
+          {/* LEFT CONTEXT */} 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

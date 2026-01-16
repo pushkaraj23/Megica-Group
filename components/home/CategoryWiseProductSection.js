@@ -247,7 +247,7 @@ export default function CategoryWiseProductsSection() {
           transition={{ duration: 0.6 }}
           className="mt-20 rounded-3xl bg-brand-deep/80 backdrop-blur p-8 sm:p-10 text-center shadow-card"
         >
-          <h3 className="font-heading text-2xl sm:text-3xl uppercase text-white">
+          <h3 className="font-heading text-2xl sm:text-3xl c text-white">
             Looking for Bulk Sourcing or Private Labeling?
           </h3>
 

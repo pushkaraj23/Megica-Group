@@ -29,7 +29,7 @@ export default function CustomCursor() {
         className="
           pointer-events-none
           fixed top-0 left-0 z-[9999]
-          h-10 w-10
+          h-8 w-8
           -translate-x-1/2 -translate-y-1/2
           rounded-full
           backdrop-blur-sm border-white/50 border

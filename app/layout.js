@@ -1,9 +1,5 @@
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/common/Header";
-import Footer from "@/components/common/Footer";
-import InfinityLoader from "@/components/common/InfinityLoader";
-import CustomCursor from "@/components/common/CustomPointer";
 
 /* ------------------------------
    FONT SETUP
@@ -23,7 +19,7 @@ const manrope = Manrope({
 });
 
 /* ------------------------------
-   ROOT LAYOUT
+   ROOT LAYOUT (GLOBAL)
 -------------------------------- */
 export default function RootLayout({ children }) {
   return (
@@ -38,22 +34,7 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        {/* =====================
-            GLOBAL LOADER
-        ===================== */}
-        <InfinityLoader />
-
-        {/* =====================
-            SITE STRUCTURE
-        ===================== */}
-        <Header />
-
-        <main className="min-h-[calc(100svh-64px)] overflow-x-hidden">
-          <CustomCursor />
-          {children}
-        </main>
-
-        <Footer />
+        {children}
       </body>
     </html>
   );
