@@ -4,6 +4,7 @@ import ContactEnquirySection from "@/components/sanitaryware/home/ContactEnquiry
 import DealershipBanner from "@/components/sanitaryware/home/DealershipBanner";
 import FeaturedProducts from "@/components/sanitaryware/home/FeaturedProducts";
 import SanitarywareHero from "@/components/sanitaryware/home/HeroSection";
+import TestimonialsSection from "@/components/sanitaryware/home/TestimonialSection";
 import WhyChooseMegica from "@/components/sanitaryware/home/WhyChooseMegica";
 
 export default function SanitaryWare() {
@@ -16,6 +17,7 @@ export default function SanitaryWare() {
       <WhyChooseMegica />
       <BlogsSection />
       <ContactEnquirySection />
+      <TestimonialsSection />
     </div>
   );
 }

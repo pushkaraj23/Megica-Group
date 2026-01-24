@@ -40,14 +40,6 @@
   --color-border-light: #e5e5e5; /* Dividers */
 
   /* ================================
-     RADIUS
-     ================================ */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 32px;
-
-  /* ================================
      SHADOWS
      ================================ */
   --shadow-soft: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -149,4 +141,14 @@
 
 section[id] {
   scroll-margin-top: 96px; /* header height + breathing space */
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
 }
