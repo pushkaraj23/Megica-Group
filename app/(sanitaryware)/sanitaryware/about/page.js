@@ -10,12 +10,12 @@ export default function AboutUsPage() {
   return (
     <div>
       <AboutUsHero />
+      <CertificatesStrip />
       <MissionVisionSection />
       <WhyMegicaSection />
       <CSRSection />
       <DealershipSection />
       <TestimonialsSection />
-      <CertificatesStrip />
     </div>
   );
 }

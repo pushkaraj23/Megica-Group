@@ -19,7 +19,7 @@ const loopItems = [...certificates, ...certificates];
 
 export default function CertificatesStrip() {
   return (
-    <section className="relative bg-bg-main border-y border-border-light overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="mx-auto max-w-7xl px- pt-10">
         {/* LABEL */}
         <p className="mb-6 text-center text-xs uppercase tracking-[0.35em] text-brand-muted">
