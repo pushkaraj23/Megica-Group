@@ -1,5 +1,6 @@
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "@/components/common/SmoothScroller";
 
 /* ------------------------------
    FONT SETUP
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

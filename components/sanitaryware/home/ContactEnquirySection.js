@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function ContactEnquirySection() {
   return (
-    <section className="relative bg-[var(--color-bg-main)] overflow-hidden">
+    <section className="relative bg-(--color-bg-main) flow-hidden">
 
-      <div className="relative mx-auto max-w-7xl px-6 pt-10 pb-20 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,15 +20,15 @@ export default function ContactEnquirySection() {
           </p>
 
           {/* Heading */}
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
+          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-(--color-text-secondary)">
             Let’s Discuss Your Requirement
           </h2>
 
           {/* Accent Divider */}
-          <div className="mt-5 h-[2px] w-16 bg-[var(--color-brand-accent)]" />
+          <div className="mt-5 h-0.5 w-16 bg-brand-accent" />
 
           {/* Copy */}
-          <p className="mt-6 text-base sm:text-lg leading-relaxed text-[var(--color-text-muted)]">
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-text-muted">
             Whether you are sourcing sanitaryware for residential projects,
             commercial developments, or export distribution, our team is ready
             to assist with product details, pricing, and logistics.
@@ -36,17 +36,17 @@ export default function ContactEnquirySection() {
           <div
             className="
       relative overflow-hidden
-      rounded-[var(--radius-xl)]
+      rounded-xl
       shadow-card
-      border border-[var(--color-border-light)]
-      bg-[var(--color-bg-light)] mt-10 max-sm:mt-6
+      border border-border-light
+      bg-bg-light mt-10 max-sm:mt-6
     "
           >
             {/* Image */}
             <motion.img
               src="https://images.unsplash.com/photo-1521791136064-7986c2920216"
               alt="Megica Sanitaryware support & export enquiry"
-              className="h-[360px] w-full object-cover sm:h-[420px]"
+              className="h-90 w-full object-cover sm:h-105"
               loading="lazy"
               initial={{ scale: 1.04 }}
               whileHover={{ scale: 1.07 }}
@@ -54,19 +54,19 @@ export default function ContactEnquirySection() {
             />
 
             {/* Premium overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/25 to-transparent" />
 
             {/* Floating label */}
             <div className="absolute bottom-5 left-5 right-5">
               <div
                 className="
-          rounded-[var(--radius-lg)]
+          rounded-lg
           bg-white/10 backdrop-blur-md
           border border-white/15
           p-5
         "
               >
-                <p className="text-xs uppercase tracking-[0.3em] text-[var(--color-brand-soft)]">
+                <p className="text-xs uppercase tracking-[0.3em] text-brand-soft">
                   Premium Support
                 </p>
                 <p className="mt-2 text-lg font-semibold text-white">
@@ -81,7 +81,7 @@ export default function ContactEnquirySection() {
           </div>
 
           {/* Subtle accent glow behind image */}
-          <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-[var(--color-brand-accent)]/10 blur-3xl" />
+          <div className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-brand-accent/10 blur-3xl" />
         </motion.div>
 
         {/* =========================
@@ -94,8 +94,8 @@ export default function ContactEnquirySection() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           className="
             relative
-            rounded-[var(--radius-xl)]
-            bg-[var(--color-brand-primary)]
+            rounded-xl
+            bg-(--color-brand-primary)
             p-10
             shadow-card
           "
@@ -109,7 +109,7 @@ export default function ContactEnquirySection() {
               <input
                 type="text"
                 placeholder="Enter your name"
-                className="w-full rounded-[var(--radius-md)] bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-[var(--color-brand-accent)]"
+                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
               />
             </div>
 
@@ -121,7 +121,7 @@ export default function ContactEnquirySection() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full rounded-[var(--radius-md)] bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-[var(--color-brand-accent)]"
+                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
               />
             </div>
 
@@ -133,7 +133,7 @@ export default function ContactEnquirySection() {
               <input
                 type="tel"
                 placeholder="Enter your phone number"
-                className="w-full rounded-[var(--radius-md)] bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-[var(--color-brand-accent)]"
+                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
               />
             </div>
 
@@ -145,7 +145,7 @@ export default function ContactEnquirySection() {
               <textarea
                 rows="4"
                 placeholder="Tell us about your requirement"
-                className="w-full rounded-[var(--radius-md)] bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-[var(--color-brand-accent)]"
+                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
               />
             </div>
 
@@ -155,8 +155,8 @@ export default function ContactEnquirySection() {
               className="
                 mt-4
                 inline-flex items-center justify-center
-                rounded-[var(--radius-lg)]
-                bg-[var(--color-brand-accent)]
+                rounded-lg
+                bg-brand-accent
                 px-8 py-4
                 text-sm font-semibold uppercase tracking-wider
                 text-black

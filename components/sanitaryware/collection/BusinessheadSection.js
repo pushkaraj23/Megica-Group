@@ -6,7 +6,7 @@ export default function MegicaBusinessHeadSection() {
   return (
     <section className="relative bg-bg-dark text-text-inverse py-32 overflow-hidden mb-10">
       {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:80px_80px]" />
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[80px_80px]" />
 
       {/* Accent glow */}
       <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl" />
