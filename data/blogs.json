@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "slug": "choosing-right-sanitaryware",
+    "title": "Choosing the Right Sanitaryware for Modern Projects",
+    "excerpt": "Key considerations for hygiene, durability, and design when selecting sanitaryware for residential and commercial developments.",
+    "date": "Jan 12, 2026",
+    "readTime": "6 min read",
+    "coverImage": "https://images.unsplash.com/photo-1625801882109-032ad88edeb3?w=1600&q=80",
+    "listingImage": "https://images.unsplash.com/photo-1625801882109-032ad88edeb3?w=1200&q=80",
+    "content": [
+      {
+        "type": "heading",
+        "text": "Why Sanitaryware Selection Matters"
+      },
+      {
+        "type": "paragraph",
+        "text": "Sanitaryware today is about more than functionality. It defines hygiene, long-term durability, and the overall experience of a space."
+      },
+      {
+        "type": "heading",
+        "text": "Key Factors to Consider"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Hygiene and ease of cleaning",
+          "Material strength and longevity",
+          "Design compatibility with modern spaces",
+          "Compliance with export quality standards"
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Making the right choice early helps avoid maintenance issues and improves overall project value."
+      }
+    ]
+  }
+]

@@ -19,7 +19,7 @@ export default function ECatalogueHero() {
       />
 
       {/* Gradient veil */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/75 to-black/90" />
 
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -top-40 right-1/3 h-105 w-105 rounded-full bg-brand-accent/10 blur-3xl" />
