@@ -1,6 +1,6 @@
-import { ContactTrustBanner } from "@/components/sanitaryware/contact/ContactTrustBanner";
-import { ContactHeroSection } from "@/components/sanitaryware/contact/HeroSectionContact";
-import ContactEnquirySection from "@/components/sanitaryware/home/ContactEnquirySection";
+import { ContactTrustBanner } from "@/components/bathroom-fittings/contact/ContactTrustBanner";
+import { ContactHeroSection } from "@/components/bathroom-fittings/contact/HeroSectionContact";
+import ContactEnquirySection from "@/components/bathroom-fittings/home/ContactEnquirySection";
 
 export default function ContactUsPage() {
   return (

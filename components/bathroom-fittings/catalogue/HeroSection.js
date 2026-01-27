@@ -9,9 +9,8 @@ export default function ECatalogueHero() {
       {/* =========================
           BACKGROUND VISUALS
       ========================== */}
-      {/* Subtle texture / catalogue mood */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-25"
+        className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=2000&q=80)",
@@ -19,7 +18,7 @@ export default function ECatalogueHero() {
       />
 
       {/* Gradient veil */}
-      <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/75 to-black/90" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/75 to-black/90" />
 
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -top-40 right-1/3 h-105 w-105 rounded-full bg-brand-accent/10 blur-3xl" />
@@ -29,13 +28,13 @@ export default function ECatalogueHero() {
           CONTENT
       ========================== */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-32 flex items-center">
-        <div className="">
+        <div>
           {/* Eyebrow */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-xs uppercase tracking-[0.35em] text-brand-muted"
+            className="text-xs uppercase tracking-[0.4em] text-brand-muted"
           >
             E-Catalogue & Business Resources
           </motion.p>
@@ -45,12 +44,13 @@ export default function ECatalogueHero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="mt-6 text-5xl text-bg-main uppercase tracking-wide leading-tight"
+            className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-bg-main"
           >
-            Explore Megica’s
+            Everything You Need to
             <br className="hidden sm:block" />
-            <span className="text-brand-accent">Product Catalogue</span> &
-            Business Profile
+            <span className="text-brand-accent">
+              Evaluate, Specify & Partner
+            </span>
           </motion.h1>
 
           {/* Sub-headline */}
@@ -60,9 +60,9 @@ export default function ECatalogueHero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
             className="mt-6 text-base sm:text-lg text-white/80 leading-relaxed max-w-3xl"
           >
-            Download detailed product specifications, model ranges, and company
-            credentials designed to support dealers, distributors, architects,
-            and project partners.
+            Access Megica’s complete product catalogue and company profile —
+            built to support dealers, distributors, architects, consultants, and
+            project decision-makers.
           </motion.p>
 
           {/* Supporting line */}
@@ -72,9 +72,9 @@ export default function ECatalogueHero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.25 }}
             className="mt-5 text-sm sm:text-base text-white/70 leading-relaxed max-w-3xl"
           >
-            Our e-catalogue is structured for easy reference, export
-            compatibility, and confident decision-making — whether you’re
-            sourcing products or evaluating a long-term partnership.
+            From detailed specifications and model ranges to manufacturing
+            capabilities and export readiness, our resources are structured to
+            enable confident sourcing and long-term collaboration.
           </motion.p>
 
           {/* =========================
@@ -84,7 +84,7 @@ export default function ECatalogueHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-12 flex flex-wrap gap-4"
           >
             <Link
               href="/downloads/megica-company-profile.pdf"
@@ -92,12 +92,12 @@ export default function ECatalogueHero() {
                 inline-flex items-center justify-center
                 rounded-lg
                 bg-brand-accent
-                px-8 py-4
+                px-5 py-4
                 text-sm font-semibold uppercase tracking-wider
                 text-black
                 shadow-card
                 transition-transform duration-300
-                hover:scale-[1.03]
+                hover:scale-[1.04]
               "
             >
               Download Company Profile
@@ -109,7 +109,7 @@ export default function ECatalogueHero() {
                 inline-flex items-center justify-center
                 rounded-lg
                 border border-white/30
-                px-8 py-4
+                px-5 py-4
                 text-sm font-semibold uppercase tracking-wider
                 text-white
                 backdrop-blur
@@ -127,10 +127,10 @@ export default function ECatalogueHero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.45 }}
-            className="mt-8 text-sm text-white/65 italic max-w-2xl"
+            className="mt-5 text-sm text-white/65 italic max-w-2xl"
           >
-            Trusted by dealers, distributors, and project partners across
-            domestic and international markets.
+            Trusted by trade partners and project stakeholders across domestic
+            and international markets.
           </motion.p>
         </div>
       </div>

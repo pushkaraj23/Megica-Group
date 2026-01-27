@@ -3,56 +3,56 @@
 import { motion } from "framer-motion";
 
 /* =========================
-   IMPACT DATA
+   IMPACT DATA – BATHROOM FITTINGS
 ========================= */
 
 const impactStats = [
   {
-    metric: "30%",
-    value: "Lower Water Usage",
-    label: "Water-Efficient Performance",
+    metric: "25%",
+    value: "Lower Water Consumption",
+    label: "Water-Efficient Flow Control",
     description:
-      "Optimized flushing systems help households and facilities reduce water consumption by up to 30% without compromising performance.",
-    audience: "End Users",
-  },
-  {
-    metric: "50%",
-    value: "Less Cleaning Effort",
-    label: "Easy Maintenance Surfaces",
-    description:
-      "High-gloss, non-porous finishes significantly reduce dirt buildup, cutting daily cleaning time and chemical usage.",
+      "Optimized aerators, cartridges, and flow regulators help reduce water usage without compromising pressure or comfort.",
     audience: "End Users",
   },
   {
     metric: "40%",
-    value: "Longer Product Life",
-    label: "Durability That Lasts",
+    value: "Reduced Cleaning Effort",
+    label: "Premium Surface Finishes",
     description:
-      "Strong ceramic composition and controlled glazing extend product lifespan, reducing frequent replacements.",
+      "Advanced coatings resist stains, fingerprints, and water marks, reducing cleaning frequency and chemical use.",
     audience: "End Users",
   },
   {
-    metric: "20%",
-    value: "Higher Dealer Margins",
-    label: "Better Sell-Through",
+    metric: "45%",
+    value: "Extended Product Life",
+    label: "Durable Internal Components",
     description:
-      "Reliable quality and repeat-ready models help dealers improve conversion rates and profit margins.",
+      "High-grade metal bodies and precision-engineered cartridges significantly increase operational lifespan.",
+    audience: "End Users",
+  },
+  {
+    metric: "22%",
+    value: "Improved Dealer Margins",
+    label: "Higher Sell-Through Rates",
+    description:
+      "Consistent quality, finish options, and repeat demand help dealers improve conversions and profitability.",
     audience: "Dealers",
   },
   {
     metric: "35%",
-    value: "Fewer After-Sales Issues",
-    label: "Consistent Quality Output",
+    value: "Fewer Service Complaints",
+    label: "Reliable Performance",
     description:
-      "Strict quality checks result in fewer complaints, returns, and service calls for dealers and projects.",
+      "Rigorous functional testing reduces leakage issues, callbacks, and after-sales support requirements.",
     audience: "Dealers",
   },
   {
-    metric: "Bulk Ready",
-    value: "Project-Friendly Supply",
-    label: "Scalable for Large Orders",
+    metric: "Project-Ready",
+    value: "Scalable Supply Capability",
+    label: "Bulk & Project Execution",
     description:
-      "Standardized designs and production capacity ensure timely delivery for bulk and project requirements.",
+      "Standardized designs and production capacity ensure timely delivery for large projects and phased rollouts.",
     audience: "Dealers & Projects",
   },
 ];
@@ -61,7 +61,7 @@ const impactStats = [
    SECTION
 ========================= */
 
-export default function SanitarywareImpactSection() {
+export default function BathroomFittingsImpactSection() {
   return (
     <section className="relative bg-bg-main py-28 overflow-hidden">
       {/* Soft background accent */}
@@ -80,12 +80,12 @@ export default function SanitarywareImpactSection() {
         </p>
 
         <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-secondary">
-          Real-World Impact of Using Megica Sanitaryware
+          Real-World Impact of Using Megica Bathroom Fittings
         </h2>
 
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-text-muted">
-          Practical benefits that matter — for everyday users, dealers, and
-          project partners.
+          Tangible performance benefits that matter to homeowners, dealers, and
+          large-scale project partners.
         </p>
       </motion.div>
 

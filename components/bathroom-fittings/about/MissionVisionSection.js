@@ -28,9 +28,8 @@ export default function MissionVisionSection() {
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-[var(--color-text-muted)] leading-relaxed">
-            Our mission and vision guide every decision — from material
-            selection and manufacturing processes to long-term partnerships and
-            global expansion.
+            Our mission and vision shape every decision — from engineering and
+            material selection to long-term partnerships and global growth.
           </p>
         </motion.div>
 
@@ -64,16 +63,16 @@ export default function MissionVisionSection() {
 
             {/* Content */}
             <p className="mt-8 text-base sm:text-lg leading-relaxed text-white/80">
-              To manufacture high-quality sanitaryware that consistently meets
-              global standards of hygiene, durability, and design — while
-              supporting customers with dependable supply, transparent
-              processes, and long-term value.
+              To engineer and manufacture premium bathroom fittings that deliver
+              reliable performance, durable finishes, and efficient water
+              control — while supporting customers with dependable supply,
+              transparent processes, and long-term value.
             </p>
 
             {/* Sub-points */}
             <ul className="mt-8 space-y-3 text-sm text-white/70">
-              <li>• Focus on material integrity and process control</li>
-              <li>• Commitment to quality-driven manufacturing</li>
+              <li>• Precision engineering and material integrity</li>
+              <li>• Consistent quality and functional performance</li>
               <li>• Reliable support for projects and bulk requirements</li>
             </ul>
           </motion.div>
@@ -103,15 +102,18 @@ export default function MissionVisionSection() {
 
             {/* Content */}
             <p className="mt-8 text-base sm:text-lg leading-relaxed text-[var(--color-text-secondary)]">
-              To become a globally trusted sanitaryware manufacturing brand,
-              recognised for consistent quality, responsible production, and
-              strong partnerships across domestic and international markets.
+              To become a globally trusted bathroom fittings brand, recognised
+              for engineering excellence, product reliability, and strong
+              partnerships across residential, commercial, and international
+              markets.
             </p>
 
             {/* Sub-points */}
             <ul className="mt-8 space-y-3 text-sm text-[var(--color-text-muted)]">
               <li>• Expand presence across global markets</li>
-              <li>• Invest in modern manufacturing and innovation</li>
+              <li>
+                • Invest in engineering innovation and modern manufacturing
+              </li>
               <li>• Build long-term relationships with partners and clients</li>
             </ul>
           </motion.div>

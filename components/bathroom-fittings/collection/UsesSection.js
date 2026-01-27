@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 /* =========================
-   USE CASE DATA
+   USE CASE DATA – BATHROOM FITTINGS
 ========================= */
 
 const uses = [
@@ -11,7 +11,7 @@ const uses = [
     title: "Residential Spaces",
     subtitle: "Homes • Apartments • Villas",
     description:
-      "Designed for everyday comfort, hygiene, and aesthetic harmony in modern living spaces.",
+      "Bathroom fittings engineered for smooth control, refined finishes, and everyday comfort in modern living spaces.",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80",
   },
@@ -19,7 +19,7 @@ const uses = [
     title: "Commercial Buildings",
     subtitle: "Offices • IT Parks • Malls",
     description:
-      "Built to handle high usage while maintaining durability, cleanliness, and consistent performance.",
+      "Durable fittings designed to perform reliably under frequent usage while maintaining finish quality and water efficiency.",
     image:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1600&q=80",
   },
@@ -27,7 +27,7 @@ const uses = [
     title: "Hospitality Projects",
     subtitle: "Hotels • Resorts • Premium Stays",
     description:
-      "Premium sanitaryware solutions that elevate guest experience through design and reliability.",
+      "Premium bathroom fittings that enhance guest experience through precision engineering, aesthetics, and long-term reliability.",
     image:
       "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1600&q=80",
   },
@@ -35,7 +35,7 @@ const uses = [
     title: "Public Infrastructure",
     subtitle: "Airports • Hospitals • Institutions",
     description:
-      "Engineered for heavy footfall environments where hygiene, strength, and reliability are critical.",
+      "Heavy-duty fittings built for high-footfall environments where performance, durability, and ease of maintenance are critical.",
     image:
       "https://images.unsplash.com/photo-1518618750560-8f07abde4e4e?w=1600&q=80",
   },
@@ -45,7 +45,7 @@ const uses = [
    SECTION
 ========================= */
 
-export default function SanitarywareUsesSection() {
+export default function BathroomFittingsUsesSection() {
   return (
     <section className="relative bg-bg-section py-24 overflow-hidden">
       {/* HEADER */}
@@ -61,11 +61,11 @@ export default function SanitarywareUsesSection() {
         </p>
 
         <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-secondary">
-          Where Megica Sanitaryware Performs Best
+          Where Megica Bathroom Fittings Perform Best
         </h2>
 
         <p className="mt-5 max-w-2xl text-base sm:text-lg text-text-muted">
-          Sanitaryware solutions engineered to perform reliably across
+          Bathroom fittings engineered to deliver reliable performance across
           residential, commercial, hospitality, and public environments.
         </p>
       </motion.div>

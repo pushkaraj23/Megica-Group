@@ -1,10 +1,10 @@
-import AboutUsHero from "@/components/sanitaryware/about/AboutUsHero";
-import CertificatesStrip from "@/components/sanitaryware/about/CertificatesStrip";
-import CSRSection from "@/components/sanitaryware/about/CSRSection";
-import DealershipSection from "@/components/sanitaryware/about/DealershipSection";
-import MissionVisionSection from "@/components/sanitaryware/about/MissionVisionSection";
-import WhyMegicaSection from "@/components/sanitaryware/about/WhyMegicaSection";
-import TestimonialsSection from "@/components/sanitaryware/home/TestimonialSection";
+import AboutUsHero from "@/components/bathroom-fittings/about/AboutUsHero";
+import CertificatesStrip from "@/components/bathroom-fittings/about/CertificatesStrip";
+import CSRSection from "@/components/bathroom-fittings/about/CSRSection";
+import DealershipSection from "@/components/bathroom-fittings/about/DealershipSection";
+import MissionVisionSection from "@/components/bathroom-fittings/about/MissionVisionSection";
+import WhyMegicaSection from "@/components/bathroom-fittings/about/WhyMegicaSection";
+import TestimonialsSection from "@/components/bathroom-fittings/home/TestimonialSection";
 
 export default function AboutUsPage() {
   return (

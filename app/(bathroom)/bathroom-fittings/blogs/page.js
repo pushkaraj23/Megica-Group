@@ -1,6 +1,6 @@
-import BlogListSection from "@/components/sanitaryware/blogs/BlogListSection";
-import BlogHero from "@/components/sanitaryware/blogs/HeroBanner";
-import ContactEnquirySection from "@/components/sanitaryware/home/ContactEnquirySection";
+import BlogListSection from "@/components/bathroom-fittings/blogs/BlogListSection";
+import BlogHero from "@/components/bathroom-fittings/blogs/HeroBanner";
+import ContactEnquirySection from "@/components/bathroom-fittings/home/ContactEnquirySection";
 
 export default function BlogsPage() {
   return (

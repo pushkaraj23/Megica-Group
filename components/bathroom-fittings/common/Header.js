@@ -18,13 +18,11 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const current = window.scrollY;
-
       if (current > lastScrollY && current > 100) {
         setHidden(true);
       } else {
         setHidden(false);
       }
-
       setLastScrollY(current);
     };
 
@@ -53,15 +51,18 @@ export default function Header() {
     };
   }, [open]);
 
+  /* =========================
+     NAV ITEMS – BATHROOM FITTINGS
+  ========================== */
   const navItems = [
-    { name: "Home", href: "/sanitaryware/" },
-    { name: "About", href: "/sanitaryware/about" },
-    { name: "Collection", href: "/sanitaryware/collection" },
-    { name: "Gallery", href: "/sanitaryware/gallery" },
-    { name: "Export", href: "/sanitaryware/export" },
-    { name: "E-Catalogue", href: "/sanitaryware/e-catalogue" },
-    { name: "Blogs", href: "/sanitaryware/blogs" },
-    { name: "Contact", href: "/sanitaryware/contact" },
+    { name: "Home", href: "/bathroom-fittings/" },
+    { name: "About", href: "/bathroom-fittings/about" },
+    { name: "Collection", href: "/bathroom-fittings/collection" },
+    { name: "Gallery", href: "/bathroom-fittings/gallery" },
+    { name: "Export", href: "/bathroom-fittings/export" },
+    { name: "E-Catalogue", href: "/bathroom-fittings/e-catalogue" },
+    { name: "Blogs", href: "/bathroom-fittings/blogs" },
+    { name: "Contact", href: "/bathroom-fittings/contact" },
   ];
 
   return (
@@ -87,13 +88,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 px-6">
             {/* LOGO */}
             <Link
-              href="/sanitaryware/"
+              href="/bathroom-fittings/"
               className="flex items-center gap-3"
               onClick={() => setOpen(false)}
             >
               <img src="/megica-logo1.png" className="h-10" alt="Megica" />
               <span className="text-brand-primary text-xs uppercase tracking-widest font-semibold">
-                Sanitaryware
+                Bathroom Fittings
               </span>
             </Link>
 
@@ -106,8 +107,7 @@ export default function Header() {
                     key={item.href}
                     href={item.href}
                     className={`
-                      relative
-                      transition-colors
+                      relative transition-colors
                       ${
                         isActive
                           ? "text-brand-primary"
@@ -154,13 +154,11 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={() => setOpen(false)}
-                        className={`
-                          ${
-                            isActive
-                              ? "text-brand-primary font-semibold"
-                              : "text-black/70"
-                          }
-                        `}
+                        className={
+                          isActive
+                            ? "text-brand-primary font-semibold"
+                            : "text-black/70"
+                        }
                       >
                         {item.name}
                       </Link>

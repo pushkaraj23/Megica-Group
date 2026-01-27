@@ -12,13 +12,13 @@ const images = [
   "https://images.unsplash.com/photo-1636004482498-7b96b604a2ce",
 ];
 
-export default function SanitarywareCollectionHero() {
+export default function BathroomFittingsCollectionHero() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 6000); // 🔁 Change image every 6s
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -40,8 +40,8 @@ export default function SanitarywareCollectionHero() {
         />
       </AnimatePresence>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/65" />
+      {/* Gradient overlay (more premium depth) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-black/75" />
 
       {/* Ambient accents */}
       <div className="pointer-events-none absolute -top-40 right-1/4 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl" />
@@ -59,12 +59,12 @@ export default function SanitarywareCollectionHero() {
         >
           {/* Eyebrow */}
           <p className="text-xs uppercase tracking-[0.4em] text-brand-muted">
-            Megica Sanitaryware
+            Megica Bathroom Fittings
           </p>
 
           {/* Heading */}
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-bg-main">
-            Sanitaryware Collection
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-bg-main">
+            Bathroom Fittings Collection
           </h1>
 
           {/* Accent divider */}
@@ -72,23 +72,24 @@ export default function SanitarywareCollectionHero() {
 
           {/* Subline */}
           <p className="mt-6 text-lg sm:text-xl text-white/80">
-            Design-led. Hygienic. Built for modern spaces.
+            Precision-engineered faucets, showers, and fittings for modern
+            spaces.
           </p>
 
           {/* Highlights */}
           <div className="mt-12 grid gap-5 sm:grid-cols-2 max-w-2xl mx-auto">
             {[
-              "Contemporary designs",
-              "High-gloss hygienic finishes",
-              "Durable for daily use",
-              "Project & bulk-ready range",
+              "Precision-engineered designs",
+              "Durable premium finishes",
+              "Smooth control & water efficiency",
+              "Project & export-ready range",
             ].map((item, i) => (
               <div
                 key={i}
                 className="
                   flex items-center gap-4
                   rounded-lg
-                  bg-brand-primary/60
+                  bg-brand-primary/65
                   px-5 py-3
                   backdrop-blur
                   border border-white/5

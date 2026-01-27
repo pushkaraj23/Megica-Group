@@ -4,34 +4,34 @@ import { motion } from "framer-motion";
 
 const reasons = [
   {
-    title: "Manufacturing Expertise",
+    title: "Precision Engineering",
     description:
-      "Years of focused manufacturing experience backed by controlled processes and consistent output quality.",
+      "Advanced manufacturing processes focused on accuracy, smooth operation, and long-lasting mechanical performance.",
   },
   {
-    title: "Export-Ready Quality",
+    title: "Global Quality Standards",
     description:
-      "Products engineered and tested to meet international hygiene, durability, and compliance standards.",
+      "Bathroom fittings designed and tested to comply with international durability, pressure, and safety benchmarks.",
   },
   {
-    title: "Design with Purpose",
+    title: "Design That Performs",
     description:
-      "Modern, functional designs that balance aesthetics, comfort, and long-term usability.",
+      "Thoughtfully engineered designs that blend visual elegance with ergonomic control and water efficiency.",
   },
   {
-    title: "Material Integrity",
+    title: "Premium Material Finish",
     description:
-      "High-grade raw materials and glazing techniques ensure strength, finish retention, and longevity.",
+      "High-grade metals, coatings, and surface treatments that resist corrosion, wear, and finish degradation.",
   },
   {
-    title: "Scalable Supply",
+    title: "Project-Scale Supply",
     description:
-      "Production capacity designed to support bulk orders, project timelines, and global distribution.",
+      "Production capacity built to support large-scale developments, retail distribution, and export timelines.",
   },
   {
-    title: "Quality Assurance",
+    title: "Reliability Assured",
     description:
-      "Multi-stage inspection and testing protocols to ensure reliability before dispatch.",
+      "Rigorous inspection and functional testing ensure consistent performance before every dispatch.",
   },
 ];
 
@@ -55,15 +55,15 @@ export default function WhyChooseMegica() {
           </p>
 
           <h2 className="mt-5 text-3xl text-text-inverse sm:text-4xl font-extrabold tracking-tight">
-            Built on Quality.
+            Engineered for Precision.
             <br className="hidden sm:block" />
-            Trusted by Markets Worldwide.
+            Designed for Everyday Performance.
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
-            Megica Sanitaryware is driven by precision manufacturing, material
-            integrity, and a commitment to long-term performance across every
-            product we deliver.
+            Megica Bathroom Fittings are crafted with engineering accuracy,
+            premium materials, and a commitment to dependable performance in
+            modern living spaces.
           </p>
         </motion.div>
 

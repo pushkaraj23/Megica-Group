@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 import { registerWorldMap } from "./registerWorldMap";
 
 /* =========================
-   EXPORT DATA
+   EXPORT DATA – BATHROOM FITTINGS
 ========================= */
 
 const exportData = {
   India: {
     coord: [78.9629, 20.5937],
-    stats: "Manufacturing Origin",
+    stats: "Manufacturing & Engineering Hub",
   },
   Bhutan: {
     coord: [90.4336, 27.5142],
@@ -20,11 +20,11 @@ const exportData = {
   },
   Europe: {
     coord: [10.0, 50.0],
-    stats: "Compliance-Driven Export Market",
+    stats: "Compliance-Driven Fittings Market",
   },
   Africa: {
     coord: [20.0, 5.0],
-    stats: "Infrastructure & Bulk Demand",
+    stats: "Infrastructure & Project Demand",
   },
   "South America": {
     coord: [-60.0, -15.0],
@@ -143,15 +143,15 @@ export default function GlobalExportMap() {
             </p>
 
             <h2 className="mt-4 text-3xl lg:text-4xl font-heading text-text-primary">
-              Indian Manufacturing
+              Indian Engineering
               <br />
-              <span className="text-brand-accent">Exported Worldwide</span>
+              <span className="text-brand-accent">Supplied Worldwide</span>
             </h2>
 
             <p className="mt-6 text-text-muted leading-relaxed">
               From India to key global markets across multiple continents,
-              Megica Group delivers export-ready sanitaryware and fittings
-              through structured B2B supply chains.
+              Megica delivers export-ready bathroom fittings through structured,
+              reliable B2B supply chains.
             </p>
           </motion.div>
 
@@ -164,9 +164,21 @@ export default function GlobalExportMap() {
             className="lg:col-span-2 grid sm:grid-cols-2 gap-6"
           >
             <StatCard title="Export Regions" value="6" desc="Active markets" />
-            <StatCard title="Manufacturing Base" value="India" desc="Origin" />
-            <StatCard title="Supply Model" value="B2B" desc="Bulk exports" />
-            <StatCard title="Export Ready" value="100%" desc="Compliance" />
+            <StatCard
+              title="Manufacturing Base"
+              value="India"
+              desc="Engineering hub"
+            />
+            <StatCard
+              title="Supply Model"
+              value="B2B"
+              desc="Bulk & project exports"
+            />
+            <StatCard
+              title="Export Ready"
+              value="100%"
+              desc="Global compliance"
+            />
           </motion.div>
         </div>
 

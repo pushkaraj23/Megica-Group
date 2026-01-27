@@ -1,5 +1,5 @@
-import Header from "@/components/sanitaryware/common/Header";
-import Footer from "@/components/sanitaryware/common/Footer";
+import Header from "@/components/bathroom-fittings/common/Header";
+import Footer from "@/components/bathroom-fittings/common/Footer";
 import InfinityLoader from "@/components/common/InfinityLoader";
 import CustomCursor from "@/components/common/CustomPointer";
 

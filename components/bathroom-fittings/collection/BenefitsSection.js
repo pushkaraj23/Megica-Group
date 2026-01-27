@@ -3,39 +3,39 @@
 import { motion } from "framer-motion";
 
 /* =========================
-   BENEFITS DATA
+   BENEFITS DATA – BATHROOM FITTINGS
 ========================= */
 
 const benefits = [
   {
-    title: "Superior Hygiene Standards",
+    title: "Precision Flow & Control",
     description:
-      "Non-porous ceramic surfaces with high-gloss glazing reduce bacterial retention and simplify daily cleaning.",
+      "Engineered cartridges and valve systems ensure smooth operation, accurate control, and consistent water flow over time.",
   },
   {
-    title: "Built for Long-Term Durability",
+    title: "Durable Metal Construction",
     description:
-      "Manufactured using high-density ceramic compounds to withstand continuous usage in residential and commercial environments.",
+      "High-grade metals and robust internal components designed to withstand continuous use in residential and commercial environments.",
   },
   {
     title: "Water-Efficient Performance",
     description:
-      "Optimized flushing systems engineered to reduce water consumption without compromising effectiveness.",
+      "Optimized flow rates help reduce water consumption while maintaining comfort and performance.",
   },
   {
-    title: "Design Consistency Across Ranges",
+    title: "Premium Finish Retention",
     description:
-      "Unified design language across models ensures visual harmony for projects, hotels, and large-scale developments.",
+      "Advanced surface treatments resist corrosion, wear, and discoloration, preserving appearance over long-term use.",
   },
   {
-    title: "Export-Ready Quality Control",
+    title: "Export-Ready Quality Standards",
     description:
-      "Every unit undergoes multi-stage inspection to meet international quality benchmarks and export standards.",
+      "Every fitting undergoes functional testing and inspection to meet international quality, safety, and export benchmarks.",
   },
   {
     title: "Low Maintenance Lifecycle Cost",
     description:
-      "Durable finishes and reliable components reduce long-term maintenance and replacement expenses.",
+      "Reliable components and durable finishes reduce servicing needs, downtime, and long-term maintenance expenses.",
   },
 ];
 
@@ -43,7 +43,7 @@ const benefits = [
    SECTION
 ========================= */
 
-export default function SanitarywareBenefitsSection() {
+export default function BathroomFittingsBenefitsSection() {
   return (
     <section className="relative bg-bg-dark py-28 overflow-hidden">
       {/* Ambient accents */}
@@ -63,17 +63,17 @@ export default function SanitarywareBenefitsSection() {
         </p>
 
         <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-inverse">
-          Benefits Using our Products
+          Benefits of Using Our Bathroom Fittings
         </h2>
 
         <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/70">
-          Our sanitaryware solutions are engineered to deliver lasting value,
-          operational reliability, and consistent performance across diverse
-          applications.
+          Megica Bathroom Fittings are engineered to deliver long-term
+          performance, reliability, and value across residential, commercial,
+          and institutional applications.
         </p>
       </motion.div>
 
-      {/* BENEFITS */}
+      {/* BENEFITS GRID */}
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((item, index) => (

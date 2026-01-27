@@ -32,21 +32,22 @@ export default function AboutUsHeroExtended() {
           className="max-w-3xl"
         >
           <p className="text-xs uppercase tracking-[0.35em] text-brand-muted">
-            About Megica Sanitaryware
+            About Megica Bathroom Fittings
           </p>
 
           <h1 className="mt-6 text-4xl sm:text-5xl text-bg-main lg:text-6xl font-extrabold tracking-tight leading-tight">
-            Manufacturing Excellence <br className="hidden sm:block" />
-            Built for Global Markets
+            Precision Engineering <br className="hidden sm:block" />
+            Designed for Global Living
           </h1>
 
           <div className="mt-6 h-0.5 w-20 bg-brand-accent" />
 
           <p className="mt-8 text-base sm:text-lg leading-relaxed text-white/80">
-            Megica Sanitaryware is a quality-driven manufacturer of premium
-            sanitaryware products. Our focus lies in hygiene, durability,
-            functional design, and export-ready consistency — supporting
-            residential, commercial, and infrastructure projects worldwide.
+            Megica Bathroom Fittings is a quality-driven manufacturer of premium
+            faucets, shower systems, and bathroom accessories. Our focus lies in
+            precision engineering, durable finishes, water efficiency, and
+            export-ready consistency — supporting residential, commercial, and
+            infrastructure projects worldwide.
           </p>
         </motion.div>
       </div>
@@ -69,10 +70,10 @@ export default function AboutUsHeroExtended() {
           "
         >
           {[
-            { value: "15+", label: "Years of Manufacturing" },
-            { value: "120+", label: "Sanitaryware Models" },
-            { value: "25+", label: "Export Countries" },
-            { value: "100%", label: "Quality Inspected Output" },
+            { value: "15+", label: "Years of Engineering Experience" },
+            { value: "150+", label: "Fittings & Finish Variants" },
+            { value: "30+", label: "Export Markets Served" },
+            { value: "100%", label: "Functionally Tested Output" },
           ].map((stat, i) => (
             <div
               key={i}
@@ -103,23 +104,23 @@ export default function AboutUsHeroExtended() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="text-2xl text-bg-main sm:text-3xl font-extrabold tracking-tight">
-              A Process-Driven Manufacturing Approach
+              Engineering-Driven Manufacturing Philosophy
             </h2>
 
             <div className="mt-5 h-0.5 w-16 bg-brand-accent" />
 
             <p className="mt-6 text-base leading-relaxed text-white/75">
-              Our manufacturing process is built on controlled raw material
-              selection, precision moulding, advanced glazing techniques, and
-              multi-stage quality inspection. Each product is developed to
-              ensure structural strength, surface finish retention, and long
-              service life.
+              Our manufacturing process is built on precision machining,
+              controlled material selection, advanced surface treatments, and
+              multi-stage functional testing. Each fitting is engineered to
+              ensure smooth operation, pressure stability, corrosion resistance,
+              and long service life.
             </p>
 
             <p className="mt-5 text-base leading-relaxed text-white/75">
               With scalable production capacity and export-compliant packaging,
-              Megica supports bulk orders, project timelines, and long-term
-              supply partnerships across domestic and international markets.
+              Megica supports bulk supply, project timelines, and long-term
+              partnerships across domestic and international markets.
             </p>
           </motion.div>
 
@@ -139,7 +140,7 @@ export default function AboutUsHeroExtended() {
           >
             <img
               src="https://images.unsplash.com/photo-1531403009284-440f080d1e12"
-              alt="Megica manufacturing facility"
+              alt="Megica bathroom fittings manufacturing and testing facility"
               className="h-105 w-full object-cover"
               loading="lazy"
             />

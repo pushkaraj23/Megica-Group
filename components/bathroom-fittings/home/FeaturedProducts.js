@@ -10,31 +10,31 @@ import Link from "next/link";
 const featuredProducts = [
   {
     id: 1,
-    name: "Wall Hung Basin",
+    name: "Overhead Shower",
     image:
-      "https://www.inart.co.in/cdn/shop/files/01_-_Copy_bb7bc87b-20a2-458d-ace0-97e5ff9c0418.jpg?v=1725008039&width=1946",
-    link: "/sanitaryware/products/wall-hung-basin",
+      "https://images.unsplash.com/photo-1600566753151-384129cf4e3d?w=1400&auto=format&fit=crop&q=60",
+    link: "/bathroom-fittings/products/overhead-shower",
   },
   {
     id: 2,
-    name: "One Piece Closet",
+    name: "Single Lever Basin Mixer",
     image:
-      "https://www.inart.co.in/cdn/shop/products/CVZX-Copy.png?v=1665231221",
-    link: "/sanitaryware/products/one-piece-closet",
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&auto=format&fit=crop&q=60",
+    link: "/bathroom-fittings/products/single-lever-basin-mixer",
   },
   {
     id: 3,
-    name: "Table Top Basin",
+    name: "Wall Mixer with L-Bend",
     image:
-      "https://ruheindia.com/cdn/shop/files/02_4b186c57-691c-4144-9aa0-e637126e966f.png?v=1753091717&width=1214",
-    link: "/sanitaryware/products/table-top-basin",
+      "https://images.unsplash.com/photo-1600566752734-2a0e1a0af9d6?w=1400&auto=format&fit=crop&q=60",
+    link: "/bathroom-fittings/products/wall-mixer-l-bend",
   },
   {
     id: 4,
-    name: "Concealed Cistern",
+    name: "Health Faucet Set",
     image:
-      "https://www.jiomart.com/images/product/original/rvzdb04ilr/plantex-concealed-flush-tank-for-toilet-flushing-cistern-with-full-frame-slim-and-stylish-tank-with-flush-plate-concealed-cistern-pack-of-1-product-images-orvzdb04ilr-p610029347-1-202409260858.jpg?im=Resize=(420,420)",
-    link: "/sanitaryware/products/concealed-cistern",
+      "https://images.unsplash.com/photo-1600566752547-33b4181b61f8?w=1400&auto=format&fit=crop&q=60",
+    link: "/bathroom-fittings/products/health-faucet-set",
   },
 ];
 
@@ -58,13 +58,13 @@ export default function FeaturedProducts() {
           </p>
 
           <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
-            Signature Sanitaryware
+            Signature Bathroom Fittings
           </h2>
 
           <p className="mt-5 text-base sm:text-lg text-[var(--color-text-muted)]">
-            A curated selection of Megica’s most trusted and export-ready
-            sanitaryware designs — engineered for performance and refined
-            aesthetics.
+            A curated selection of Megica’s premium bathroom fittings — crafted
+            for smooth operation, refined finishes, and export-ready
+            consistency.
           </p>
         </motion.div>
 
@@ -132,7 +132,7 @@ export default function FeaturedProducts() {
           className="mt-16 text-center"
         >
           <Link
-            href="/sanitaryware/products"
+            href="/bathroom-fittings/products"
             className="
               inline-flex items-center justify-center
               rounded-[var(--radius-lg)]

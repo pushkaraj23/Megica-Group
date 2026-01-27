@@ -4,36 +4,36 @@ import { motion } from "framer-motion";
 
 const capabilities = [
   {
-    title: "Manufacturing Discipline",
+    title: "Precision Engineering",
     description:
-      "Process-driven production with controlled raw materials, precision moulding, and consistent glazing standards.",
+      "Process-driven manufacturing with controlled materials, accurate machining, and consistent surface finishing for reliable performance.",
   },
   {
-    title: "Export-Ready Consistency",
+    title: "Export-Ready Standards",
     description:
-      "Products engineered, inspected, and packed to meet international quality, compliance, and logistics requirements.",
+      "Bathroom fittings engineered, tested, and packed to meet international durability, compliance, and logistics requirements.",
   },
   {
-    title: "Design with Purpose",
+    title: "Design That Performs",
     description:
-      "Functional, modern designs that balance aesthetics, hygiene, and long-term usability across project types.",
+      "Thoughtfully engineered designs that balance aesthetics, ergonomic control, water efficiency, and long-term usability.",
   },
   {
     title: "Scalable Supply Capability",
     description:
-      "Infrastructure and capacity designed to support bulk orders, multi-location projects, and long-term partnerships.",
+      "Infrastructure and capacity designed to support bulk orders, multi-location developments, and long-term partnerships.",
   },
   {
     title: "Quality Accountability",
     description:
-      "Multi-stage inspection ensures structural strength, surface finish retention, and reliable performance.",
+      "Multi-stage functional testing ensures smooth operation, pressure stability, finish durability, and consistent performance.",
   },
 ];
 
 export default function WhyMegicaSection() {
   return (
     <section className="relative bg-[var(--color-bg-dark)] text-[var(--color-text-inverse)]">
-      {/* Ambient depth (can overflow safely) */}
+      {/* Ambient depth */}
       <div className="pointer-events-none absolute -top-32 right-1/3 h-80 w-80 rounded-full bg-[var(--color-brand-accent)]/10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -left-40 h-96 w-96 rounded-full bg-[var(--color-brand-soft)]/10 blur-3xl" />
 
@@ -58,27 +58,31 @@ export default function WhyMegicaSection() {
           </p>
 
           <h2 className="mt-6 text-bg-main text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-            Built for Reliability. <br className="hidden sm:block" />
-            Chosen for Long-Term Value.
+            Engineered for Reliability. <br className="hidden sm:block" />
+            Chosen for Long-Term Performance.
           </h2>
 
-          {/* Accent divider (now sticks visually) */}
+          {/* Accent divider */}
           <div className="mt-6 h-[2px] w-20 bg-[var(--color-brand-accent)]" />
 
           <p className="mt-8 text-base sm:text-lg leading-relaxed text-white/80">
-            Megica Sanitaryware is built around one core principle —
-            consistency. From manufacturing processes and material quality to
-            supply commitments and support, every decision is designed to reduce
-            risk for our partners and deliver dependable outcomes.
+            Megica Bathroom Fittings is built around one core principle —
+            reliability. From engineering precision and material selection to
+            functional testing and supply commitments, every decision is made to
+            deliver consistent performance and reduce risk for our partners.
           </p>
 
           <p className="mt-5 text-base leading-relaxed text-white/70">
-            This approach has made Megica a preferred choice for consultants,
-            dealers, and export buyers who value predictability, accountability,
-            and long-term collaboration over short-term gains.
+            This approach has made Megica a preferred choice for architects,
+            consultants, dealers, and export buyers who value predictability,
+            accountability, and long-term collaboration.
           </p>
 
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" className="w-full mt-7 rounded-2xl h-auto" alt="" />
+          <img
+            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf"
+            className="w-full mt-7 rounded-2xl h-auto"
+            alt="Megica bathroom fittings engineering and quality control"
+          />
         </motion.div>
 
         {/* =========================

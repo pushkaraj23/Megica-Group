@@ -1,12 +1,12 @@
-import SanitarywareBenefitsSection from "@/components/sanitaryware/collection/BenefitsSection";
-import MegicaBusinessHeadSection from "@/components/sanitaryware/collection/BusinessheadSection";
-import SanitarywareCollectionHero from "@/components/sanitaryware/collection/CollectionHeroSection";
-import CollectionIntroSection from "@/components/sanitaryware/collection/CollectionIntro";
-import SanitarywareImpactSection from "@/components/sanitaryware/collection/ImpactSection";
-import SanitarywareCategoryParallax from "@/components/sanitaryware/collection/SanitarywareCategoryParallax";
-import SanitarywareUsesSection from "@/components/sanitaryware/collection/UsesSection";
-import ContactEnquirySection from "@/components/sanitaryware/home/ContactEnquirySection";
-import WhyChooseMegica from "@/components/sanitaryware/home/WhyChooseMegica";
+import SanitarywareBenefitsSection from "@/components/bathroom-fittings/collection/BenefitsSection";
+import MegicaBusinessHeadSection from "@/components/bathroom-fittings/collection/BusinessheadSection";
+import SanitarywareCollectionHero from "@/components/bathroom-fittings/collection/CollectionHeroSection";
+import CollectionIntroSection from "@/components/bathroom-fittings/collection/CollectionIntro";
+import SanitarywareImpactSection from "@/components/bathroom-fittings/collection/ImpactSection";
+import SanitarywareCategoryParallax from "@/components/bathroom-fittings/collection/SanitarywareCategoryParallax";
+import SanitarywareUsesSection from "@/components/bathroom-fittings/collection/UsesSection";
+import ContactEnquirySection from "@/components/bathroom-fittings/home/ContactEnquirySection";
+import WhyChooseMegica from "@/components/bathroom-fittings/home/WhyChooseMegica";
 
 export default function CollectionsPage() {
   return (

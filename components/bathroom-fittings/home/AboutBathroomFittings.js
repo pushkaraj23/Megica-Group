@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function AboutSanitaryware() {
+export default function AboutBathroomFittings() {
   return (
     <section className="relative bg-[var(--color-bg-main)] overflow-hidden">
       {/* Soft background accent */}
@@ -24,18 +24,18 @@ export default function AboutSanitaryware() {
 
           {/* Heading */}
           <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
-            Crafted for Everyday Use.
+            Precision You Can Feel.
             <br className="hidden sm:block" />
-            Engineered for Long-Term Performance.
+            Performance You Can Trust.
           </h2>
 
           {/* Description */}
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-[var(--color-text-muted)] max-w-xl">
-            Megica Sanitaryware designs and manufactures high-quality
-            sanitaryware solutions that balance hygiene, durability, and modern
-            aesthetics. Our products are developed for consistent performance
-            across residential, commercial, and large-scale infrastructure
-            environments.
+            Megica Bathroom Fittings are engineered for smooth operation,
+            long-lasting performance, and modern bathroom environments. Every
+            fitting is designed with attention to material quality, internal
+            mechanisms, and finish consistency to perform reliably in
+            residential, commercial, and high-usage project applications.
           </p>
 
           {/* CTA */}
@@ -64,10 +64,10 @@ export default function AboutSanitaryware() {
           className="grid grid-cols-2 gap-6"
         >
           {[
-            { label: "Years of Manufacturing Experience", value: "15+" },
-            { label: "Sanitaryware Models", value: "120+" },
-            { label: "Export Markets", value: "25+" },
-            { label: "Quality Checkpoints", value: "100%" },
+            { label: "Years of Engineering Expertise", value: "15+" },
+            { label: "Fitting Designs & Variants", value: "140+" },
+            { label: "International Markets Served", value: "25+" },
+            { label: "Performance Tested Components", value: "100%" },
           ].map((item, index) => (
             <div
               key={index}

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const catalogues = [
   {
-    title: "Sanitaryware Catalogue",
+    title: "Bathrooom Fittings Catalogue",
     subtitle: "Complete Product Range",
     pdf: "/downloads/sanitaryware-catalogue.pdf",
     page1: "/catalogues/sanitaryware-p1.jpg",

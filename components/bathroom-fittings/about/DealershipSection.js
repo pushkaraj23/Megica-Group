@@ -25,25 +25,25 @@ export default function DealershipSection() {
           </p>
 
           <h2 className="mt-6 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
-            Grow with a Trusted Manufacturing Brand
+            Partner with a Trusted Bathroom Fittings Brand
           </h2>
 
           <div className="mt-6 h-[2px] w-20 bg-[var(--color-brand-accent)]" />
 
           <p className="mt-8 text-base sm:text-lg leading-relaxed text-[var(--color-text-muted)]">
-            Megica Sanitaryware partners with dealers and distributors who value
-            product consistency, transparent support, and long-term business
-            growth. Our dealership program is structured to support retail,
-            project, and bulk supply opportunities.
+            Megica Bathroom Fittings collaborates with dealers and distributors
+            who value engineering precision, finish quality, and long-term
+            business growth. Our dealership program is designed to support
+            retail, project-based, and bulk supply opportunities.
           </p>
 
           {/* Highlights */}
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {[
-              "Attractive dealer margins",
-              "Consistent product availability",
-              "Project & bulk order support",
-              "Marketing & branding assistance",
+              "Competitive dealer margins",
+              "Consistent availability across fittings & finishes",
+              "Support for projects and bulk orders",
+              "Marketing, branding & technical assistance",
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 rounded-full bg-[var(--color-brand-accent)]" />
@@ -76,13 +76,14 @@ export default function DealershipSection() {
           </p>
 
           <h3 className="mt-4 text-xl font-semibold text-[var(--color-text-secondary)]">
-            Expand Your Market Presence
+            Expand Your Bathroom Solutions Portfolio
           </h3>
 
           <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
             We invite regional dealers and distributors to represent Megica’s
-            sanitaryware range and build long-term value through consistent
-            supply and professional support.
+            bathroom fittings range — including faucets, showers, and
+            accessories — and grow through reliable supply and professional
+            support.
           </p>
 
           {/* CTA Buttons */}

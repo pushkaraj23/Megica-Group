@@ -12,21 +12,21 @@ const testimonials = [
     role: "Project Consultant",
     company: "Commercial Developments, India",
     quote:
-      "Megica’s sanitaryware consistently meets project requirements for quality, finish, and delivery timelines. Their manufacturing reliability makes coordination smooth.",
+      "Megica’s bathroom fittings deliver excellent performance across large projects. The precision, finish quality, and consistency make them easy to specify and execute on-site.",
   },
   {
     name: "Ahmed Al Farsi",
     role: "Import Manager",
     company: "Building Supplies, UAE",
     quote:
-      "What stands out is their export-ready packaging and consistent product standards. Megica understands international market expectations very well.",
+      "From faucets to shower systems, Megica’s fittings meet international expectations for durability, finish, and packaging. Their understanding of export standards is impressive.",
   },
   {
     name: "Sanjay Kulkarni",
     role: "Dealer Partner",
     company: "Western India",
     quote:
-      "Strong product range, dependable supply, and responsive support. Megica has been a reliable brand for both retail and project-based requirements.",
+      "A dependable range of bathroom fittings with strong demand. Consistent supply, premium finishes, and responsive support make Megica a trusted brand for our customers.",
   },
 ];
 
@@ -52,12 +52,13 @@ export default function TestimonialsSection() {
           </p>
 
           <h2 className="mt-5 text-3xl sm:text-4xl text-bg-main font-extrabold tracking-tight">
-            Trusted by Partners & Clients
+            Trusted for Performance & Precision
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-white/75 leading-relaxed">
-            Our products and processes are trusted by consultants, dealers, and
-            international buyers across markets.
+            Architects, consultants, dealers, and international buyers rely on
+            Megica Bathroom Fittings for quality, consistency, and long-term
+            reliability.
           </p>
         </motion.div>
 
@@ -88,9 +89,7 @@ export default function TestimonialsSection() {
               "
             >
               {/* Quote mark */}
-              <div className="text-9xl text-brand-accent">
-                “
-              </div>
+              <div className="text-9xl text-brand-accent">“</div>
 
               {/* Quote */}
               <p className="text-sm sm:text-base leading-relaxed text-white/80">

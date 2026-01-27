@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function DealershipBanner() {
+export default function DealershipBannerBathroomFittings() {
   return (
     <section className="relative overflow-hidden bg-[var(--color-bg-dark)] text-[var(--color-text-inverse)]">
       {/* Ambient glow */}
@@ -44,19 +44,20 @@ export default function DealershipBanner() {
 
             {/* Description */}
             <p className="mt-6 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed">
-              Join Megica Sanitaryware as an authorised dealer and represent a
-              brand known for quality manufacturing, export-ready products, and
-              consistent supply. Grow your business with structured support and
-              a strong product portfolio.
+              Become an authorised dealer for Megica Bathroom Fittings and
+              represent a brand known for precision engineering, premium
+              finishes, and consistent product performance. Grow your business
+              with a range designed for residential, commercial, and high-usage
+              project environments.
             </p>
 
             {/* Highlights */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 "Attractive dealer margins",
-                "Consistent product availability",
-                "Marketing & branding support",
-                "Project & bulk order assistance",
+                "Reliable supply & batch consistency",
+                "Marketing & brand support",
+                "Project & bulk order enablement",
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3">
                   <span className="h-2 w-2 rounded-full bg-[var(--color-brand-accent)]" />
@@ -75,18 +76,19 @@ export default function DealershipBanner() {
             </p>
 
             <h3 className="mt-4 text-text-inverse text-xl font-semibold">
-              Expand Your Market with a Trusted Brand
+              Expand Your Reach with a Performance-Driven Brand
             </h3>
 
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
-              We are inviting dealers and distributors across regions to grow
-              with Megica’s premium sanitaryware range.
+              We are onboarding distributors and dealers to represent Megica’s
+              bathroom fittings range — engineered for durability, smooth
+              operation, and modern bathroom aesthetics.
             </p>
 
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/dealership"
+                href="/bathroom-fittings/dealership"
                 className="
                   inline-flex items-center justify-center
                   rounded-[var(--radius-lg)]
@@ -103,7 +105,7 @@ export default function DealershipBanner() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/bathroom-fittings/contact"
                 className="
                   inline-flex items-center justify-center
                   rounded-[var(--radius-lg)]

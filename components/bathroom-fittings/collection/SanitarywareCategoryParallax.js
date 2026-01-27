@@ -7,128 +7,132 @@ import { Navigation, Autoplay, Keyboard } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+
 /* =========================
-   CATEGORY DATA
+   CATEGORY DATA – BATHROOM FITTINGS
 ========================= */
 
 const categories = [
   {
-    title: "Water Closets",
-    subtitle: "One-piece • Two-piece • Wall-hung",
+    title: "Faucets & Mixers",
+    subtitle: "Single-lever • Wall-mounted • Deck-mounted",
     description:
-      "Ergonomically designed water closets engineered for hygiene, comfort, and long-term performance across residential and commercial environments.",
+      "Precision-engineered faucets and mixers designed for smooth control, durable finishes, and consistent water flow across residential and commercial applications.",
     image:
       "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1800&q=80",
     products: [
       {
-        image: "https://m.media-amazon.com/images/I/71fU6mFzO8L.jpg",
-        caption: "Rimless wall-hung WC with high-gloss hygienic finish",
+        image:
+          "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80",
+        caption: "Single-lever basin mixer with premium chrome finish",
       },
       {
         image:
-          "https://www.inart.co.in/cdn/shop/files/LOGO-01_f77c3140-e05a-4247-9a28-d7e7012f0044.jpg?v=1723290511&width=1100",
-        caption: "One-piece floor-mounted water closet for modern homes",
+          "https://images.unsplash.com/photo-1636004482498-7b96b604a2ce?w=900&q=80",
+        caption: "Wall-mounted faucet for clean, modern aesthetics",
       },
       {
-        image: "https://www.makankidukan.com/uploads/products/1747990675_0.jpg",
-        caption: "Compact WC designed for space-efficient bathrooms",
+        image:
+          "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=80",
+        caption: "Deck-mounted mixer engineered for smooth operation",
       },
       {
-        image: "https://cdn.moglix.com/p/9XaIw42ClcAfU.jpg",
-        caption: "Premium designer WC with durability-grade glazing",
+        image:
+          "https://images.unsplash.com/photo-1595526114035-45c7c93e8a2a?w=900&q=80",
+        caption: "Designer faucet with corrosion-resistant finish",
       },
     ],
   },
 
   {
-    title: "Wash Basins",
-    subtitle: "Countertop • Wall-hung • Pedestal",
+    title: "Shower Systems",
+    subtitle: "Overhead • Hand showers • Thermostatic",
     description:
-      "Modern wash basins crafted to complement contemporary interiors while ensuring easy maintenance and daily durability.",
+      "Complete shower solutions engineered for pressure balance, water efficiency, and a refined bathing experience.",
     image:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1800&q=80",
     products: [
       {
         image:
-          "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=900&q=80",
-        caption: "Minimal countertop basin with smooth ceramic contours",
-      },
-      {
-        image:
           "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=900&q=80",
-        caption: "Wall-hung basin designed for compact modern spaces",
-      },
-      {
-        image:
-          "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=900&q=80",
-        caption: "Pedestal basin with classic proportions and finish",
-      },
-      {
-        image:
-          "https://images.unsplash.com/photo-1618220179428-22790b461013?w=900&q=80",
-        caption: "Designer wash basin for premium residential interiors",
-      },
-    ],
-  },
-
-  {
-    title: "Urinals",
-    subtitle: "Commercial • High-traffic solutions",
-    description:
-      "Designed for heavy usage, our urinals focus on water efficiency, easy cleaning, and long-term operational reliability.",
-    image:
-      "https://images.unsplash.com/photo-1518618750560-8f07abde4e4e?w=1800&q=80",
-    products: [
-      {
-        image:
-          "https://images.unsplash.com/photo-1621976498727-9a3e45c3a2fa?w=900&q=80",
-        caption: "Wall-mounted urinal optimized for commercial restrooms",
+        caption: "Rain shower system with wide spray coverage",
       },
       {
         image:
           "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=900&q=80",
-        caption: "Water-efficient urinal for high-footfall environments",
+        caption: "Hand shower with ergonomic grip and flow control",
       },
       {
         image:
-          "https://images.unsplash.com/photo-1595526114035-45c7c93e8a2a?w=900&q=80",
-        caption: "Contemporary urinal with easy-clean ceramic surface",
+          "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=900&q=80",
+        caption: "Thermostatic shower for consistent temperature",
       },
       {
         image:
           "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=900&q=80",
-        caption: "Durable urinal designed for institutional use",
+        caption: "Premium shower set with durable surface coating",
       },
     ],
   },
 
   {
-    title: "Cisterns & Flush Systems",
-    subtitle: "Concealed • Exposed • Smart flush",
+    title: "Concealed & Exposed Valves",
+    subtitle: "Flush plates • Diverters • Control units",
     description:
-      "Reliable flushing systems built for performance, compatibility, and seamless integration with modern sanitaryware.",
+      "Reliable valve systems designed for seamless integration, smooth switching, and long-term operational stability.",
     image:
       "https://images.unsplash.com/photo-1618220179428-22790b461013?w=1800&q=80",
     products: [
       {
         image:
           "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=900&q=80",
-        caption: "Concealed cistern system for clean wall aesthetics",
+        caption: "Concealed valve system for minimal wall aesthetics",
       },
       {
         image:
           "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&q=80",
-        caption: "Dual-flush cistern optimized for water efficiency",
+        caption: "Dual-outlet diverter for shower and hand shower",
       },
       {
         image:
           "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=900&q=80",
-        caption: "Flush system compatible with multiple WC formats",
+        caption: "Flush plate with durable tactile controls",
       },
       {
         image:
           "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=900&q=80",
-        caption: "Modern exposed cistern with reliable flushing mechanism",
+        caption: "Exposed valve designed for easy maintenance",
+      },
+    ],
+  },
+
+  {
+    title: "Bathroom Accessories",
+    subtitle: "Towel rails • Soap dispensers • Holders",
+    description:
+      "Functional bathroom accessories crafted to match finishes, enhance usability, and complement modern interiors.",
+    image:
+      "https://images.unsplash.com/photo-1518618750560-8f07abde4e4e?w=1800&q=80",
+    products: [
+      {
+        image:
+          "https://images.unsplash.com/photo-1621976498727-9a3e45c3a2fa?w=900&q=80",
+        caption: "Minimal towel rail with corrosion-resistant coating",
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=900&q=80",
+        caption: "Wall-mounted soap dispenser for daily use",
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1595526114035-45c7c93e8a2a?w=900&q=80",
+        caption: "Toilet paper holder with premium metal finish",
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=900&q=80",
+        caption: "Accessory set designed for coordinated bathrooms",
       },
     ],
   },
@@ -138,7 +142,7 @@ const categories = [
    SECTION
 ========================= */
 
-export default function SanitarywareCategoryParallax() {
+export default function BathroomFittingsCategoryParallax() {
   const [activeCategory, setActiveCategory] = useState(null);
 
   return (
@@ -154,7 +158,6 @@ export default function SanitarywareCategoryParallax() {
         ))}
       </section>
 
-      {/* FULLSCREEN PRODUCT MODAL */}
       {activeCategory && (
         <ProductGalleryModal
           category={activeCategory}

@@ -49,8 +49,9 @@ export default function BlogsSection() {
           </h2>
 
           <p className="mt-6 text-base sm:text-lg text-text-muted leading-relaxed">
-            Industry insights, product knowledge, and expert perspectives on
-            sanitaryware manufacturing, design, and global market trends.
+            Expert insights, product guides, and design perspectives on bathroom
+            fittings, water control systems, finishes, and modern bathroom
+            solutions.
           </p>
         </motion.div>
 
@@ -77,7 +78,10 @@ export default function BlogsSection() {
                 will-change-opacity
               "
             >
-              <Link href={`/sanitaryware/blogs/${blog.slug}`} className="block h-full">
+              <Link
+                href={`/bathroom-fittings/blogs/${blog.slug}`}
+                className="block h-full"
+              >
                 {/* IMAGE */}
                 <div className="relative aspect-16/10 overflow-hidden bg-gray-100">
                   <img
@@ -131,7 +135,7 @@ export default function BlogsSection() {
           className="mt-20 text-center"
         >
           <Link
-            href="/sanitaryware/blogs"
+            href="/bathroom-fittings/blogs"
             className="
               inline-flex items-center justify-center
               rounded-[var(--radius-lg)]

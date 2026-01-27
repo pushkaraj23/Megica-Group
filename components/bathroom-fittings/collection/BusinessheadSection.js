@@ -25,7 +25,7 @@ export default function MegicaBusinessHeadSection() {
           <div className="relative w-full max-w-md">
             <img
               src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=900&q=80"
-              alt="Megica Global Business Head"
+              alt="Megica Bathroom Fittings Global Business Head"
               className="rounded-2xl object-cover shadow-card"
             />
 
@@ -56,17 +56,18 @@ export default function MegicaBusinessHeadSection() {
           <div className="mt-6 h-0.5 w-16 bg-brand-accent" />
 
           <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-white/75">
-            At Megica Sanitaryware, our global business leadership focuses on
-            building long-term partnerships with dealers, distributors, and
-            project stakeholders worldwide. With deep manufacturing insight and
-            export experience, we help partners achieve consistent growth,
-            reliable supply, and market confidence.
+            At Megica Bathroom Fittings, our global business leadership is
+            focused on building long-term partnerships with dealers,
+            distributors, and project stakeholders worldwide. With strong
+            product knowledge, manufacturing insight, and export experience, we
+            help partners achieve reliable supply, consistent quality, and
+            sustainable business growth.
           </p>
 
           <p className="mt-4 max-w-xl text-base leading-relaxed text-white/65">
-            Whether you are expanding your retail network, executing large
-            projects, or sourcing dependable sanitaryware products — our team is
-            here to support you at every stage.
+            Whether you are expanding your retail presence, executing large
+            commercial projects, or sourcing dependable bathroom fittings — our
+            team is committed to supporting you at every stage.
           </p>
 
           {/* =========================

@@ -5,36 +5,39 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 /* =========================
-   SLIDE DATA
+   SLIDE DATA – BATHROOM FITTINGS
 ========================= */
 
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5",
-    tagline: "Designed for Modern Living",
-    title: "Sanitaryware",
-    subtitle: "Built for hygiene, durability, and everyday performance",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    tagline: "Precision for Everyday Use",
+    title: "Bathroom Fittings",
+    subtitle:
+      "Engineered for smooth operation, durability, and modern bathroom performance",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1595515770358-b0047714ccb9",
-    tagline: "Engineered with Precision",
-    title: "Sanitaryware",
-    subtitle: "Manufactured to meet global quality and export standards",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
+    tagline: "Designed with Purpose",
+    title: "Bathroom Fittings",
+    subtitle:
+      "Crafted to meet international quality standards and high-usage environments",
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1722186382699-8a6aecee6c65",
-    tagline: "Trusted Worldwide",
-    title: "Sanitaryware",
-    subtitle: "Chosen for residential, commercial, and infrastructure projects",
+    image: "https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf",
+    tagline: "Trusted Across Projects",
+    title: "Bathroom Fittings",
+    subtitle:
+      "Preferred for residential, commercial, and hospitality developments worldwide",
   },
 ];
 
 const SLIDE_DURATION = 6000; // 6 seconds
 
-export default function SanitarywareHero() {
+export default function BathroomFittingsHero() {
   const [active, setActive] = useState(0);
 
   /* =========================
@@ -60,7 +63,7 @@ export default function SanitarywareHero() {
           style={{
             backgroundImage: `url(${slides[active].image})`,
           }}
-          initial={{ opacity: 0, scale: 1.05 }}
+          initial={{ opacity: 0, scale: 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -68,7 +71,7 @@ export default function SanitarywareHero() {
       </AnimatePresence>
 
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/65" />
 
       {/* =========================
           CONTENT
@@ -77,9 +80,9 @@ export default function SanitarywareHero() {
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[active].id}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 34 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -18 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             {/* Micro Tagline */}
@@ -88,19 +91,19 @@ export default function SanitarywareHero() {
             </p>
 
             {/* H1 */}
-            <h1 className="mt-6 text-4xl sm:text-8xl uppercase text-text-inverse tracking-widest">
+            <h1 className="mt-6 text-4xl sm:text-8xl uppercase tracking-widest text-text-inverse">
               {slides[active].title}
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-6 max-w-2xl text-base font-light sm:text-2xl text-white/80 leading-relaxed">
+            <p className="mt-6 max-w-2xl text-base sm:text-2xl font-light text-white/80 leading-relaxed">
               {slides[active].subtitle}
             </p>
 
             {/* CTA */}
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
-                href="/sanitaryware/products"
+                href="/bathroom-fittings/products"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg
@@ -117,7 +120,7 @@ export default function SanitarywareHero() {
               </Link>
 
               <Link
-                href="/sanitaryware/contact"
+                href="/bathroom-fittings/contact"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg

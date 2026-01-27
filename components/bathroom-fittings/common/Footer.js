@@ -5,9 +5,11 @@ export default function Footer() {
       <div className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-5 py-16 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h3 className="text-2xl mb-2 text-brand-accent">Subscribe to our newsletter</h3>
+            <h3 className="text-2xl mb-2 text-brand-accent">
+              Subscribe to our newsletter
+            </h3>
             <p className="text-sm text-white/70">
-              Get Early Access to New Collections and Specials!
+              Get updates on new bathroom fittings, finishes, and collections.
             </p>
           </div>
 
@@ -52,15 +54,15 @@ export default function Footer() {
         {/* BRAND INFO */}
         <div className="text-center">
           <p className="text-sm text-white/80 mb-6">
-            Megica Sanitaryware is a premium manufacturer and exporter of
-            high-quality sanitaryware products, committed to design, durability
-            and global standards.
+            Megica Bathroom Fittings offers precision-engineered faucets,
+            showers, accessories, and water control solutions designed for
+            modern spaces and global markets.
           </p>
 
           <div className="text-xl tracking-wide">
             MEGICA
             <span className="text-[var(--color-brand-accent)] ml-1">
-              SANITARYWARE
+              BATHROOM FITTINGS
             </span>
           </div>
 
@@ -77,7 +79,7 @@ export default function Footer() {
           <p className="text-sm text-white/80 leading-6">
             Corporate Office
             <br />
-            Megica Sanitaryware
+            Megica Bathroom Fittings
             <br />
             India
           </p>
@@ -93,7 +95,7 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="border-t border-white/10 py-4 text-sm">
         <div className="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-3">
-          <span>© 2026 Megica Sanitaryware. All rights reserved.</span>
+          <span>© 2026 Megica Bathroom Fittings. All rights reserved.</span>
           <span>
             Powered by <strong>Techno Bytes IT Solutions LLP</strong>
           </span>

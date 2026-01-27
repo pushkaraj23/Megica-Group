@@ -2,43 +2,48 @@
 
 import { motion } from "framer-motion";
 
+/* =========================
+   CSR STORIES – BATHROOM FITTINGS
+========================= */
+
 const csrStories = [
   {
-    title: "Sustainable Manufacturing",
+    title: "Responsible Manufacturing",
     description:
-      "Optimized production processes, responsible sourcing, and reduced environmental footprint across operations.",
-    image:
-      "https://images.unsplash.com/photo-1695712551762-4788429015f1",
+      "Process optimization, responsible material sourcing, and continuous improvement to reduce environmental impact across fittings production.",
+    image: "https://images.unsplash.com/photo-1695712551762-4788429015f1",
   },
   {
-    title: "Water Conservation",
+    title: "Water Efficiency Commitment",
     description:
-      "Water-efficient systems and recycling practices integrated into manufacturing workflows.",
+      "Designing water-efficient fittings and adopting conservation practices within manufacturing operations.",
     image:
       "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&q=80",
   },
   {
-    title: "Employee Well-being",
+    title: "Employee Safety & Growth",
     description:
-      "Safe work environments, skill development, and long-term growth opportunities for our people.",
+      "Safe working environments, skill development programs, and long-term growth opportunities for our workforce.",
     image:
       "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
   },
   {
     title: "Community Engagement",
     description:
-      "Supporting local communities through awareness programs and social development initiatives.",
+      "Actively supporting local communities through awareness initiatives, training, and social development programs.",
     image:
       "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&q=80",
   },
 ];
 
 export default function CSRSection() {
-  const newLocal = "pointer-events-none absolute inset-0 bg-linear-to-br from-black/10 via-transparent to-white/20";
+  const overlayClass =
+    "pointer-events-none absolute inset-0 bg-linear-to-br from-black/10 via-transparent to-white/20";
+
   return (
     <section className="relative bg-linear-to-b from-brand-accent/80 to-brand-accent/0 overflow-hidden">
       {/* Visual depth layers */}
-      <div className={newLocal} />
+      <div className={overlayClass} />
       <div className="pointer-events-none absolute -top-40 right-1/4 h-105 w-105 rounded-full bg-black/15 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-32">
@@ -63,9 +68,9 @@ export default function CSRSection() {
           <div className="mt-6 h-0.5 w-20 bg-black" />
 
           <p className="mt-8 text-base sm:text-lg leading-relaxed text-black/80">
-            At Megica Sanitaryware, responsibility is embedded into how we
-            manufacture, how we support our people, and how we engage with the
-            communities around us.
+            At Megica Bathroom Fittings, responsibility is reflected in how we
+            design our products, manage our resources, support our people, and
+            engage with the communities around us.
           </p>
         </motion.div>
 
@@ -114,7 +119,7 @@ export default function CSRSection() {
                   border border-black/10
                 "
               >
-                <h3 className="text-lg font-semibold text-text-secondary)">
+                <h3 className="text-lg font-semibold text-text-secondary">
                   {item.title}
                 </h3>
 
@@ -139,9 +144,9 @@ export default function CSRSection() {
           className="mt-32 max-w-4xl"
         >
           <p className="text-sm sm:text-base leading-relaxed text-black/80">
-            Our CSR initiatives are not separate programs — they are part of how
-            we think, plan, and grow. Responsible manufacturing today ensures a
-            stronger, more sustainable future for tomorrow.
+            Our CSR initiatives are not separate efforts — they are integral to
+            how we design, manufacture, and grow. Responsible practices today
+            help us build a more sustainable and trusted future for tomorrow.
           </p>
         </motion.div>
       </div>
