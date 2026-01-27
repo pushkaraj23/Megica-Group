@@ -1,6 +1,6 @@
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-import LenisProvider from "@/components/common/SmoothScroller";
+import Script from "next/script";
 
 /* ------------------------------
    FONT SETUP
@@ -25,6 +25,29 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6EXQ5N4923"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)} gtag('js', new Date()); gtag('config',
+          'G-6EXQ5N4923');{" "}
+        </script> */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EGN22E922R"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EGN22E922R');
+          `}
+        </Script>
+      </head>
       <body
         className={`
           ${inter.variable}

@@ -90,6 +90,9 @@
   .bg-bg-section {
     background-color: var(--color-bg-section);
   }
+  .bg-bg-dark {
+    background-color: var(--color-bg-dark);
+  }
 
   /* Text */
   .text-brand-deep {

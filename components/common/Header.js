@@ -20,124 +20,125 @@ export default function Header() {
   ];
 
   const productLinks = [
-    {
-      label: "Product Overview",
-      href: "/products#products-hero",
-    },
-    {
-      label: "Product Categories",
-      href: "/products#product-categories",
-    },
-    {
-      label: "Featured Products",
-      href: "/products#featured-products",
-    },
-    {
-      label: "Dealership Opportunity",
-      href: "/products#dealership",
-    },
-    {
-      label: "Why Megica",
-      href: "/products#why-megica",
-    },
-    {
-      label: "Send Enquiry",
-      href: "/products#enquiry",
-    },
+    { label: "Product Overview", href: "/products#products-hero" },
+    { label: "Product Categories", href: "/products#product-categories" },
+    { label: "Featured Products", href: "/products#featured-products" },
+    { label: "Dealership Opportunity", href: "/products#dealership" },
+    { label: "Why Megica", href: "/products#why-megica" },
+    { label: "Send Enquiry", href: "/products#enquiry" },
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full">
-      {/* GLASS BAR */}
-      <div className="bg-white backdrop-blur-xl border-b border-light shadow-soft">
-        <div className="mx-auto max-w-7xl px-5 sm:px-6">
-          <div className="flex h-16 items-center justify-between">
-            {/* LOGO */}
-            <Link
-              href="/"
-              className="group flex items-center gap-3 rounded-xl px-2 py-1 transition hover:bg-bg-section"
-            >
-              <img
-                src="/megica-logo1.png"
-                className="h-8 transition-transform duration-300 group-hover:scale-105"
-                alt="Megica Group"
-              />
-              <span className="text-brand-accent text-2xl leading-none">•</span>
-            </Link>
+    <header className="fixed top-6 z-50 w-full flex justify-center px-4">
+      {/* =========================
+          FLOATING GLASS NAVBAR
+      ========================== */}
+      <motion.div
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="
+          relative
+          flex items-center justify-between
+          max-w-7xl w-full
+          px-6 py-3
+          rounded-full
+          backdrop-blur-xl
+          bg-bg-light
+          shadow-[0_20px_60px_rgba(0,0,0,0.18)]
+          border border-white/40
+        "
+      >
+        {/* Gold glare */}
+        <div className="pointer-events-none absolute -top-10 left-1/3 h-32 w-32 rounded-full bg-brand-accent/20 blur-3xl" />
 
-            {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex items-center gap-3">
-              <NavPill href="/">Home</NavPill>
+        {/* LOGO */}
+        <Link href="/" className="flex items-center gap-3">
+          <img src="/megica-logo1.png" alt="Megica Group" className="h-8" />
+          <span className="text-brand-accent text-xl leading-none">•</span>
+        </Link>
 
-              <HoverDropdown label="About" href="/about">
-                {aboutLinks.map((item) => (
-                  <DropdownLink key={item.href} {...item} />
-                ))}
-              </HoverDropdown>
+        {/* DESKTOP NAV */}
+        <nav className="hidden lg:flex items-center gap-2">
+          <NavPill href="/">Home</NavPill>
 
-              <HoverDropdown label="Product Portfolio" href="/products">
-                {productLinks.map((item) => (
-                  <DropdownLink key={item.href} {...item} />
-                ))}
-              </HoverDropdown>
+          <HoverDropdown label="About" href="/about">
+            {aboutLinks.map((l) => (
+              <DropdownLink key={l.href} href={l.href} label={l.label} />
+            ))}
+          </HoverDropdown>
 
-              <NavPill href="/global-presence">Global Presence</NavPill>
-              <NavPill href="/e-catalogue">E-Catalogue</NavPill>
-              <NavPill href="/contact" accent>
-                Contact
-              </NavPill>
-            </nav>
+          <HoverDropdown label="Product Portfolio" href="/products">
+            {productLinks.map((l) => (
+              <DropdownLink key={l.href} href={l.href} label={l.label} />
+            ))}
+          </HoverDropdown>
 
-            {/* MOBILE TOGGLE */}
-            <button
-              onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden rounded-xl border border-light px-3 py-2 text-brand-deep hover:bg-bg-section"
-            >
-              ☰
-            </button>
-          </div>
-        </div>
-      </div>
+          <NavPill href="/global-presence">Global Presence</NavPill>
+          <NavPill href="/e-catalogue">E-Catalogue</NavPill>
 
-      {/* MOBILE MENU */}
+          <NavPill href="/contact" accent>
+            Contact
+          </NavPill>
+        </nav>
+
+        {/* MOBILE TOGGLE */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden rounded-full border border-black/10 px-4 py-2 text-sm"
+        >
+          ☰
+        </button>
+      </motion.div>
+
+      {/* =========================
+          MOBILE MENU
+      ========================== */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="lg:hidden bg-bg-main border-b border-light shadow-soft"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="
+              absolute top-24
+              w-[92%]
+              rounded-3xl
+              bg-white
+              shadow-card
+              border border-border-light
+              p-6
+              lg:hidden
+            "
           >
-            <div className="px-5 py-5 space-y-3">
-              <MobileLink href="/">Home</MobileLink>
+            <MobileLink href="/">Home</MobileLink>
 
-              <MobileAccordion
-                title="About"
-                open={openSub === "about"}
-                onClick={() => setOpenSub(openSub === "about" ? null : "about")}
-              >
-                {aboutLinks.map((l) => (
-                  <MobileSubLink key={l.href} {...l} />
-                ))}
-              </MobileAccordion>
+            <MobileAccordion
+              title="About"
+              open={openSub === "about"}
+              onClick={() => setOpenSub(openSub === "about" ? null : "about")}
+            >
+              {aboutLinks.map((l) => (
+                <MobileSubLink key={l.href} href={l.href} label={l.label} />
+              ))}
+            </MobileAccordion>
 
-              <MobileAccordion
-                title="Product Portfolio"
-                open={openSub === "products"}
-                onClick={() =>
-                  setOpenSub(openSub === "products" ? null : "products")
-                }
-              >
-                {productLinks.map((l) => (
-                  <MobileSubLink key={l.href} {...l} />
-                ))}
-              </MobileAccordion>
+            <MobileAccordion
+              title="Product Portfolio"
+              open={openSub === "products"}
+              onClick={() =>
+                setOpenSub(openSub === "products" ? null : "products")
+              }
+            >
+              {productLinks.map((l) => (
+                <MobileSubLink key={l.href} href={l.href} label={l.label} />
+              ))}
+            </MobileAccordion>
 
-              <MobileLink href="/global-presence">Global Presence</MobileLink>
-              <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
-              <MobileLink href="/contact">Contact</MobileLink>
-            </div>
+            <MobileLink href="/global-presence">Global Presence</MobileLink>
+            <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
+            <MobileLink href="/contact">Contact</MobileLink>
           </motion.div>
         )}
       </AnimatePresence>
@@ -154,11 +155,15 @@ function NavPill({ href, children, accent }) {
     <Link
       href={href}
       className={`
-        relative rounded-xl px-4 py-2 text-sm transition
+        px-4 py-2 text-sm tracking-wide rounded-full transition-all duration-200
         ${
           accent
-            ? "bg-brand-accent text-brand-deep hover:opacity-90"
-            : "text-text-primary hover:bg-bg-section hover:text-brand-primary"
+            ? "bg-brand-accent text-black shadow-sm hover:brightness-110"
+            : `
+              text-text-primary
+              hover:bg-bg-section hover
+              hover:text-brand-primary
+            `
         }
       `}
     >
@@ -176,39 +181,44 @@ function HoverDropdown({ label, href, children }) {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      {/* LABEL AS LINK */}
+      {/* Trigger */}
       <Link
         href={href}
         className="
-          inline-flex items-center gap-1
-          cursor-pointer
-          rounded-xl px-4 py-2
-          text-sm
+          px-4 py-2 text-sm tracking-wide
           text-text-primary
-          transition
-          hover:bg-bg-section
+          rounded-full
+          flex items-center gap-1
+          transition-all duration-200
           hover:text-brand-primary
+          hover:bg-brand-accent/30
         "
       >
         {label}
-        <span className="text-xs text-muted">▾</span>
+        <span className="text-xs opacity-70">▾</span>
       </Link>
 
-      {/* Hover buffer (important) */}
-      <div className="absolute left-0 top-full h-3 w-full" />
-
-      {/* DROPDOWN */}
+      {/* Dropdown */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 14, scale: 0.96 }}
+            initial={{ opacity: 0, y: 12, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 14, scale: 0.96 }}
+            exit={{ opacity: 0, y: 12, scale: 0.96 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute left-0 top-full mt-4 w-72 z-50"
+            className="absolute left-0 mt-4 w-72 z-50"
           >
-            <div className="rounded-2xl bg-bg-main/95 backdrop-blur-xl border border-light shadow-card">
-              <div className="p-4 space-y-1">{children}</div>
+            <div
+              className="
+              rounded-2xl
+              bg-white/95
+              backdrop-blur-xl
+              border border-border-light
+              shadow-card
+              p-3
+            "
+            >
+              {children}
             </div>
           </motion.div>
         )}
@@ -221,7 +231,7 @@ function DropdownLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="block rounded-lg px-3 py-2 text-sm text-text-secondary transition hover:bg-bg-section hover:text-brand-primary"
+      className="block rounded-lg px-3 py-2 text-sm text-text-inverse hover:bg-bg-section"
     >
       {label}
     </Link>
@@ -236,7 +246,7 @@ function MobileLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="block rounded-xl px-3 py-2 font-semibold text-text-primary hover:bg-bg-section"
+      className="block rounded-xl px-3 py-2 font-semibold hover:bg-bg-section"
     >
       {children}
     </Link>
@@ -248,10 +258,10 @@ function MobileAccordion({ title, open, onClick, children }) {
     <div>
       <button
         onClick={onClick}
-        className="flex w-full items-center justify-between rounded-xl px-3 py-2 font-semibold text-text-primary hover:bg-bg-section"
+        className="flex w-full justify-between px-3 py-2 rounded-xl font-semibold hover:bg-bg-section"
       >
         {title}
-        <span className="text-sm">{open ? "−" : "+"}</span>
+        <span>{open ? "−" : "+"}</span>
       </button>
 
       <AnimatePresence>
@@ -261,7 +271,7 @@ function MobileAccordion({ title, open, onClick, children }) {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="ml-3 mt-2 space-y-1 border-l border-light pl-3"
+            className="ml-4 mt-2 space-y-1 border-l pl-3"
           >
             {children}
           </motion.div>
@@ -275,7 +285,7 @@ function MobileSubLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="block px-2 py-1 text-sm text-text-secondary hover:text-brand-primary"
+      className="block px-2 py-1 text-sm hover:text-brand-primary"
     >
       {label}
     </Link>

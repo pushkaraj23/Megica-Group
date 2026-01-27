@@ -8,27 +8,12 @@ import CustomCursor from "@/components/common/CustomPointer";
 export default function MainLayout({ children }) {
   return (
     <>
-      {/* =====================
-          GLOBAL LOADER
-      ===================== */}
       <InfinityLoader />
-
-      {/* =====================
-          HEADER
-      ===================== */}
       <Header />
-
-      {/* =====================
-          PAGE CONTENT
-      ===================== */}
       <main className="min-h-[calc(100svh-64px)] overflow-x-hidden">
         <CustomCursor />
         {children}
       </main>
-
-      {/* =====================
-          FOOTER
-      ===================== */}
       <Footer />
     </>
   );
