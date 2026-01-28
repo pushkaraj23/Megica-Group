@@ -28,12 +28,12 @@ export default function CustomCursor() {
         ref={cursorRef}
         className="
           pointer-events-none
-          fixed top-0 left-0 z-[9999]
-          h-8 w-8
+          fixed top-0 left-0 z-9999
+          h-5 w-5
           -translate-x-1/2 -translate-y-1/2
           rounded-full
           backdrop-blur-sm border-white/50 border
-          transition-transform duration-300 ease-out bg-brand-deep/50
+          transition-transform duration-300 ease-out bg-brand-deep/75
         "
       />
     </>

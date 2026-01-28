@@ -72,7 +72,7 @@ export default function Header() {
               <DropdownLink key={l.href} href={l.href} label={l.label} />
             ))}
           </HoverDropdown>
-
+          <NavPill href="/dealership">Dealership</NavPill>
           <NavPill href="/global-presence">Global Presence</NavPill>
           <NavPill href="/e-catalogue">E-Catalogue</NavPill>
 
@@ -112,7 +112,6 @@ export default function Header() {
             "
           >
             <MobileLink href="/">Home</MobileLink>
-
             <MobileAccordion
               title="About"
               open={openSub === "about"}
@@ -137,6 +136,7 @@ export default function Header() {
               ))}
             </MobileAccordion>
 
+            <MobileLink href="/dealership">Dealership</MobileLink>
             <MobileLink href="/global-presence">Global Presence</MobileLink>
             <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
             <MobileLink href="/contact">Contact</MobileLink>

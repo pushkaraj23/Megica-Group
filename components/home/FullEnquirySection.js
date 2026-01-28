@@ -1,24 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/data/firebase";
+import SuccessPopup from "../common/SuccessPopup";
 
 export default function FullEnquirySection() {
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    companyName: "",
+    email: "",
+    countryCode: "+91",
+    phone: "",
+    interest: "Sanitaryware",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      await addDoc(collection(db, "enquiries"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+        source: "Website Enquiry",
+      });
+
+      setShowPopup(true);
+      setFormData({
+        fullName: "",
+        companyName: "",
+        email: "",
+        countryCode: "+91",
+        phone: "",
+        interest: "Sanitaryware",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Enquiry submit error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section className="relative bg-bg-main">
-      {/* Soft transition glow before dark footer */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-bg-section to-transparent" />
+      <SuccessPopup
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+        duration={4000}
+        message="Thank you for your Enquiry. Our team will respond within 24 hrs."
+      />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 py-24">
-        <div className="grid gap-14 lg:grid-cols-2 items-start">
-          {/* =====================
-              LEFT CONTENT
-          ===================== */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="grid gap-14 lg:grid-cols-2 items-start"
+        >
+          {/* LEFT CONTENT */}
+          <div>
             <p className="text-sm font-semibold tracking-wide text-brand-primary">
               ENQUIRY FORM
             </p>
@@ -31,149 +85,129 @@ export default function FullEnquirySection() {
 
             <p className="mt-5 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
               Whether you are looking for bulk sourcing, project supply, or
-              private labeling, our team is ready to understand your
-              requirements and guide you with the right solutions.
+              private labeling, our team is ready to guide you.
             </p>
 
-            {/* Trust points */}
             <div className="mt-8 space-y-3 text-sm text-brand-deep">
               <p>✔ Export-ready products & documentation</p>
               <p>✔ OEM & private label support</p>
               <p>✔ Dedicated business communication</p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* =====================
-              FORM
-          ===================== */}
-          <motion.form
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
+          {/* FORM */}
+          <form
+            onSubmit={handleSubmit}
             className="relative rounded-3xl bg-brand-deep border border-white/10 shadow-card p-6 sm:p-8 overflow-hidden"
           >
-            {/* Soft Accent Glow */}
             <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-accent/20 blur-3xl" />
 
-            <div className="relative grid gap-5 sm:grid-cols-2">
-              {/* Full Name */}
-              <div>
-                <label className="block text-sm font-semibold text-text-inverse">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
-                />
-              </div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              <Input
+                label="Full Name"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+              />
+              <Input
+                label="Company Name"
+                name="companyName"
+                value={formData.companyName}
+                onChange={handleChange}
+              />
+              <Input
+                label="Email Address"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
 
-              {/* Company Name */}
-              <div>
-                <label className="block text-sm font-semibold text-text-inverse">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Your company"
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-sm font-semibold text-text-inverse">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="you@company.com"
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
-                />
-              </div>
-
-              {/* Country Code */}
               <div>
                 <label className="block text-sm font-semibold text-text-inverse">
                   Country Code
                 </label>
                 <select
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
-                  defaultValue="+91"
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
                 >
-                  <option value="+91" className="text-brand-deep">
-                    🇮🇳 +91 (India)
-                  </option>
-                  <option value="+1" className="text-brand-deep">
-                    🇺🇸 +1 (USA)
-                  </option>
-                  <option value="+44" className="text-brand-deep">
-                    🇬🇧 +44 (UK)
-                  </option>
-                  <option value="+971" className="text-brand-deep">
-                    🇦🇪 +971 (UAE)
-                  </option>
-                  <option value="+61" className="text-brand-deep">
-                    🇦🇺 +61 (Australia)
-                  </option>
+                  <option value="+91">🇮🇳 +91</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+971">🇦🇪 +971</option>
                 </select>
               </div>
 
-              {/* Phone Number */}
-              <div>
-                <label className="block text-sm font-semibold text-text-inverse">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  placeholder="Your phone number"
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
-                />
-              </div>
+              <Input
+                label="Phone Number"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+              />
 
-              {/* Product Interest */}
-              <div className="">
+              <div>
                 <label className="block text-sm font-semibold text-text-inverse">
                   Product Interest
                 </label>
-                <select className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50">
-                  <option className="text-brand-deep">Sanitaryware</option>
-                  <option className="text-brand-deep">Bathroom Fittings</option>
-                  <option className="text-brand-deep">Both</option>
+                <select
+                  name="interest"
+                  value={formData.interest}
+                  onChange={handleChange}
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
+                >
+                  <option>Sanitaryware</option>
+                  <option>Bathroom Fittings</option>
+                  <option>Both</option>
                 </select>
               </div>
 
-              {/* Message */}
               <div className="sm:col-span-2">
                 <label className="block text-sm font-semibold text-text-inverse">
                   Your Requirements
                 </label>
                 <textarea
+                  name="message"
                   rows="4"
-                  placeholder="Tell us about quantity, market, customization, or project details..."
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
                 />
               </div>
             </div>
 
-            {/* Submit */}
-            <div className="relative mt-7">
+            <div className="mt-7">
               <button
                 type="submit"
-                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm sm:text-base uppercase font-medium text-brand-deep shadow-soft transition hover:scale-[1.02] active:scale-[0.98]"
+                disabled={loading}
+                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm uppercase font-medium text-brand-deep transition disabled:opacity-60"
               >
-                Send Enquiry
+                {loading ? "Sending..." : "Send Enquiry"}
               </button>
             </div>
-
-            {/* Note */}
-            <p className="mt-4 text-xs text-bg-light text-center">
-              Our export team typically responds within 24 business hours.
-            </p>
-          </motion.form>
-        </div>
+          </form>
+        </motion.div>
       </div>
     </section>
+  );
+}
+
+/* Reusable input */
+function Input({ label, type = "text", name, value, onChange }) {
+  return (
+    <div>
+      <label className="block text-sm font-semibold text-text-inverse">
+        {label}
+      </label>
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        required
+        className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
+      />
+    </div>
   );
 }

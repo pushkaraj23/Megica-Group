@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import FullEnquirySection from "@/components/home/FullEnquirySection";
+import DealershipEnquirySection from "@/components/common/DealershipEnquirySection";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -222,7 +222,7 @@ export default function MegicaDealershipPage() {
           </div>
         </div>
       </section>
-      <FullEnquirySection />
+      <DealershipEnquirySection />
     </main>
   );
 }
