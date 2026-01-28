@@ -26,6 +26,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Meta Pixel Code */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+
+            fbq('init', '673723048523292');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        {/* End Meta Pixel Code */}
+
         <Script id="clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
@@ -35,7 +53,7 @@ export default function RootLayout({ children }) {
             })(window, document, "clarity", "script", "v7xet0xgo8");
           `}
         </Script>
-        
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-EGN22E922R"
           strategy="afterInteractive"

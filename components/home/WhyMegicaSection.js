@@ -169,7 +169,7 @@ export default function WhyMegicaSection() {
               </Link>
 
               <Link
-                href="/about/dealership"
+                href="/dealership"
                 className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-inverse transition hover:bg-white/10"
               >
                 Become a Dealer

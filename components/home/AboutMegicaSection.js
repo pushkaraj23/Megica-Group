@@ -305,10 +305,10 @@ export default function AboutMegicaSection() {
 
                 <div className="mt-7 flex flex-col sm:flex-row gap-3">
                   <Link
-                    href="/about/why-megica"
+                    href="/about"
                     className="rounded-lg bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-deep transition hover:opacity-90"
                   >
-                    Why Megica Group
+                    More About Us
                   </Link>
 
                   <Link

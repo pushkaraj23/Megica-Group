@@ -43,7 +43,6 @@ export default function Header() {
           max-w-7xl w-full
           px-6 py-3
           rounded-full
-          backdrop-blur-xl
           bg-bg-light
           shadow-[0_20px_60px_rgba(0,0,0,0.18)]
           border border-white/40
@@ -102,11 +101,11 @@ export default function Header() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
             className="
-              absolute top-24
+              absolute top-20
               w-[92%]
               rounded-3xl
-              bg-white
-              shadow-card
+              bg-white/60
+              shadow-card backdrop-blur-md
               border border-border-light
               p-6
               lg:hidden
@@ -120,7 +119,9 @@ export default function Header() {
               onClick={() => setOpenSub(openSub === "about" ? null : "about")}
             >
               {aboutLinks.map((l) => (
-                <MobileSubLink key={l.href} href={l.href} label={l.label} />
+                <div key={l.href} onClick={() => setMobileOpen(!mobileOpen)}>
+                  <MobileSubLink href={l.href} label={l.label} />
+                </div>
               ))}
             </MobileAccordion>
 
@@ -211,12 +212,11 @@ function HoverDropdown({ label, href, children }) {
             <div
               className="
               rounded-2xl
-              bg-white/95
-              backdrop-blur-xl
+              bg-brand-primary/75
+              backdrop-blur-sm
               border border-border-light
               shadow-card
-              p-3
-            "
+              p-3"
             >
               {children}
             </div>
@@ -231,7 +231,7 @@ function DropdownLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="block rounded-lg px-3 py-2 text-sm text-text-inverse hover:bg-bg-section"
+      className="block rounded-lg px-3 py-2 text-sm text-text-inverse hover:text-brand-primary hover:bg-bg-section"
     >
       {label}
     </Link>
@@ -246,7 +246,7 @@ function MobileLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="block rounded-xl px-3 py-2 font-semibold hover:bg-bg-section"
+      className="block rounded-xl px-3 py-2 tracking-wide hover:bg-bg-section"
     >
       {children}
     </Link>
@@ -258,7 +258,7 @@ function MobileAccordion({ title, open, onClick, children }) {
     <div>
       <button
         onClick={onClick}
-        className="flex w-full justify-between px-3 py-2 rounded-xl font-semibold hover:bg-bg-section"
+        className="flex w-full justify-between px-3 py-2 rounded-xl tracking-wide hover:bg-bg-section"
       >
         {title}
         <span>{open ? "−" : "+"}</span>
@@ -285,7 +285,7 @@ function MobileSubLink({ href, label }) {
   return (
     <Link
       href={href}
-      className="block px-2 py-1 text-sm hover:text-brand-primary"
+      className="block px-2 py-1 text-sm tracking-wide hover:text-brand-primary"
     >
       {label}
     </Link>

@@ -26,7 +26,7 @@ export default function InfinityLoader() {
           className="
             fixed inset-0 z-9999
             flex items-center justify-center
-            bg-bg-main
+            bg-bg-dark/50 backdrop-blur-xl
             pointer-events-auto
           "
         >
@@ -48,13 +48,13 @@ export default function InfinityLoader() {
               />
               <path
                 d="M100 30C100 16 84 16 70 30C56 44 40 44 20 30"
-                stroke="var(--color-brand-primary)"
+                stroke="var(--color-bg-main)"
                 strokeWidth="6"
                 strokeLinecap="round"
               />
             </svg>
 
-            <p className="text-sm font-semibold tracking-wide text-brand-primary">
+            <p className="text-sm font-semibold tracking-wide text-bg-main">
               Megica Group of Companies
             </p>
           </div>

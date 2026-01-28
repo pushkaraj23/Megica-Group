@@ -51,7 +51,7 @@ export default function FullEnquirySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
-            className="relative rounded-3xl bg-brand-deep border border-white/10 shadow-card p-6 sm:p-8 overflow-hidden "
+            className="relative rounded-3xl bg-brand-deep border border-white/10 shadow-card p-6 sm:p-8 overflow-hidden"
           >
             {/* Soft Accent Glow */}
             <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-accent/20 blur-3xl" />
@@ -93,30 +93,54 @@ export default function FullEnquirySection() {
                 />
               </div>
 
-              {/* Phone */}
+              {/* Country Code */}
               <div>
                 <label className="block text-sm font-semibold text-text-inverse">
-                  Contact Number
+                  Country Code
+                </label>
+                <select
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
+                  defaultValue="+91"
+                >
+                  <option value="+91" className="text-brand-deep">
+                    🇮🇳 +91 (India)
+                  </option>
+                  <option value="+1" className="text-brand-deep">
+                    🇺🇸 +1 (USA)
+                  </option>
+                  <option value="+44" className="text-brand-deep">
+                    🇬🇧 +44 (UK)
+                  </option>
+                  <option value="+971" className="text-brand-deep">
+                    🇦🇪 +971 (UAE)
+                  </option>
+                  <option value="+61" className="text-brand-deep">
+                    🇦🇺 +61 (Australia)
+                  </option>
+                </select>
+              </div>
+
+              {/* Phone Number */}
+              <div>
+                <label className="block text-sm font-semibold text-text-inverse">
+                  Phone Number
                 </label>
                 <input
                   type="tel"
-                  placeholder="+91 / Country Code"
-                  className=" mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50 "
+                  placeholder="Your phone number"
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
                 />
               </div>
 
               {/* Product Interest */}
-              <div className="sm:col-span-2">
+              <div className="">
                 <label className="block text-sm font-semibold text-text-inverse">
                   Product Interest
                 </label>
-                <select className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50 ">
+                <select className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50">
                   <option className="text-brand-deep">Sanitaryware</option>
                   <option className="text-brand-deep">Bathroom Fittings</option>
                   <option className="text-brand-deep">Both</option>
-                  <option className="text-brand-deep">
-                    OEM / Private Label
-                  </option>
                 </select>
               </div>
 
@@ -128,7 +152,7 @@ export default function FullEnquirySection() {
                 <textarea
                   rows="4"
                   placeholder="Tell us about quantity, market, customization, or project details..."
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50 "
+                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder:text-white/50 backdrop-blur transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/50"
                 />
               </div>
             </div>
@@ -137,7 +161,7 @@ export default function FullEnquirySection() {
             <div className="relative mt-7">
               <button
                 type="submit"
-                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm sm:text-base uppercase font-medium text-brand-deep shadow-soft transition hover:scale-[1.02] active:scale-[0.98] "
+                className="w-full rounded-lg bg-brand-accent px-6 py-3 text-sm sm:text-base uppercase font-medium text-brand-deep shadow-soft transition hover:scale-[1.02] active:scale-[0.98]"
               >
                 Send Enquiry
               </button>
