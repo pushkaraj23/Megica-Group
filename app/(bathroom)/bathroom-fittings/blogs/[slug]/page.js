@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import blogs from "@/data/blogs.json";
 
@@ -106,8 +107,8 @@ export default function BlogDetailPage() {
           FOOTER NAV
       ========================== */}
       <section className="pb-28 text-center">
-        <a
-          href="/sanitaryware/blogs"
+        <Link
+          href="/bathroom-fittings/blogs"
           className="
             inline-flex items-center gap-2
             text-xs uppercase tracking-widest
@@ -117,7 +118,7 @@ export default function BlogDetailPage() {
           "
         >
           ← Back to Blogs
-        </a>
+        </Link>
       </section>
     </article>
   );

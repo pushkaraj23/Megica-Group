@@ -68,7 +68,7 @@ export default function LetsConnectSection() {
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <Link
-                href="/sanitaryware/contact"
+                href="/bathroom-fittings/contact"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg
@@ -84,7 +84,7 @@ export default function LetsConnectSection() {
               </Link>
 
               <Link
-                href="/sanitaryware/export"
+                href="/bathroom-fittings/export"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg
@@ -101,7 +101,7 @@ export default function LetsConnectSection() {
               </Link>
 
               <Link
-                href="/sanitaryware/dealership"
+                href="/dealership"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg
@@ -118,7 +118,7 @@ export default function LetsConnectSection() {
               </Link>
 
               <Link
-                href="/sanitaryware/e-catalogue"
+                href="/bathroom-fittings/e-catalogue"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg

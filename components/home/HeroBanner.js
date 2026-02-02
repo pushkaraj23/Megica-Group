@@ -148,7 +148,7 @@ export default function HeroBanner() {
               <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl">
                 {[
                   ["30+", "Countries"],
-                  ["ISO", "Certified"],
+                  ["ISO 9001:2015", "Certified"],
                   ["OEM", "Partnerships"],
                 ].map(([v, l]) => (
                   <div

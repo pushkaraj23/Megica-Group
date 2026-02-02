@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/data/firebase";
+import { COUNTRY_CODES } from "@/data/countryCodes";
 import SuccessPopup from "../common/SuccessPopup";
 
 export default function FullEnquirySection() {
@@ -102,18 +103,20 @@ export default function FullEnquirySection() {
           >
             <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-accent/20 blur-3xl" />
 
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-6 sm:grid-cols-2">
               <Input
                 label="Full Name"
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
+                placeholder="Your full name"
               />
               <Input
                 label="Company Name"
                 name="companyName"
                 value={formData.companyName}
                 onChange={handleChange}
+                placeholder="Your company name"
               />
               <Input
                 label="Email Address"
@@ -121,41 +124,17 @@ export default function FullEnquirySection() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                placeholder="you@company.com"
               />
-
               <div>
-                <label className="block text-sm font-semibold text-text-inverse">
-                  Country Code
-                </label>
-                <select
-                  name="countryCode"
-                  value={formData.countryCode}
-                  onChange={handleChange}
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
-                >
-                  <option value="+91">🇮🇳 +91</option>
-                  <option value="+1">🇺🇸 +1</option>
-                  <option value="+44">🇬🇧 +44</option>
-                  <option value="+971">🇦🇪 +971</option>
-                </select>
-              </div>
-
-              <Input
-                label="Phone Number"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-
-              <div>
-                <label className="block text-sm font-semibold text-text-inverse">
+                <label className="block text-sm font-semibold text-text-inverse mb-2">
                   Product Interest
                 </label>
                 <select
                   name="interest"
                   value={formData.interest}
                   onChange={handleChange}
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
+                  className="w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
                 >
                   <option>Sanitaryware</option>
                   <option>Bathroom Fittings</option>
@@ -164,7 +143,36 @@ export default function FullEnquirySection() {
               </div>
 
               <div className="sm:col-span-2">
-                <label className="block text-sm font-semibold text-text-inverse">
+                <label className="block text-sm font-semibold text-text-inverse mb-2">
+                  Contact Number
+                </label>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleChange}
+                    className="w-full sm:w-44 shrink-0 rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
+                  >
+                    {COUNTRY_CODES.map(({ name, code }) => (
+                      <option key={code + name} value={code}>
+                        {name} ({code})
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    placeholder="Phone number"
+                    className="flex-1 min-w-0 rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder-white/40 focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
+                  />
+                </div>
+              </div>
+
+              <div className="sm:col-span-2">
+                <label className="block text-sm font-semibold text-text-inverse mb-2">
                   Your Requirements
                 </label>
                 <textarea
@@ -172,7 +180,8 @@ export default function FullEnquirySection() {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
+                  placeholder="Describe your product requirements, quantities, or questions"
+                  className="w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder-white/40 focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20 resize-y min-h-[100px]"
                 />
               </div>
             </div>
@@ -194,10 +203,10 @@ export default function FullEnquirySection() {
 }
 
 /* Reusable input */
-function Input({ label, type = "text", name, value, onChange }) {
+function Input({ label, type = "text", name, value, onChange, placeholder }) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-text-inverse">
+      <label className="block text-sm font-semibold text-text-inverse mb-2">
         {label}
       </label>
       <input
@@ -206,7 +215,8 @@ function Input({ label, type = "text", name, value, onChange }) {
         value={value}
         onChange={onChange}
         required
-        className="mt-2 w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse"
+        placeholder={placeholder}
+        className="w-full rounded-lg bg-white/10 border border-white/15 px-4 py-3 text-sm text-text-inverse placeholder-white/40 focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
       />
     </div>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -63,10 +62,10 @@ export default function ECatalogueHeroSection() {
 
           {/* CTA BUTTONS */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            {/* Catalogue */}
-            <Link
-              href="/downloads/megica-product-catalogue.pdf"
-              target="_blank"
+            {/* Bath Fittings Catalogue */}
+            <a
+              href="/downloads/Megica Bath Fittings.pdf"
+              download
               className="
                 inline-flex items-center justify-center
                 rounded-xl
@@ -80,13 +79,13 @@ export default function ECatalogueHeroSection() {
                 hover:opacity-90
               "
             >
-              Download Product Catalogue
-            </Link>
+              Download Bath Fittings Catalogue
+            </a>
 
-            {/* Company Profile */}
-            <Link
-              href="/downloads/megica-company-profile.pdf"
-              target="_blank"
+            {/* Sanitaryware Catalogue */}
+            <a
+              href="/downloads/Megica Sanitaryware 1.pdf"
+              download
               className="
                 inline-flex items-center justify-center
                 rounded-xl
@@ -99,8 +98,8 @@ export default function ECatalogueHeroSection() {
                 hover:bg-white/10
               "
             >
-              Download Company Profile
-            </Link>
+              Download Sanitaryware Catalogue
+            </a>
           </div>
         </motion.div>
       </div>

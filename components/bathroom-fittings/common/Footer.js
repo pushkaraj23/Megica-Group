@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--color-bg-dark)] text-[var(--color-text-inverse)]">
@@ -40,14 +42,39 @@ export default function Footer() {
         <div>
           <h4 className="text-xl text-brand-accent mb-6">Quick Links</h4>
           <div className="grid grid-cols-2 gap-y-3 text-sm text-white/80">
-            <span>Home</span>
-            <span>CSR Activities</span>
-            <span>About Us</span>
-            <span>Certificates</span>
-            <span>Testimonials</span>
-            <span>E-Catalogue</span>
-            <span>Blogs</span>
-            <span>Contact</span>
+            <Link href="/bathroom-fittings/" className="hover:text-brand-accent transition">
+              Home
+            </Link>
+            <Link href="/about#csr" className="hover:text-brand-accent transition">
+              CSR Activities
+            </Link>
+            <Link href="/bathroom-fittings/about" className="hover:text-brand-accent transition">
+              About Us
+            </Link>
+            <Link href="/about#certifications" className="hover:text-brand-accent transition">
+              Certificates
+            </Link>
+            <Link href="/about#testimonials" className="hover:text-brand-accent transition">
+              Testimonials
+            </Link>
+            <Link
+              href="/bathroom-fittings/e-catalogue"
+              className="hover:text-brand-accent transition"
+            >
+              E-Catalogue
+            </Link>
+            <Link
+              href="/bathroom-fittings/blogs"
+              className="hover:text-brand-accent transition"
+            >
+              Blogs
+            </Link>
+            <Link
+              href="/bathroom-fittings/contact"
+              className="hover:text-brand-accent transition"
+            >
+              Contact
+            </Link>
           </div>
         </div>
 
@@ -67,9 +94,33 @@ export default function Footer() {
           </div>
 
           <div className="flex justify-center gap-5 mt-6 text-lg">
-            <span>f</span>
-            <span>in</span>
-            <span>▶</span>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Visit Megica on Facebook"
+              className="hover:text-brand-accent transition"
+            >
+              f
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Visit Megica on LinkedIn"
+              className="hover:text-brand-accent transition"
+            >
+              in
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Visit Megica on YouTube"
+              className="hover:text-brand-accent transition"
+            >
+              ▶
+            </a>
           </div>
         </div>
 
@@ -77,17 +128,42 @@ export default function Footer() {
         <div>
           <h4 className="text-xl text-brand-accent mb-6">Contact</h4>
           <p className="text-sm text-white/80 leading-6">
-            Corporate Office
-            <br />
             Megica Bathroom Fittings
             <br />
-            India
+            Megica Group of Companies
+            <br />
+            Shop No. 505, Fifth Floor,
+            <br />
+            Shivam Plaza, Morbi–Halvad Rd,
+            <br />
+            Opp. WTC, Near ITI,
+            <br />
+            Mahendranagar, Morbi,
+            <br />
+            Gujarat – 363642, India
           </p>
 
           <p className="text-sm mt-4 text-white/80">
-            P: +91 XXXXXXXXXX
+            <a
+              href="tel:+919560690006"
+              className="hover:underline hover:text-brand-accent transition"
+            >
+              📞 +91 95606 90006
+            </a>
             <br />
-            E: export@megica.com
+            <a
+              href="tel:+918080500515"
+              className="hover:underline hover:text-brand-accent transition"
+            >
+              📞 +91 80805 00515
+            </a>
+            <br />
+            <a
+              href="mailto:samar@megicagroup.com"
+              className="hover:underline hover:text-brand-accent transition"
+            >
+              ✉️ samar@megicagroup.com
+            </a>
           </p>
         </div>
       </div>
@@ -97,7 +173,15 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <span>© 2026 Megica Bathroom Fittings. All rights reserved.</span>
           <span>
-            Powered by <strong>Techno Bytes IT Solutions LLP</strong>
+            Powered by{" "}
+            <a
+              href="https://fibonce.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-semibold hover:text-brand-accent transition"
+            >
+              Fibonce Tech Solutions
+            </a>
           </span>
         </div>
       </div>

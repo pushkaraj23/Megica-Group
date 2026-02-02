@@ -88,7 +88,7 @@ export default function DealershipBannerBathroomFittings() {
             {/* CTA Buttons */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/bathroom-fittings/dealership"
+                href="/dealership"
                 className="
                   inline-flex items-center justify-center
                   rounded-[var(--radius-lg)]

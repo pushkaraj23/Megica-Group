@@ -151,19 +151,21 @@ export default function MegicaWorkshopSection() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/downloads/catalogue"
-                className="rounded-lg bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-deep transition hover:opacity-90"
+              <a
+                href="/downloads/Megica Sanitaryware 1.pdf"
+                download
+                className="rounded-lg bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-deep transition hover:opacity-90 inline-block"
               >
-                Download Product Catalogue
-              </Link>
+                Download Sanitaryware Catalogue
+              </a>
 
-              <Link
-                href="/downloads/company-profile"
-                className="rounded-lg bg-bg-main/10 backdrop-blur border border-white/30 px-5 py-3 text-sm font-semibold text-inverse transition hover:bg-white/10"
+              <a
+                href="/downloads/Megica Bath Fittings.pdf"
+                download
+                className="rounded-lg bg-bg-main/10 backdrop-blur border border-white/30 px-5 py-3 text-sm font-semibold text-inverse transition hover:bg-white/10 inline-block"
               >
-                Download Company Profile
-              </Link>
+                Download Bath Fittings Catalogue
+              </a>
 
               <Link
                 href="/contact"

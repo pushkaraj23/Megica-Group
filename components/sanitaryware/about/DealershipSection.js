@@ -105,7 +105,7 @@ export default function DealershipSection() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/sanitaryware/contact"
               className="
                 inline-flex items-center justify-center
                 rounded-[var(--radius-lg)]

@@ -66,6 +66,12 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-EGN22E922R');
           `}
         </Script>
+
+        {/* PageSense Analytics */}
+        <Script
+          src="https://cdn-in.pagesense.io/js/megicainternationalprivateli/2e28c48112ff4c7b93196f92786dd509.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body
         className={`

@@ -82,7 +82,7 @@ export default function BlogsSection() {
               "
             >
               <Link
-                href={`/sanitaryware/blogs/${blog.slug}`}
+                href={`/bathroom-fittings/blogs/${blog.slug}`}
                 className="flex h-full flex-col"
               >
                 {/* IMAGE */}

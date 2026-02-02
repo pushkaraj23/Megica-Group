@@ -106,7 +106,7 @@ export default function DealershipSection() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/bathroom-fittings/contact"
               className="
                 inline-flex items-center justify-center
                 rounded-[var(--radius-lg)]

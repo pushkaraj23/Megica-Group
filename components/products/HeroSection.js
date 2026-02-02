@@ -75,7 +75,7 @@ export default function ProductHeroSection() {
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
-                href="/products/categories"
+                href="/products#product-categories"
                 className="group relative overflow-hidden rounded-xl bg-brand-accent px-6 py-3 text-sm sm:text-base font-semibold text-brand-deep shadow-card transition hover:scale-[1.03]"
               >
                 <span className="relative z-10">Browse Product Categories</span>

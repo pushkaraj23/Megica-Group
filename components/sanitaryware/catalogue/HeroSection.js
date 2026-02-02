@@ -86,8 +86,9 @@ export default function ECatalogueHero() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <Link
-              href="/downloads/megica-company-profile.pdf"
+            <a
+              href="/downloads/Dealership Proposal.pdf"
+              download
               className="
                 inline-flex items-center justify-center
                 rounded-lg
@@ -100,11 +101,11 @@ export default function ECatalogueHero() {
                 hover:scale-[1.03]
               "
             >
-              Download Company Profile
-            </Link>
+              Download Dealership Proposal
+            </a>
 
             <Link
-              href="/sanitaryware/dealership"
+              href="/dealership"
               className="
                 inline-flex items-center justify-center
                 rounded-lg

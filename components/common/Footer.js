@@ -95,10 +95,26 @@ export default function Footer() {
             </p>
 
             <p className="mt-3 text-sm text-bg-light">
-              📞 +91 95606 90006 <br />
-              📞 +91 80805 00515
+              <a
+                href="tel:+919560690006"
+                className="hover:underline hover:text-brand-accent transition"
+              >
+                📞 +91 95606 90006
+              </a>
               <br />
-              ✉️ samar@megicagroup.com
+              <a
+                href="tel:+918080500515"
+                className="hover:underline hover:text-brand-accent transition"
+              >
+                📞 +91 80805 00515
+              </a>
+              <br />
+              <a
+                href="mailto:samar@megicagroup.com"
+                className="hover:underline hover:text-brand-accent transition"
+              >
+                ✉️ samar@megicagroup.com
+              </a>
             </p>
 
             <div className="mt-6 flex flex-col gap-3">

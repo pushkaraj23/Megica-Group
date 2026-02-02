@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 ========================= */
 
 const certificates = [
-  { name: "ISO 9001", image: "/images/certificates/iso-9001.png" },
+  { name: "ISO 9001:2015", image: "/images/certificates/iso-9001.png" },
   { name: "CE Certified", image: "/images/certificates/ce.png" },
   { name: "ISO 14001", image: "/images/certificates/iso-14001.png" },
   { name: "Quality Tested", image: "/images/certificates/quality.png" },

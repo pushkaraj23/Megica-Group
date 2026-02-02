@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/data/firebase";
+import { COUNTRY_CODES } from "@/data/countryCodes";
 import SuccessPopup from "./SuccessPopup";
 
 export default function DealershipEnquirySection() {
@@ -111,7 +112,7 @@ export default function DealershipEnquirySection() {
             p-6 sm:p-8
           "
         >
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-6 sm:grid-cols-2">
             {/* Full Name */}
             <Input
               label="Full Name"
@@ -140,37 +141,35 @@ export default function DealershipEnquirySection() {
               placeholder="you@company.com"
             />
 
-            {/* Phone + Country Code */}
-            <div>
-              <label className="block text-sm font-semibold text-text-secondary">
+            {/* Phone + Country Code — full width row for balanced layout */}
+            <div className="sm:col-span-2">
+              <label className="block text-sm font-semibold text-text-secondary mb-2">
                 Contact Number
               </label>
-
-              <div className="mt-2 flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <select
                   name="countryCode"
                   value={formData.countryCode}
                   onChange={handleChange}
                   className="
-                    w-24
+                    w-full sm:w-44 shrink-0
                     rounded-lg
                     bg-bg-light
                     border border-border-light
-                    px-2 py-3
+                    px-4 py-3
                     text-sm
                     text-text-primary
                     focus:border-brand-accent
                     focus:outline-none
-                    focus:ring-1 focus:ring-brand-accent/30
+                    focus:ring-2 focus:ring-brand-accent/20
                   "
                 >
-                  <option value="+91">+91</option>
-                  <option value="+1">+1</option>
-                  <option value="+44">+44</option>
-                  <option value="+971">+971</option>
-                  <option value="+61">+61</option>
+                  {COUNTRY_CODES.map(({ name, code }) => (
+                    <option key={code + name} value={code}>
+                      {name} ({code})
+                    </option>
+                  ))}
                 </select>
-
                 <input
                   type="tel"
                   name="phone"
@@ -179,7 +178,7 @@ export default function DealershipEnquirySection() {
                   required
                   placeholder="Phone number"
                   className="
-                    flex-1
+                    flex-1 min-w-0
                     rounded-lg
                     bg-bg-light
                     border border-border-light
@@ -189,37 +188,36 @@ export default function DealershipEnquirySection() {
                     transition
                     focus:border-brand-accent
                     focus:outline-none
-                    focus:ring-1 focus:ring-brand-accent/30
+                    focus:ring-2 focus:ring-brand-accent/20
                   "
                 />
               </div>
             </div>
 
+            {/* Location */}
+            <Input
+              label="City / Region"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              placeholder="City, State, Country"
+            />
+
             {/* Interest */}
-            <div className="sm:col-span-2 grid grid-cols-1 gap-5 md:grid-cols-2">
-              {/* Location */}
-              <Input
-                label="City / Region"
-                name="location"
-                value={formData.location}
+            <div>
+              <label className="block text-sm font-semibold text-text-secondary mb-2">
+                Interested In
+              </label>
+              <select
+                name="interest"
+                value={formData.interest}
                 onChange={handleChange}
-                placeholder="City, State, Country"
-              />
-              <div>
-                <label className="block text-sm font-semibold text-text-secondary">
-                  Interested In
-                </label>
-                <select
-                  name="interest"
-                  value={formData.interest}
-                  onChange={handleChange}
-                  className="mt-2 w-full rounded-lg bg-bg-light border border-border-light px-4 py-3 text-sm text-text-primary transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/30"
-                >
-                  <option>Sanitaryware Dealership</option>
-                  <option>Bathroom Fittings Dealership</option>
-                  <option>Both Categories</option>
-                </select>
-              </div>
+                className="w-full rounded-lg bg-bg-light border border-border-light px-4 py-3 text-sm text-text-primary transition focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
+              >
+                <option>Sanitaryware Dealership</option>
+                <option>Bathroom Fittings Dealership</option>
+                <option>Both Categories</option>
+              </select>
             </div>
           </div>
 
@@ -262,7 +260,7 @@ export default function DealershipEnquirySection() {
 function Input({ label, name, value, onChange, placeholder, type = "text" }) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-text-secondary">
+      <label className="block text-sm font-semibold text-text-secondary mb-2">
         {label}
       </label>
       <input
@@ -272,7 +270,7 @@ function Input({ label, name, value, onChange, placeholder, type = "text" }) {
         onChange={onChange}
         required
         placeholder={placeholder}
-        className="mt-2 w-full rounded-lg bg-bg-light border border-border-light px-4 py-3 text-sm text-text-primary transition focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent/30"
+        className="w-full rounded-lg bg-bg-light border border-border-light px-4 py-3 text-sm text-text-primary transition focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/20"
       />
     </div>
   );

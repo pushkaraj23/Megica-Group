@@ -157,7 +157,7 @@ export default function ExportHeroSection() {
               </Link>
 
               <Link
-                href="/export-catalogue"
+                href="/e-catalogue"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg border border-white/30

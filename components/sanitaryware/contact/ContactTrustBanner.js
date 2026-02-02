@@ -6,7 +6,7 @@ export function ContactTrustBanner() {
   const items = [
     { value: "30+", label: "Countries Served" },
     { value: "Export", label: "Ready Products" },
-    { value: "ISO", label: "Quality Standards" },
+    { value: "ISO 9001:2015", label: "Quality Standards" },
     { value: "Bulk", label: "Project Supply" },
   ];
 

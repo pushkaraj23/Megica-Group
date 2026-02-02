@@ -1,10 +1,55 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/data/firebase";
+import { COUNTRY_CODES } from "@/data/countryCodes";
+import SuccessPopup from "@/components/common/SuccessPopup";
+
+const INITIAL_FORM = {
+  fullName: "",
+  email: "",
+  countryCode: "+91",
+  phone: "",
+  message: "",
+};
 
 export default function ContactEnquirySection() {
+  const [formData, setFormData] = useState(INITIAL_FORM);
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await addDoc(collection(db, "bathroom-fittings"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+        source: "Bathroom Fittings Enquiry",
+      });
+      setShowPopup(true);
+      setFormData(INITIAL_FORM);
+    } catch (error) {
+      console.error("Bathroom fittings enquiry error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+    setLoading(false);
+  };
+
   return (
     <section className="relative bg-(--color-bg-main) overflow-hidden">
+      <SuccessPopup
+        show={showPopup}
+        onClose={() => setShowPopup(false)}
+        duration={4000}
+        message="Thank you for your enquiry. Our bathroom fittings team will get back to you within 24–48 hours."
+      />
       <div className="relative mx-auto max-w-7xl px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -101,7 +146,7 @@ export default function ContactEnquirySection() {
             shadow-card
           "
         >
-          <form className="grid gap-6">
+          <form className="grid gap-6" onSubmit={handleSubmit}>
             {/* Name */}
             <div>
               <label className="block text-xs uppercase tracking-wider text-white/70 mb-2">
@@ -109,8 +154,11 @@ export default function ContactEnquirySection() {
               </label>
               <input
                 type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
                 placeholder="Enter your name"
-                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
+                className="w-full rounded-lg bg-white/5 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
               />
             </div>
 
@@ -121,21 +169,41 @@ export default function ContactEnquirySection() {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter your email"
-                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
+                className="w-full rounded-lg bg-white/5 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
               />
             </div>
 
-            {/* Phone */}
+            {/* Phone + Country Code */}
             <div>
               <label className="block text-xs uppercase tracking-wider text-white/70 mb-2">
                 Contact Number
               </label>
-              <input
-                type="tel"
-                placeholder="Enter your phone number"
-                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
-              />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <select
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleChange}
+                  className="w-full sm:w-44 shrink-0 rounded-lg bg-white/5 border border-white/20 px-4 py-3 text-sm text-white outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 [&>option]:text-black"
+                >
+                  {COUNTRY_CODES.map(({ name, code }) => (
+                    <option key={code + name} value={code}>
+                      {name} ({code})
+                    </option>
+                  ))}
+                </select>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone number"
+                  className="flex-1 min-w-0 rounded-lg bg-white/5 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20"
+                />
+              </div>
             </div>
 
             {/* Message */}
@@ -145,28 +213,21 @@ export default function ContactEnquirySection() {
               </label>
               <textarea
                 rows="4"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Tell us about your bathroom fittings requirement"
-                className="w-full rounded-md bg-transparent border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none focus:border-brand-accent"
+                className="w-full rounded-lg bg-white/5 border border-white/20 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 resize-y min-h-[100px]"
               />
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="
-                mt-4
-                inline-flex items-center justify-center
-                rounded-lg
-                bg-brand-accent
-                px-8 py-4
-                text-sm font-semibold uppercase tracking-wider
-                text-black
-                shadow-card
-                transition-transform duration-300
-                hover:scale-[1.04]
-              "
+              disabled={loading}
+              className="mt-2 w-full inline-flex items-center justify-center rounded-lg bg-brand-accent px-8 py-4 text-sm font-semibold uppercase tracking-wider text-black shadow-card transition hover:brightness-110 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Send Enquiry
+              {loading ? "Sending..." : "Send Enquiry"}
             </button>
           </form>
         </motion.div>

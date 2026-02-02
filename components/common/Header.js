@@ -75,6 +75,7 @@ export default function Header() {
           <NavPill href="/dealership">Dealership</NavPill>
           <NavPill href="/global-presence">Global Presence</NavPill>
           <NavPill href="/e-catalogue">E-Catalogue</NavPill>
+          <NavPill href="/gallery">Gallery</NavPill>
 
           <NavPill href="/contact" accent>
             Contact
@@ -139,6 +140,7 @@ export default function Header() {
             <MobileLink href="/dealership">Dealership</MobileLink>
             <MobileLink href="/global-presence">Global Presence</MobileLink>
             <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
+            <MobileLink href="/gallery">Gallery</MobileLink>
             <MobileLink href="/contact">Contact</MobileLink>
           </motion.div>
         )}

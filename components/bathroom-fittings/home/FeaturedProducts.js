@@ -13,28 +13,28 @@ const featuredProducts = [
     name: "Overhead Shower",
     image:
       "https://images.unsplash.com/photo-1600566753151-384129cf4e3d?w=1400&auto=format&fit=crop&q=60",
-    link: "/bathroom-fittings/products/overhead-shower",
+    link: "/bathroom-fittings/products",
   },
   {
     id: 2,
     name: "Single Lever Basin Mixer",
     image:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&auto=format&fit=crop&q=60",
-    link: "/bathroom-fittings/products/single-lever-basin-mixer",
+    link: "/bathroom-fittings/products",
   },
   {
     id: 3,
     name: "Wall Mixer with L-Bend",
     image:
       "https://images.unsplash.com/photo-1600566752734-2a0e1a0af9d6?w=1400&auto=format&fit=crop&q=60",
-    link: "/bathroom-fittings/products/wall-mixer-l-bend",
+    link: "/bathroom-fittings/products",
   },
   {
     id: 4,
     name: "Health Faucet Set",
     image:
       "https://images.unsplash.com/photo-1600566752547-33b4181b61f8?w=1400&auto=format&fit=crop&q=60",
-    link: "/bathroom-fittings/products/health-faucet-set",
+    link: "/bathroom-fittings/products",
   },
 ];
 

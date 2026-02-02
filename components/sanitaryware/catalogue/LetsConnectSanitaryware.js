@@ -101,7 +101,7 @@ export default function LetsConnectSection() {
               </Link>
 
               <Link
-                href="/sanitaryware/dealership"
+                href="/dealership"
                 className="
                   inline-flex items-center justify-center
                   rounded-lg

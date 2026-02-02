@@ -147,7 +147,7 @@ export default function ExportHeroSection() {
                 </Link>
 
                 <Link
-                  href="/export-catalogue"
+                  href="/e-catalogue"
                   className="inline-flex items-center justify-center rounded-lg border border-white/30 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white backdrop-blur transition-all duration-300 hover:border-brand-accent hover:text-brand-accent"
                 >
                   Request Export Catalogue

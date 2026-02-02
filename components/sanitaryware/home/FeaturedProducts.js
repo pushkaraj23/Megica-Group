@@ -13,28 +13,28 @@ const featuredProducts = [
     name: "Wall Hung Basin",
     image:
       "https://www.inart.co.in/cdn/shop/files/01_-_Copy_bb7bc87b-20a2-458d-ace0-97e5ff9c0418.jpg?v=1725008039&width=1946",
-    link: "/sanitaryware/products/wall-hung-basin",
+    link: "/sanitaryware/products",
   },
   {
     id: 2,
     name: "One Piece Closet",
     image:
       "https://www.inart.co.in/cdn/shop/products/CVZX-Copy.png?v=1665231221",
-    link: "/sanitaryware/products/one-piece-closet",
+    link: "/sanitaryware/products",
   },
   {
     id: 3,
     name: "Table Top Basin",
     image:
       "https://ruheindia.com/cdn/shop/files/02_4b186c57-691c-4144-9aa0-e637126e966f.png?v=1753091717&width=1214",
-    link: "/sanitaryware/products/table-top-basin",
+    link: "/sanitaryware/products",
   },
   {
     id: 4,
     name: "Concealed Cistern",
     image:
       "https://www.jiomart.com/images/product/original/rvzdb04ilr/plantex-concealed-flush-tank-for-toilet-flushing-cistern-with-full-frame-slim-and-stylish-tank-with-flush-plate-concealed-cistern-pack-of-1-product-images-orvzdb04ilr-p610029347-1-202409260858.jpg?im=Resize=(420,420)",
-    link: "/sanitaryware/products/concealed-cistern",
+    link: "/sanitaryware/products",
   },
 ];
 
