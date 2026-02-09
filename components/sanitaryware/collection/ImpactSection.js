@@ -79,7 +79,7 @@ export default function SanitarywareImpactSection() {
           What You Gain
         </p>
 
-        <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-secondary">
+        <h2 className="mt-4 text-3xl sm:text-4xl uppercase tracking-tight text-text-secondary">
           Real-World Impact of Using Megica Sanitaryware
         </h2>
 
@@ -121,7 +121,7 @@ export default function SanitarywareImpactSection() {
 
               {/* METRIC */}
               <div className="flex items-baseline gap-2">
-                <span className="text-4xl sm:text-5xl font-extrabold text-text-secondary">
+                <span className="text-4xl sm:text-5xl uppercase text-text-secondary">
                   {item.metric}
                 </span>
               </div>

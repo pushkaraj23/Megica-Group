@@ -60,7 +60,7 @@ export default function SanitarywareUsesSection() {
           Applications
         </p>
 
-        <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-secondary">
+        <h2 className="mt-4 text-3xl sm:text-4xl uppercase tracking-tight text-text-secondary">
           Where Megica Sanitaryware Performs Best
         </h2>
 
@@ -118,7 +118,7 @@ function UseCard({ item, index }) {
           {item.subtitle}
         </span>
 
-        <h3 className="mt-3 text-xl sm:text-2xl font-extrabold text-text-secondary">
+        <h3 className="mt-3 text-xl sm:text-2xl uppercase text-text-secondary">
           {item.title}
         </h3>
 

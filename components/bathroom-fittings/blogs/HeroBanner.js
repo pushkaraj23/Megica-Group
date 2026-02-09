@@ -14,7 +14,7 @@ export default function BlogHero() {
         </p>
 
         {/* Heading */}
-        <h1 className="mx-auto max-w-3xl font-(--font-heading) text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-text-inverse">
+        <h1 className="mx-auto max-w-3xl font-(--font-heading) text-4xl md:text-5xl lg:text-6xl uppercase leading-tight text-text-inverse">
           Insights, Ideas &
           <span className="text-brand-accent"> Digital Thinking</span>
         </h1>

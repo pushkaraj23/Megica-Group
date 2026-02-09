@@ -54,7 +54,7 @@ export default function WhyChooseMegica() {
             Why Choose Megica
           </p>
 
-          <h2 className="mt-5 text-3xl text-text-inverse sm:text-4xl font-extrabold tracking-tight">
+          <h2 className="mt-5 text-3xl text-text-inverse sm:text-4xl uppercase tracking-tight">
             Built on Quality.
             <br className="hidden sm:block" />
             Trusted by Markets Worldwide.

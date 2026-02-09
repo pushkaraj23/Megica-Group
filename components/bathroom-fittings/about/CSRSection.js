@@ -61,7 +61,7 @@ export default function CSRSection() {
             Corporate Social Responsibility
           </p>
 
-          <h2 className="mt-6 text-3xl sm:text-4xl font-extrabold tracking-tight text-black">
+          <h2 className="mt-6 text-3xl sm:text-4xl uppercase tracking-tight text-black">
             Responsibility in Action
           </h2>
 

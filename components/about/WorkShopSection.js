@@ -49,7 +49,7 @@ export default function MegicaWorkshopSection() {
             MEGICA WORKSHOP & MANUFACTURING FACILITY
           </p>
 
-          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+          <h2 className="mt-3 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep leading-tight">
             Advanced Manufacturing Infrastructure{" "}
             <span className="text-brand-primary">Built for Scale</span>
           </h2>
@@ -141,7 +141,7 @@ export default function MegicaWorkshopSection() {
           <div className="relative p-8 sm:p-10">
             <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-brand-accent/25 blur-3xl" />
 
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+            <h3 className="font-heading text-2xl sm:text-3xl uppercase text-white">
               Explore Our Manufacturing Capabilities
             </h3>
 

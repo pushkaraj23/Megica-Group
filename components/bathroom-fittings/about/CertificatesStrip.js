@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 ========================= */
 
 const certificates = [
-  { name: "ISO 9001:2015", image: "/images/certificates/iso-9001.png" },
-  { name: "CE Certified", image: "/images/certificates/ce.png" },
-  { name: "ISO 14001", image: "/images/certificates/iso-14001.png" },
-  { name: "Quality Tested", image: "/images/certificates/quality.png" },
-  { name: "Export Compliance", image: "/images/certificates/export.png" },
+  { name: "ISO 9001:2015", image: "/certificates/1.png" },
+  { name: "ISO 14001", image: "/certificates/2.png" },
+  { name: "MQA Certified", image: "/certificates/mqa.jpeg" },
+  { name: "UKAF Certified", image: "/certificates/ukaf.jpeg" },
+  { name: "ECGC Registered", image: "/certificates/ecgc.jpeg" },
 ];
 
 /* Duplicate list for seamless loop */

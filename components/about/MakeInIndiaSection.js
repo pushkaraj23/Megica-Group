@@ -32,7 +32,7 @@ export default function MakeInIndiaSection() {
             </div>
 
             {/* Heading */}
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep leading-tight">
               Rooted in Indian Craftsmanship.
               <br />
               <span className="text-brand-primary">

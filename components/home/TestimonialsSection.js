@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const testimonialImages = [
   { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
@@ -10,6 +11,8 @@ const testimonialImages = [
 ];
 
 export default function TestimonialsSection() {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
     <section className="relative bg-bg-section overflow-hidden">
       <div className="pointer-events-none absolute -top-40 -left-40 h-130 w-130 rounded-full bg-bg-light blur-3xl" />
@@ -51,11 +54,12 @@ export default function TestimonialsSection() {
                 ease: [0.22, 0.61, 0.36, 1],
               }}
               className="
-                group relative
+                group relative cursor-pointer
                 rounded-3xl overflow-hidden
                 bg-bg-main border border-light shadow-soft
                 transition hover:-translate-y-2 hover:shadow-card
               "
+              onClick={() => setActiveImage(item)}
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
@@ -70,6 +74,34 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {activeImage && (
+          <div
+            className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative w-full max-w-4xl h-[80vh] rounded-2xl overflow-hidden bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveImage(null)}
+                className="absolute top-3 right-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-black text-sm font-bold shadow"
+                aria-label="Close image"
+              >
+                ×
+              </button>
+              <Image
+                src={activeImage.src}
+                alt={activeImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

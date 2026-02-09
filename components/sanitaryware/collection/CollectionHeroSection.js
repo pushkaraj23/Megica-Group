@@ -63,7 +63,7 @@ export default function SanitarywareCollectionHero() {
           </p>
 
           {/* Heading */}
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase text-bg-main">
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-bg-main">
             Sanitaryware Collection
           </h1>
 

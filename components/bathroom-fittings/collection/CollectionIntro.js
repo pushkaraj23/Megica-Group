@@ -57,7 +57,7 @@ export default function CollectionIntroSection() {
               Engineered to Perform
             </p>
 
-            <h2 className="mt-6 text-2xl sm:text-3xl font-extrabold tracking-tight text-text-secondary">
+            <h2 className="mt-6 text-2xl sm:text-3xl uppercase tracking-tight text-text-secondary">
               Where Precision Meets Everyday Comfort
             </h2>
 

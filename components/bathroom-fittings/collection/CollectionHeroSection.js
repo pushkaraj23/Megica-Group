@@ -63,7 +63,7 @@ export default function BathroomFittingsCollectionHero() {
           </p>
 
           {/* Heading */}
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-bg-main">
+          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-bg-main">
             Bathroom Fittings Collection
           </h1>
 

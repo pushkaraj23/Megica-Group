@@ -44,7 +44,7 @@ export default function ECatalogueHero() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-bg-main"
+            className="mt-6 text-4xl sm:text-5xl lg:text-6xl uppercase tracking-tight leading-tight text-bg-main"
           >
             Everything You Need to
             <br className="hidden sm:block" />

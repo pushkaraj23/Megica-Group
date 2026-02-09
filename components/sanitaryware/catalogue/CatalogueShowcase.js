@@ -56,7 +56,7 @@ export default function CatalogueShowcase() {
                 PDF Preview
               </p>
 
-              <h3 className="mt-3 text-2xl font-extrabold text-white leading-tight">
+              <h3 className="mt-3 text-2xl uppercase text-white leading-tight">
                 {item.title}
               </h3>
 

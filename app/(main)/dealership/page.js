@@ -46,7 +46,7 @@ export default function MegicaDealershipPage() {
               MEGICA GROUP DEALERSHIP
             </p>
 
-            <h1 className="mt-4 font-heading text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            <h1 className="mt-4 font-heading text-white text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight">
               Partner With a Manufacturing & Export Group
               <br />
               <span className="text-brand-accent">
@@ -90,7 +90,7 @@ export default function MegicaDealershipPage() {
             viewport={{ once: true }}
             className="max-w-3xl mb-16"
           >
-            <h2 className="font-heading text-3xl lg:text-4xl font-extrabold text-brand-deep">
+            <h2 className="font-heading text-3xl lg:text-4xl uppercase text-brand-deep">
               Why Megica Group Dealership?
             </h2>
             <p className="mt-4 text-muted text-lg">
@@ -144,7 +144,7 @@ export default function MegicaDealershipPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="font-heading text-3xl lg:text-4xl text-center font-extrabold text-brand-deep mb-16"
+            className="font-heading text-3xl lg:text-4xl text-center uppercase text-brand-deep mb-16"
           >
             Simple & Transparent Application Process
             <div className="relative mt-20">
@@ -196,7 +196,7 @@ export default function MegicaDealershipPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="font-heading text-white text-3xl lg:text-4xl font-extrabold"
+            className="font-heading text-white text-3xl lg:text-4xl uppercase"
           >
             Ready to Build a Long-Term Business?
           </motion.h2>

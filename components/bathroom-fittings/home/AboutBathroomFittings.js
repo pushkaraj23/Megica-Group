@@ -23,7 +23,7 @@ export default function AboutBathroomFittings() {
           </p>
 
           {/* Heading */}
-          <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
+          <h2 className="mt-5 text-3xl sm:text-4xl uppercase tracking-tight text-[var(--color-text-secondary)]">
             Precision You Can Feel.
             <br className="hidden sm:block" />
             Performance You Can Trust.
@@ -78,7 +78,7 @@ export default function AboutBathroomFittings() {
                 shadow-soft
               "
             >
-              <p className="text-2xl font-extrabold text-[var(--color-text-secondary)]">
+              <p className="text-2xl uppercase text-[var(--color-text-secondary)]">
                 {item.value}
               </p>
               <p className="mt-2 text-sm text-[var(--color-text-muted)]">

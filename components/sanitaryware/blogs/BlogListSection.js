@@ -45,7 +45,7 @@ export default function BlogsSection() {
             Insights & Updates
           </p>
 
-          <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-(--color-text-secondary)">
+          <h2 className="mt-5 text-3xl sm:text-4xl uppercase tracking-tight text-(--color-text-secondary)">
             Latest from Our Blog
           </h2>
 

@@ -23,7 +23,7 @@ export default function AboutSanitaryware() {
           </p>
 
           {/* Heading */}
-          <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
+          <h2 className="mt-5 text-3xl sm:text-4xl uppercase tracking-tight text-[var(--color-text-secondary)]">
             Crafted for Everyday Use.
             <br className="hidden sm:block" />
             Engineered for Long-Term Performance.
@@ -78,7 +78,7 @@ export default function AboutSanitaryware() {
                 shadow-soft
               "
             >
-              <p className="text-2xl font-extrabold text-[var(--color-text-secondary)]">
+              <p className="text-2xl uppercase text-[var(--color-text-secondary)]">
                 {item.value}
               </p>
               <p className="mt-2 text-sm text-[var(--color-text-muted)]">

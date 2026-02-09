@@ -47,7 +47,7 @@ export default function ContactMapSection() {
           <div className="relative h-[420px] w-full">
             <iframe
               title="Megica Group Location"
-              src="https://www.google.com/maps?q=India&output=embed"
+              src="https://www.google.com/maps?q=Megica%20Group%20of%20Companies%2C%20Shivam%20Plaza%2C%20Mahendranagar%2C%20Morbi%2C%20Gujarat%20363642&output=embed"
               className="absolute inset-0 h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -57,10 +57,10 @@ export default function ContactMapSection() {
           {/* OVERLAY STRIP */}
           <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur px-6 py-4 border-t border-border-light">
             <p className="text-sm font-medium text-text-secondary">
-              Megica Group of Companies — India
+              Megica Group of Companies
             </p>
             <p className="text-xs text-text-muted mt-1">
-              Manufacturing • Export • Distribution
+              Shop No. 505, Fifth Floor, Shivam Plaza, Morbi–Halvad Rd, Mahendranagar, Morbi, Gujarat – 363642, India
             </p>
           </div>
         </motion.div>

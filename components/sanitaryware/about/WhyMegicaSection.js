@@ -57,7 +57,7 @@ export default function WhyMegicaSection() {
             Why Megica
           </p>
 
-          <h2 className="mt-6 text-bg-main text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+          <h2 className="mt-6 text-bg-main text-3xl sm:text-4xl uppercase tracking-tight leading-tight">
             Built for Reliability. <br className="hidden sm:block" />
             Chosen for Long-Term Value.
           </h2>

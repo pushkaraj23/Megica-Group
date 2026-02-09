@@ -64,7 +64,7 @@ export default function ContactEnquirySection() {
           </p>
 
           {/* Heading */}
-          <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-(--color-text-secondary)">
+          <h2 className="mt-2 text-3xl sm:text-4xl uppercase tracking-tight text-(--color-text-secondary)">
             Let’s Discuss Your Fitting Requirements
           </h2>
 

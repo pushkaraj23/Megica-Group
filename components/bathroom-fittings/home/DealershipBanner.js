@@ -35,7 +35,7 @@ export default function DealershipBannerBathroomFittings() {
             </p>
 
             {/* Heading */}
-            <h2 className="mt-5 text-3xl text-text-inverse sm:text-4xl font-extrabold tracking-tight">
+            <h2 className="mt-5 text-3xl text-text-inverse sm:text-4xl uppercase tracking-tight">
               Partner with Megica
             </h2>
 

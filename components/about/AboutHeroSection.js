@@ -70,7 +70,7 @@ export default function AboutHeroSection() {
             </div>
 
             {/* Heading */}
-            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-white">
               Building Trust in India.
               <br />
               <span className="text-brand-accent">
@@ -150,7 +150,7 @@ export default function AboutHeroSection() {
           transition={{ duration: 0.8 }}
           className="mt-20"
         >
-          <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-white mb-8">
+          <h2 className="font-heading text-2xl sm:text-3xl uppercase text-white mb-8">
             Our Core Values
           </h2>
 

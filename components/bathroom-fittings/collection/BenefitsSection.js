@@ -62,7 +62,7 @@ export default function BathroomFittingsBenefitsSection() {
           Advantages
         </p>
 
-        <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-text-inverse">
+        <h2 className="mt-4 text-3xl sm:text-4xl uppercase tracking-tight text-text-inverse">
           Benefits of Using Our Bathroom Fittings
         </h2>
 
@@ -104,7 +104,7 @@ export default function BathroomFittingsBenefitsSection() {
                 BENEFIT {String(index + 1).padStart(2, "0")}
               </span>
 
-              <h3 className="mt-4 text-xl font-extrabold text-text-inverse">
+              <h3 className="mt-4 text-xl uppercase text-text-inverse">
                 {item.title}
               </h3>
 

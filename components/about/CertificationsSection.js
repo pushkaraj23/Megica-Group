@@ -5,20 +5,36 @@ import { motion } from "framer-motion";
 
 const certifications = [
   {
-    title: "International Quality Management",
-    logo: "https://www.web.iqcertification.co/assets/image/logo/LogoIQC.png",
+    title: "ISO 9001:2015 – Quality Management",
+    logo: "/certificates/1.png",
   },
   {
-    title: "Manufacturing Process Certification",
-    logo: "https://images.credly.com/images/709929be-6871-4c77-80e2-f4ed47dd78dd/image.png",
+    title: "ISO 14001 – Environmental Management",
+    logo: "/certificates/2.png",
   },
   {
-    title: "Product Compliance & Safety",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWMOoi1WStBU9VdSfXibzr4uE4vFzgn6sxqg&s",
+    title: "Product Performance & Safety",
+    logo: "/certificates/3.png",
   },
   {
-    title: "Environmental & Operational Compliance",
-    logo: "https://img.freepik.com/premium-vector/environmental-compliance-icon-vector-image-can-be-used-manufacturing-distribution_120816-355048.jpg",
+    title: "Global Trade & Export Compliance",
+    logo: "/certificates/4.png",
+  },
+  {
+    title: "MQA Certification",
+    logo: "/certificates/mqa.jpeg",
+  },
+  {
+    title: "UKAF Certification",
+    logo: "/certificates/ukaf.jpeg",
+  },
+  {
+    title: "ECGC Registration",
+    logo: "/certificates/ecgc.jpeg",
+  },
+  {
+    title: "KAB Accreditation",
+    logo: "/certificates/kab_logo.jpg",
   },
 ];
 
@@ -44,7 +60,7 @@ export default function CertificationsSection() {
             CERTIFICATIONS & COMPLIANCE
           </p>
 
-          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-white">
+          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase leading-tight text-white">
             Certified for Quality, Safety &{" "}
             <span className="text-brand-accent">Global Trade</span>
           </h2>
@@ -146,7 +162,7 @@ export default function CertificationsSection() {
           transition={{ duration: 1 }}
           className="mt-24 rounded-3xl bg-bg-main/5 backdrop-blur-xl border border-white/15 shadow-card p-8 sm:p-10"
         >
-          <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+          <h3 className="font-heading text-2xl sm:text-3xl uppercase text-white">
             Need Certification or Compliance Documents?
           </h3>
 

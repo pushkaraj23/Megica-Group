@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const testimonialImages = [
   { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
@@ -10,6 +11,8 @@ const testimonialImages = [
 ];
 
 export default function TestimonialsSection() {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
     <section className="relative bg-bg-dark text-text-inverse overflow-hidden">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-105 w-105 -translate-x-1/2 rounded-full bg-[var(--color-brand-accent)]/10 blur-3xl" />
@@ -26,7 +29,7 @@ export default function TestimonialsSection() {
             Testimonials
           </p>
 
-          <h2 className="mt-5 text-3xl sm:text-4xl text-bg-main font-extrabold tracking-tight">
+          <h2 className="mt-5 text-3xl sm:text-4xl text-bg-main uppercase tracking-tight">
             Trusted by Partners & Clients
           </h2>
 
@@ -51,11 +54,12 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="
-                group relative
+                group relative cursor-pointer
                 rounded-xl overflow-hidden
                 bg-brand-primary shadow-card border border-white/5
                 transition hover:-translate-y-1 hover:shadow-lg
               "
+              onClick={() => setActiveImage(item)}
             >
               <div className="relative aspect-[4/3] w-full">
                 <Image
@@ -70,6 +74,34 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </motion.div>
+
+        {activeImage && (
+          <div
+            className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative w-full max-w-4xl h-[80vh] rounded-2xl overflow-hidden bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveImage(null)}
+                className="absolute top-3 right-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-black text-sm font-bold shadow"
+                aria-label="Close image"
+              >
+                ×
+              </button>
+              <Image
+                src={activeImage.src}
+                alt={activeImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

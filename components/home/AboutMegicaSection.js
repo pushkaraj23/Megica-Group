@@ -249,7 +249,7 @@ export default function AboutMegicaSection() {
                     key={s.label}
                     className="rounded-xl bg-bg-section border border-light p-4 text-center"
                   >
-                    <p className="font-heading text-base sm:text-lg font-extrabold text-brand-deep">
+                    <p className="font-heading text-base sm:text-lg uppercase text-brand-deep">
                       {s.value}
                     </p>
                     <p className="mt-1 text-xs sm:text-sm text-muted">

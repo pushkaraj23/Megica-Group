@@ -257,7 +257,7 @@ function ParallaxCategoryCard({ item, index, onExplore }) {
             Category {index + 1}
           </p>
 
-          <h2 className="mt-3 text-4xl w-3/4 sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-bg-main">
+          <h2 className="mt-3 text-4xl w-3/4 sm:text-5xl lg:text-6xl uppercase tracking-tight text-bg-main">
             {item.title}
           </h2>
 

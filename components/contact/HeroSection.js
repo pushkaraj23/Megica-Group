@@ -62,19 +62,19 @@ export default function ContactHeroSection() {
           >
             <ContactBlock
               title="Corporate Office"
-              value="Megica Group of Companies, India"
-              sub="Manufacturing • Export • Distribution"
+              value="Megica Group of Companies"
+              sub="Shop No. 505, Fifth Floor, Shivam Plaza, Morbi–Halvad Rd, Opp. WTC, Near ITI, Mahendranagar, Morbi, Gujarat – 363642, India"
             />
 
             <ContactBlock
               title="Phone"
-              value="+91 XXXXX XXXXX"
+              value="+91 95606 90006 · +91 80805 00515"
               sub="Monday – Saturday | IST Business Hours"
             />
 
             <ContactBlock
               title="Email"
-              value="info@megicagroup.com"
+              value="samar@megicagroup.com"
               sub="Product • Export • Partnership Enquiries"
             />
           </motion.div>

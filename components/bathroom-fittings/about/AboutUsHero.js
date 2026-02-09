@@ -35,7 +35,7 @@ export default function AboutUsHeroExtended() {
             About Megica Bathroom Fittings
           </p>
 
-          <h1 className="mt-6 text-4xl sm:text-5xl text-bg-main lg:text-6xl font-extrabold tracking-tight leading-tight">
+          <h1 className="mt-6 text-4xl sm:text-5xl text-bg-main lg:text-6xl uppercase tracking-tight leading-tight">
             Precision Engineering <br className="hidden sm:block" />
             Designed for Global Living
           </h1>
@@ -86,7 +86,7 @@ export default function AboutUsHeroExtended() {
                 border border-white/5
               "
             >
-              <p className="text-3xl font-extrabold text-brand-accent">
+              <p className="text-3xl uppercase text-brand-accent">
                 {stat.value}
               </p>
               <p className="mt-2 text-sm text-white/70">{stat.label}</p>
@@ -103,7 +103,7 @@ export default function AboutUsHeroExtended() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-2xl text-bg-main sm:text-3xl font-extrabold tracking-tight">
+            <h2 className="text-2xl text-bg-main sm:text-3xl uppercase tracking-tight">
               Engineering-Driven Manufacturing Philosophy
             </h2>
 

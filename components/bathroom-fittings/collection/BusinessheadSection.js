@@ -47,7 +47,7 @@ export default function MegicaBusinessHeadSection() {
             Let’s Talk
           </p>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight text-bg-main">
+          <h2 className="mt-4 text-3xl sm:text-4xl uppercase tracking-tight text-bg-main">
             Connect with Our
             <br className="hidden sm:block" />
             Global Business Head

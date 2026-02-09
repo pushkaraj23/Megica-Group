@@ -26,7 +26,7 @@ export default function LetsConnectSection() {
               Let’s Connect
             </p>
 
-            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-brand-deep">
+            <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-brand-deep">
               Start a Conversation with Megica
             </h2>
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const testimonialImages = [
   { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
@@ -10,6 +11,8 @@ const testimonialImages = [
 ];
 
 export default function TestimonialsImagesSection() {
+  const [activeImage, setActiveImage] = useState(null);
+
   return (
     <section className="relative bg-bg-dark py-32 overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -51,13 +54,14 @@ export default function TestimonialsImagesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: index * 0.08 }}
               className="
-                group relative
+                group relative cursor-pointer
                 h-[360px]
                 rounded-3xl
                 overflow-hidden
                 shadow-card
                 bg-brand-primary
               "
+              onClick={() => setActiveImage(t)}
             >
               <Image
                 src={t.src}
@@ -76,6 +80,34 @@ export default function TestimonialsImagesSection() {
             </motion.div>
           ))}
         </div>
+
+        {activeImage && (
+          <div
+            className="fixed inset-0 z-[9999] bg-black/80 flex items-center justify-center p-4"
+            onClick={() => setActiveImage(null)}
+          >
+            <div
+              className="relative w-full max-w-4xl h-[80vh] rounded-2xl overflow-hidden bg-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                onClick={() => setActiveImage(null)}
+                className="absolute top-3 right-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-black text-sm font-bold shadow"
+                aria-label="Close image"
+              >
+                ×
+              </button>
+              <Image
+                src={activeImage.src}
+                alt={activeImage.alt}
+                fill
+                className="object-contain"
+                sizes="100vw"
+              />
+            </div>
+          </div>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}

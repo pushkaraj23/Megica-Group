@@ -48,7 +48,7 @@ export default function CSRSection() {
             CORPORATE SOCIAL RESPONSIBILITY
           </p>
 
-          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-deep leading-tight">
+          <h2 className="mt-4 font-heading text-3xl sm:text-4xl lg:text-5xl uppercase text-brand-deep leading-tight">
             Responsible Growth{" "}
             <span className="text-brand-primary">Beyond Business</span>
           </h2>
@@ -84,7 +84,7 @@ export default function CSRSection() {
 
               {/* CONTENT */}
               <div className="relative z-10 h-full flex flex-col justify-end p-6">
-                <h3 className="font-heading text-lg sm:text-xl font-extrabold text-white">
+                <h3 className="font-heading text-lg sm:text-xl uppercase text-white">
                   {item.title}
                 </h3>
 
@@ -110,7 +110,7 @@ export default function CSRSection() {
           <div className="grid lg:grid-cols-2">
             {/* LEFT – TEXT */}
             <div className="p-8 sm:p-12">
-              <h3 className="font-heading text-2xl font-extrabold text-brand-deep">
+              <h3 className="font-heading text-2xl uppercase text-brand-deep">
                 CSR in Action
               </h3>
 

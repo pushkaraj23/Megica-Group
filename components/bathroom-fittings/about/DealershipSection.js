@@ -24,7 +24,7 @@ export default function DealershipSection() {
             Dealership Opportunity
           </p>
 
-          <h2 className="mt-6 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
+          <h2 className="mt-6 text-3xl sm:text-4xl uppercase tracking-tight text-[var(--color-text-secondary)]">
             Partner with a Trusted Bathroom Fittings Brand
           </h2>
 

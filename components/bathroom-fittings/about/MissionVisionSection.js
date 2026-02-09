@@ -23,7 +23,7 @@ export default function MissionVisionSection() {
             Our Purpose
           </p>
 
-          <h2 className="mt-5 text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--color-text-secondary)]">
+          <h2 className="mt-5 text-3xl sm:text-4xl uppercase tracking-tight text-[var(--color-text-secondary)]">
             Mission & Vision
           </h2>
 

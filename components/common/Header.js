@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const categorySites = [
   {
@@ -21,6 +22,7 @@ const categorySites = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSub, setOpenSub] = useState(null);
+  const pathname = usePathname();
 
   const aboutLinks = [
     { label: "About Megica Group", href: "/about#about-megica" },
@@ -70,24 +72,30 @@ export default function Header() {
           <img
             src="/megica-logo1.png"
             alt="Megica Group"
-            className="h-8"
-            width={120}
-            height={32}
+            className="h-8 w-auto"
           />
           <span className="text-brand-accent text-xl leading-none">•</span>
         </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden lg:flex items-center gap-2">
-          <NavPill href="/">Home</NavPill>
+          <NavPill href="/" isActive={pathname === "/"}>Home</NavPill>
 
-          <HoverDropdown label="About" href="/about">
+          <HoverDropdown
+            label="About"
+            href="/about"
+            isActive={pathname.startsWith("/about")}
+          >
             {aboutLinks.map((l) => (
               <DropdownLink key={l.href} href={l.href} label={l.label} />
             ))}
           </HoverDropdown>
 
-          <HoverDropdown label="Product Portfolio" href="/products">
+          <HoverDropdown
+            label="Product Portfolio"
+            href="/products"
+            isActive={pathname.startsWith("/products")}
+          >
             <div className="grid grid-cols-2 gap-2 mb-3 pb-3 border-b border-border-light">
               {categorySites.map((cat) => (
                 <Link
@@ -115,12 +123,29 @@ export default function Header() {
               <DropdownLink key={l.href} href={l.href} label={l.label} />
             ))}
           </HoverDropdown>
-          <NavPill href="/dealership">Dealership</NavPill>
-          <NavPill href="/global-presence">Global Presence</NavPill>
-          <NavPill href="/e-catalogue">E-Catalogue</NavPill>
-          <NavPill href="/gallery">Gallery</NavPill>
+          <NavPill
+            href="/dealership"
+            isActive={pathname.startsWith("/dealership")}
+          >
+            Dealership
+          </NavPill>
+          <NavPill
+            href="/global-presence"
+            isActive={pathname.startsWith("/global-presence")}
+          >
+            Global Presence
+          </NavPill>
+          <NavPill
+            href="/e-catalogue"
+            isActive={pathname.startsWith("/e-catalogue")}
+          >
+            E-Catalogue
+          </NavPill>
+          <NavPill href="/gallery" isActive={pathname.startsWith("/gallery")}>
+            Gallery
+          </NavPill>
 
-          <NavPill href="/contact" accent>
+          <NavPill href="/contact" accent isActive={pathname.startsWith("/contact")}>
             Contact
           </NavPill>
         </nav>
@@ -159,11 +184,14 @@ export default function Header() {
               lg:hidden
             "
           >
-            <MobileLink href="/">Home</MobileLink>
+            <MobileLink href="/" isActive={pathname === "/"}>
+              Home
+            </MobileLink>
             <MobileAccordion
               title="About"
               open={openSub === "about"}
               onClick={() => setOpenSub(openSub === "about" ? null : "about")}
+              isActive={pathname.startsWith("/about")}
             >
               {aboutLinks.map((l) => (
                 <div key={l.href} onClick={() => setMobileOpen(!mobileOpen)}>
@@ -178,6 +206,7 @@ export default function Header() {
               onClick={() =>
                 setOpenSub(openSub === "products" ? null : "products")
               }
+              isActive={pathname.startsWith("/products")}
             >
               <div className="grid grid-cols-2 gap-2 mb-3">
                 {categorySites.map((cat) => (
@@ -208,11 +237,36 @@ export default function Header() {
               ))}
             </MobileAccordion>
 
-            <MobileLink href="/dealership">Dealership</MobileLink>
-            <MobileLink href="/global-presence">Global Presence</MobileLink>
-            <MobileLink href="/e-catalogue">E-Catalogue</MobileLink>
-            <MobileLink href="/gallery">Gallery</MobileLink>
-            <MobileLink href="/contact">Contact</MobileLink>
+            <MobileLink
+              href="/dealership"
+              isActive={pathname.startsWith("/dealership")}
+            >
+              Dealership
+            </MobileLink>
+            <MobileLink
+              href="/global-presence"
+              isActive={pathname.startsWith("/global-presence")}
+            >
+              Global Presence
+            </MobileLink>
+            <MobileLink
+              href="/e-catalogue"
+              isActive={pathname.startsWith("/e-catalogue")}
+            >
+              E-Catalogue
+            </MobileLink>
+            <MobileLink
+              href="/gallery"
+              isActive={pathname.startsWith("/gallery")}
+            >
+              Gallery
+            </MobileLink>
+            <MobileLink
+              href="/contact"
+              isActive={pathname.startsWith("/contact")}
+            >
+              Contact
+            </MobileLink>
           </motion.div>
         )}
       </AnimatePresence>
@@ -224,20 +278,18 @@ export default function Header() {
    DESKTOP COMPONENTS
 ===================== */
 
-function NavPill({ href, children, accent }) {
+function NavPill({ href, children, accent, isActive }) {
   return (
     <Link
       href={href}
       className={`
-        px-4 py-2 text-sm tracking-wide rounded-full transition-all duration-200
+        px-4 py-2 text-sm tracking-wide rounded-full transition-all duration-200 border
         ${
           accent
-            ? "bg-brand-accent text-black shadow-sm hover:brightness-110"
-            : `
-              text-text-primary
-              hover:bg-bg-section hover
-              hover:text-brand-primary
-            `
+            ? "bg-brand-accent text-black shadow-sm hover:brightness-110 border-brand-accent"
+            : isActive
+              ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft"
+              : "text-text-primary border-transparent hover:bg-bg-section hover:text-brand-primary"
         }
       `}
     >
@@ -246,7 +298,7 @@ function NavPill({ href, children, accent }) {
   );
 }
 
-function HoverDropdown({ label, href, children }) {
+function HoverDropdown({ label, href, children, isActive }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -258,15 +310,17 @@ function HoverDropdown({ label, href, children }) {
       {/* Trigger */}
       <Link
         href={href}
-        className="
+        className={`
           px-4 py-2 text-sm tracking-wide
-          text-text-primary
           rounded-full
-          flex items-center gap-1
+          flex items-center gap-1 border
           transition-all duration-200
-          hover:text-brand-primary
-          hover:bg-brand-accent/30
-        "
+          ${
+            isActive
+              ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft hover:text-brand-primary hover:bg-bg-section"
+              : "text-text-primary border-transparent hover:text-brand-primary hover:bg-brand-accent/30"
+          }
+        `}
       >
         {label}
         <span className="text-xs opacity-70">▾</span>
@@ -315,23 +369,29 @@ function DropdownLink({ href, label }) {
    MOBILE COMPONENTS
 ===================== */
 
-function MobileLink({ href, children }) {
+function MobileLink({ href, children, isActive }) {
   return (
     <Link
       href={href}
-      className="block rounded-xl px-3 py-2 tracking-wide hover:bg-bg-section"
+      className={`
+        block rounded-xl px-3 py-2 tracking-wide
+        ${isActive ? "bg-bg-section text-brand-primary font-semibold" : "hover:bg-bg-section"}
+      `}
     >
       {children}
     </Link>
   );
 }
 
-function MobileAccordion({ title, open, onClick, children }) {
+function MobileAccordion({ title, open, onClick, children, isActive }) {
   return (
     <div>
       <button
         onClick={onClick}
-        className="flex w-full justify-between px-3 py-2 rounded-xl tracking-wide hover:bg-bg-section"
+        className={`
+          flex w-full justify-between px-3 py-2 rounded-xl tracking-wide hover:bg-bg-section
+          ${isActive ? "bg-bg-section text-brand-primary font-semibold" : ""}
+        `}
       >
         {title}
         <span>{open ? "−" : "+"}</span>
