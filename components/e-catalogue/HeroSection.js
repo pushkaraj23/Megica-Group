@@ -61,10 +61,10 @@ export default function ECatalogueHeroSection() {
           </p>
 
           {/* CTA BUTTONS */}
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            {/* Bath Fittings Catalogue */}
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4">
+            {/* Megica Group Profile - primary */}
             <a
-              href="/downloads/Megica Bath Fittings.pdf"
+              href="/downloads/Megica_Group_Profile.pdf"
               download
               className="
                 inline-flex items-center justify-center
@@ -77,6 +77,25 @@ export default function ECatalogueHeroSection() {
                 shadow-card
                 transition
                 hover:opacity-90
+              "
+            >
+              Download Megica Group Profile
+            </a>
+
+            {/* Bath Fittings Catalogue */}
+            <a
+              href="/downloads/Megica Bath Fittings.pdf"
+              download
+              className="
+                inline-flex items-center justify-center
+                rounded-xl
+                border border-white/30
+                px-6 py-3
+                text-sm sm:text-base
+                font-semibold
+                text-text-inverse
+                transition
+                hover:bg-white/10
               "
             >
               Download Bath Fittings Catalogue

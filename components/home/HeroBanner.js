@@ -71,6 +71,8 @@ export default function HeroBanner() {
         muted
         loop
         playsInline
+        preload="metadata"
+        aria-hidden="true"
       />
 
       {/* ================= DEPTH OVERLAYS ================= */}
@@ -178,6 +180,8 @@ export default function HeroBanner() {
                     className={`h-[3px] transition-all ${
                       i === active ? "w-14 bg-brand-accent" : "w-8 bg-white/30"
                     }`}
+                    aria-label={`Show slide ${i + 1}`}
+                    aria-pressed={i === active}
                   />
                 ))}
               </div>

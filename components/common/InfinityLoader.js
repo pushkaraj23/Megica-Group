@@ -1,19 +1,55 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+/* Lemniscate of Bernoulli: proper ∞ shape
+ * Parametric: x = a·cos(t)/(1+sin²(t)), y = a·sin(t)·cos(t)/(1+sin²(t)), t ∈ [0, 2π]
+ * Coordinates rounded to 2 decimals so server and client produce identical path (avoids hydration mismatch).
+ */
+function buildLemniscatePath(samples, width, height, scale) {
+  const cx = width / 2;
+  const cy = height / 2;
+  const a = scale;
+  const points = [];
+
+  for (let i = 0; i <= samples; i++) {
+    const t = (i / samples) * Math.PI * 2;
+    const denom = 1 + Math.pow(Math.sin(t), 2);
+    const x = cx + (a * Math.cos(t)) / denom;
+    const y = cy + (a * Math.sin(t) * Math.cos(t)) / denom;
+    points.push({ x: Number(x.toFixed(2)), y: Number(y.toFixed(2)) });
+  }
+
+  return points.map((p, i) => `${i === 0 ? "M" : "L"} ${p.x} ${p.y}`).join(" ");
+}
+
+const VIEWBOX = { width: 120, height: 60 };
+const LEMNISCATE_PATH = buildLemniscatePath(
+  128,
+  VIEWBOX.width,
+  VIEWBOX.height,
+  24
+);
 
 export default function InfinityLoader() {
   const [visible, setVisible] = useState(true);
+  const [pathLength, setPathLength] = useState(260);
+  const pathRef = useRef(null);
 
   useEffect(() => {
-    // Hide loader after page is fully loaded
-    const timer = setTimeout(() => {
-      setVisible(false);
-    }, 1200); // adjust duration if needed
+    if (pathRef.current) {
+      const len = pathRef.current.getTotalLength();
+      setPathLength(len);
+    }
+  }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(false), 1200);
     return () => clearTimeout(timer);
   }, []);
+
+  const strokeSegment = pathLength * 0.22;
 
   return (
     <AnimatePresence>
@@ -30,31 +66,49 @@ export default function InfinityLoader() {
             pointer-events-auto
           "
         >
-          <div className="flex flex-col items-center gap-6">
-            {/* Infinity SVG */}
+          <div className="flex flex-col items-center gap-8">
             <svg
-              width="120"
-              height="60"
-              viewBox="0 0 120 60"
+              width="240"
+              height="120"
+              viewBox={`0 0 ${VIEWBOX.width} ${VIEWBOX.height}`}
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="animate-infinity"
+              className="overflow-visible"
             >
+              {/* Full infinity stroke (faint track) */}
               <path
-                d="M20 30C20 16 36 16 50 30C64 44 80 44 100 30"
+                d={LEMNISCATE_PATH}
+                stroke="var(--color-brand-accent)"
+                strokeOpacity="0.25"
+                strokeWidth="6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+              {/* Animated segment that travels along the path */}
+              <motion.path
+                ref={pathRef}
+                d={LEMNISCATE_PATH}
                 stroke="var(--color-brand-accent)"
                 strokeWidth="6"
                 strokeLinecap="round"
-              />
-              <path
-                d="M100 30C100 16 84 16 70 30C56 44 40 44 20 30"
-                stroke="var(--color-bg-main)"
-                strokeWidth="6"
-                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                style={{
+                  strokeDasharray: `${strokeSegment} ${pathLength}`,
+                }}
+                animate={{
+                  strokeDashoffset: [0, -pathLength],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
               />
             </svg>
 
-            <p className="text-sm font-semibold tracking-wide text-bg-main">
+            <p className="text-base font-semibold tracking-wide text-bg-main">
               Megica Group of Companies
             </p>
           </div>

@@ -13,11 +13,6 @@ const catalogues = [
     subtitle: "Cisterns & Seat Covers Range",
     pdf: "/downloads/Megica Flush tanks and Seat Covers_1.pdf",
   },
-  {
-    title: "Dealership Proposal",
-    subtitle: "Partnership & Business Overview",
-    pdf: "/downloads/Dealership Proposal.pdf",
-  },
 ];
 
 export default function CatalogueShowcase() {

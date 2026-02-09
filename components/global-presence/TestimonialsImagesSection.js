@@ -3,53 +3,21 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-/* ============================
-   DUMMY TESTIMONIAL IMAGES
-   (Replace with real clients)
-============================ */
-const testimonials = [
-  {
-    name: "International Distributor",
-    location: "Germany",
-    image: "https://images.unsplash.com/photo-1713946598186-8e28275719b9",
-  },
-  {
-    name: "Project Partner",
-    location: "Nigeria",
-    image: "https://images.unsplash.com/photo-1612014206380-b282e27ebb7b",
-  },
-  {
-    name: "Retail Chain Buyer",
-    location: "Australia",
-    image: "https://images.unsplash.com/photo-1537511446984-935f663eb1f4",
-  },
-  {
-    name: "Import Partner",
-    location: "Sudan",
-    image: "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95",
-  },
-  {
-    name: "Domestic Distributor",
-    location: "India",
-    image: "https://images.unsplash.com/photo-1480429370139-e0132c086e2a",
-  },
+const testimonialImages = [
+  { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 2.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 3.png", alt: "Client testimonial" },
 ];
 
 export default function TestimonialsImagesSection() {
   return (
     <section className="relative bg-bg-dark py-32 overflow-hidden">
-      {/* =====================
-         BACKGROUND GLOWS
-      ====================== */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-brand-accent/10 blur-[180px]" />
         <div className="absolute bottom-[-200px] left-[-200px] h-[520px] w-[520px] rounded-full bg-brand-muted/10 blur-[200px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
-        {/* =====================
-           HEADER
-        ====================== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,13 +42,10 @@ export default function TestimonialsImagesSection() {
           </p>
         </motion.div>
 
-        {/* =====================
-           IMAGE GRID
-        ====================== */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t, index) => (
+          {testimonialImages.map((t, index) => (
             <motion.div
-              key={t.name}
+              key={t.src}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -94,41 +59,24 @@ export default function TestimonialsImagesSection() {
                 bg-brand-primary
               "
             >
-              {/* IMAGE */}
               <Image
-                src={t.image}
-                alt={t.name}
+                src={t.src}
+                alt={t.alt}
                 fill
                 className="
-                  object-cover object-top
+                  object-cover object-center
                   transition-transform
                   duration-700
                   group-hover:scale-105
                 "
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-
-              {/* DARK GRADIENT */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
-              {/* CONTENT */}
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-sm font-semibold text-text-inverse">
-                  {t.name}
-                </p>
-                <p className="mt-1 text-xs tracking-wide uppercase text-brand-accent">
-                  {t.location}
-                </p>
-              </div>
-
-              {/* GOLD ACCENT LINE */}
               <div className="absolute inset-x-0 bottom-0 h-[2px] bg-brand-accent scale-x-0 transition-transform duration-500 origin-left group-hover:scale-x-100" />
             </motion.div>
           ))}
         </div>
 
-        {/* =====================
-           FOOT NOTE
-        ====================== */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

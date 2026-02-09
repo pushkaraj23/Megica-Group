@@ -1,8 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const categorySites = [
+  {
+    label: "Sanitaryware",
+    href: "/sanitaryware",
+    image: "/catalogues/sanitaryware-p1.jpg",
+  },
+  {
+    label: "Bathroom Fittings",
+    href: "/bathroom-fittings",
+    image: "/catalogues/export-p1.jpg",
+  },
+];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -53,7 +67,13 @@ export default function Header() {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
-          <img src="/megica-logo1.png" alt="Megica Group" className="h-8" />
+          <img
+            src="/megica-logo1.png"
+            alt="Megica Group"
+            className="h-8"
+            width={120}
+            height={32}
+          />
           <span className="text-brand-accent text-xl leading-none">•</span>
         </Link>
 
@@ -68,6 +88,29 @@ export default function Header() {
           </HoverDropdown>
 
           <HoverDropdown label="Product Portfolio" href="/products">
+            <div className="grid grid-cols-2 gap-2 mb-3 pb-3 border-b border-border-light">
+              {categorySites.map((cat) => (
+                <Link
+                  key={cat.href}
+                  href={cat.href}
+                  className="group block rounded-xl overflow-hidden border border-border-light hover:border-brand-accent/50 transition shadow-sm hover:shadow-md"
+                >
+                  <div className="relative aspect-[4/3] bg-bg-section">
+                    <Image
+                      src={cat.image}
+                      alt={cat.label}
+                      fill
+                      className="object-cover transition group-hover:scale-105"
+                      sizes="140px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <span className="absolute bottom-2 left-2 right-2 text-xs font-semibold text-white drop-shadow-sm">
+                      {cat.label}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
             {productLinks.map((l) => (
               <DropdownLink key={l.href} href={l.href} label={l.label} />
             ))}
@@ -86,6 +129,9 @@ export default function Header() {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden rounded-full border border-black/10 px-4 py-2 text-sm"
+          aria-label={mobileOpen ? "Close main menu" : "Open main menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="main-mobile-nav"
         >
           ☰
         </button>
@@ -95,12 +141,13 @@ export default function Header() {
           MOBILE MENU
       ========================== */}
       <AnimatePresence>
-        {mobileOpen && (
+            {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
+            id="main-mobile-nav"
             className="
               absolute top-20
               w-[92%]
@@ -132,6 +179,30 @@ export default function Header() {
                 setOpenSub(openSub === "products" ? null : "products")
               }
             >
+              <div className="grid grid-cols-2 gap-2 mb-3">
+                {categorySites.map((cat) => (
+                  <Link
+                    key={cat.href}
+                    href={cat.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="group block rounded-xl overflow-hidden border border-border-light"
+                  >
+                    <div className="relative aspect-[4/3] bg-bg-section">
+                      <Image
+                        src={cat.image}
+                        alt={cat.label}
+                        fill
+                        className="object-cover"
+                        sizes="140px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <span className="absolute bottom-2 left-2 right-2 text-xs font-semibold text-white drop-shadow-sm">
+                        {cat.label}
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
               {productLinks.map((l) => (
                 <MobileSubLink key={l.href} href={l.href} label={l.label} />
               ))}

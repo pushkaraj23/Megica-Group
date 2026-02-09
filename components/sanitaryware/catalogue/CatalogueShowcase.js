@@ -23,11 +23,6 @@ const catalogues = [
     subtitle: "Pedestal & Wall Hung Basin Series",
     pdf: "/downloads/Pedestial & Wall Hung Basin.pdf",
   },
-  {
-    title: "Dealership Proposal",
-    subtitle: "Partnership & Business Overview",
-    pdf: "/downloads/Dealership Proposal.pdf",
-  },
 ];
 
 export default function CatalogueShowcase() {

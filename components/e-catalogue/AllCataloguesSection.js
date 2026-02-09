@@ -4,6 +4,11 @@ import { motion } from "framer-motion";
 
 const ALL_CATALOGUES = [
   {
+    title: "Megica Group Profile",
+    subtitle: "Company overview & capabilities",
+    pdf: "/downloads/Megica_Group_Profile.pdf",
+  },
+  {
     title: "Megica Bath Fittings",
     subtitle: "Bathroom Fittings Catalogue",
     pdf: "/downloads/Megica Bath Fittings.pdf",
@@ -32,11 +37,6 @@ const ALL_CATALOGUES = [
     title: "Pedestal & Wall Hung Basin",
     subtitle: "Pedestal & Wall Hung Basin Series",
     pdf: "/downloads/Pedestial & Wall Hung Basin.pdf",
-  },
-  {
-    title: "Dealership Proposal",
-    subtitle: "Partnership & Business Overview",
-    pdf: "/downloads/Dealership Proposal.pdf",
   },
 ];
 

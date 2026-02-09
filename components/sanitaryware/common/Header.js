@@ -91,7 +91,13 @@ export default function Header() {
               className="flex items-center gap-3"
               onClick={() => setOpen(false)}
             >
-              <img src="/megica-logo1.png" className="h-10" alt="Megica" />
+              <img
+                src="/megica-logo1.png"
+                className="h-10"
+                alt="Megica"
+                width={120}
+                height={40}
+              />
               <span className="text-brand-primary text-xs uppercase tracking-widest font-semibold">
                 Sanitaryware
               </span>

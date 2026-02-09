@@ -3,43 +3,18 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-const testimonials = [
-  {
-    name: "Ahmed Al Rashid",
-    role: "Distributor – Middle East",
-    company: "Al Noor Trading LLC",
-    quote:
-      "Megica Group has consistently delivered export-grade sanitaryware that meets our regional standards. Their reliability and documentation accuracy make them a preferred sourcing partner.",
-    image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e",
-  },
-  {
-    name: "Rajiv Mehta",
-    role: "Procurement Head",
-    company: "Urban Infra Projects",
-    quote:
-      "Across multiple large-scale projects, Megica’s bathroom fittings have shown excellent consistency, finish, and post-delivery support.",
-    image: "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1",
-  },
-  {
-    name: "Michael Turner",
-    role: "Import Manager – Europe",
-    company: "BuildPro Supplies",
-    quote:
-      "From private labeling to bulk shipments, Megica Group operates with transparency and professionalism. They understand international trade expectations.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-  },
+const testimonialImages = [
+  { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 2.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 3.png", alt: "Client testimonial" },
 ];
 
 export default function TestimonialsSection() {
   return (
     <section className="relative bg-bg-section overflow-hidden">
-      {/* Ambient depth */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-130 w-130 rounded-full bg-bg-light blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 py-24">
-        {/* =====================
-            HEADER
-        ===================== */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,13 +38,10 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* =====================
-            TESTIMONIAL GRID
-        ===================== */}
         <div className="mt-20 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((item, index) => (
+          {testimonialImages.map((item, index) => (
             <motion.div
-              key={item.name}
+              key={item.src}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -80,56 +52,21 @@ export default function TestimonialsSection() {
               }}
               className="
                 group relative
-                rounded-3xl bg-bg-main
-                border border-light
-                shadow-soft
-                p-7 sm:p-8
-                transition
-                hover:-translate-y-2
-                hover:shadow-card overflow-hidden
+                rounded-3xl overflow-hidden
+                bg-bg-main border border-light shadow-soft
+                transition hover:-translate-y-2 hover:shadow-card
               "
             >
-              {/* Floating quote mark */}
-              <div className="absolute -bottom-20 right-6 text-[25vh] leading-none text-brand-accent/20 font-serif">
-                “
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
               </div>
-
-              {/* Quote */}
-              <p className="text-sm sm:text-base text-brand-deep leading-relaxed">
-                {item.quote}
-              </p>
-
-              {/* Divider */}
-              <div className="my-6 h-px w-full bg-border-light" />
-
-              {/* User */}
-              <div className="flex items-center gap-4">
-                <div className="relative h-14 w-14 rounded-full overflow-hidden border border-light">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-brand-deep">{item.name}</p>
-                  <p className="text-sm text-muted">{item.role}</p>
-                  <p className="text-xs text-muted">{item.company}</p>
-                </div>
-              </div>
-
-              {/* Accent bar */}
-              <div
-                className="
-                absolute left-0 top-0 h-full w-1
-                bg-brand-accent
-                scale-y-0 origin-top
-                transition-transform duration-500
-                group-hover:scale-y-100
-              "
-              />
             </motion.div>
           ))}
         </div>

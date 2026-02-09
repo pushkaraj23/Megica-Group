@@ -1,45 +1,20 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
-/* =========================
-   TESTIMONIAL DATA (SAMPLE)
-========================= */
-
-const testimonials = [
-  {
-    name: "Rahul Mehta",
-    role: "Project Consultant",
-    company: "Commercial Developments, India",
-    quote:
-      "Megica’s sanitaryware consistently meets project requirements for quality, finish, and delivery timelines. Their manufacturing reliability makes coordination smooth.",
-  },
-  {
-    name: "Ahmed Al Farsi",
-    role: "Import Manager",
-    company: "Building Supplies, UAE",
-    quote:
-      "What stands out is their export-ready packaging and consistent product standards. Megica understands international market expectations very well.",
-  },
-  {
-    name: "Sanjay Kulkarni",
-    role: "Dealer Partner",
-    company: "Western India",
-    quote:
-      "Strong product range, dependable supply, and responsive support. Megica has been a reliable brand for both retail and project-based requirements.",
-  },
+const testimonialImages = [
+  { src: "/testimonials/Group 1.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 2.png", alt: "Client testimonial" },
+  { src: "/testimonials/Group 3.png", alt: "Client testimonial" },
 ];
 
 export default function TestimonialsSection() {
   return (
     <section className="relative bg-bg-dark text-text-inverse overflow-hidden">
-      {/* Ambient gold glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-105 w-105 -translate-x-1/2 rounded-full bg-[var(--color-brand-accent)]/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-28">
-        {/* =========================
-            SECTION HEADER
-        ========================== */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -61,9 +36,6 @@ export default function TestimonialsSection() {
           </p>
         </motion.div>
 
-        {/* =========================
-            TESTIMONIAL GRID
-        ========================== */}
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -71,43 +43,29 @@ export default function TestimonialsSection() {
           transition={{ staggerChildren: 0.08 }}
           className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {testimonials.map((item, index) => (
+          {testimonialImages.map((item, index) => (
             <motion.div
-              key={index}
+              key={item.src}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="
-                relative
-                rounded-xl
-                bg-brand-primary
-                p-8
-                shadow-card
-                border border-white/5
+                group relative
+                rounded-xl overflow-hidden
+                bg-brand-primary shadow-card border border-white/5
+                transition hover:-translate-y-1 hover:shadow-lg
               "
             >
-              {/* Quote mark */}
-              <div className="text-9xl text-brand-accent">
-                “
-              </div>
-
-              {/* Quote */}
-              <p className="text-sm sm:text-base leading-relaxed text-white/80">
-                {item.quote}
-              </p>
-
-              {/* Divider */}
-              <div className="my-6 h-[1px] w-full bg-white/10" />
-
-              {/* Author */}
-              <div>
-                <p className="text-sm font-semibold tracking-wide">
-                  {item.name}
-                </p>
-                <p className="mt-1 text-xs text-white/60">
-                  {item.role}, {item.company}
-                </p>
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 50vw, 33vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           ))}

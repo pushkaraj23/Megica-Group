@@ -1,29 +1,37 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CustomCursor() {
   const cursorRef = useRef(null);
+  const [isPointerFine, setIsPointerFine] = useState(false);
 
   useEffect(() => {
+    const mq = window.matchMedia("(pointer: fine)");
+    const handleChange = (e) => setIsPointerFine(e.matches);
+    setIsPointerFine(mq.matches);
+    mq.addEventListener("change", handleChange);
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+
+  useEffect(() => {
+    if (!isPointerFine) return;
+
     const moveCursor = (e) => {
       const { clientX, clientY } = e;
-
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate3d(${clientX}px, ${clientY}px, 0)`;
       }
     };
 
     window.addEventListener("mousemove", moveCursor);
+    return () => window.removeEventListener("mousemove", moveCursor);
+  }, [isPointerFine]);
 
-    return () => {
-      window.removeEventListener("mousemove", moveCursor);
-    };
-  }, []);
+  if (!isPointerFine) return null;
 
   return (
     <>
-      {/* OUTER CIRCLE */}
       <div
         ref={cursorRef}
         className="
@@ -35,6 +43,7 @@ export default function CustomCursor() {
           backdrop-blur-sm border-white/50 border
           transition-transform duration-300 ease-out bg-brand-deep/75
         "
+        aria-hidden
       />
     </>
   );

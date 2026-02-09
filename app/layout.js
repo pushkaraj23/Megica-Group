@@ -26,6 +26,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <title>
+          Megica Group | Sanitaryware &amp; Bathroom Fittings Manufacturer
+        </title>
+        <meta
+          name="description"
+          content="Megica Group is an export-focused manufacturer of sanitaryware and bathroom fittings from India, supplying distributors, developers and OEM partners worldwide."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.megicagroup.com" />
+
         {/* Meta Pixel Code */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`

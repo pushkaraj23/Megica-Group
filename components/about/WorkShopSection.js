@@ -152,9 +152,17 @@ export default function MegicaWorkshopSection() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="/downloads/Megica Sanitaryware 1.pdf"
+                href="/downloads/Megica_Group_Profile.pdf"
                 download
                 className="rounded-lg bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-deep transition hover:opacity-90 inline-block"
+              >
+                Download Megica Group Profile
+              </a>
+
+              <a
+                href="/downloads/Megica Sanitaryware 1.pdf"
+                download
+                className="rounded-lg bg-bg-main/10 backdrop-blur border border-white/30 px-5 py-3 text-sm font-semibold text-inverse transition hover:bg-white/10 inline-block"
               >
                 Download Sanitaryware Catalogue
               </a>

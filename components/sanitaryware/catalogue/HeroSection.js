@@ -87,7 +87,7 @@ export default function ECatalogueHero() {
             className="mt-10 flex flex-wrap gap-4"
           >
             <a
-              href="/downloads/Dealership Proposal.pdf"
+              href="/downloads/Megica_Group_Profile.pdf"
               download
               className="
                 inline-flex items-center justify-center
@@ -97,30 +97,12 @@ export default function ECatalogueHero() {
                 text-sm font-semibold uppercase tracking-wider
                 text-black
                 shadow-card
-                transition-transform duration-300
-                hover:scale-[1.03]
-              "
-            >
-              Download Dealership Proposal
-            </a>
-
-            <Link
-              href="/dealership"
-              className="
-                inline-flex items-center justify-center
-                rounded-lg
-                border border-white/30
-                px-8 py-4
-                text-sm font-semibold uppercase tracking-wider
-                text-white
-                backdrop-blur
                 transition-all duration-300
-                hover:border-brand-accent
-                hover:text-brand-accent
+                hover:brightness-110
               "
             >
-              Apply for Dealership
-            </Link>
+              Download Megica Group Profile
+            </a>
           </motion.div>
 
           {/* Trust note */}

@@ -120,28 +120,6 @@
   }
 }
 
-/* Infinity Loader animations */
-@keyframes infinity-draw {
-  0% {
-    stroke-dasharray: 0 200;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 100 200;
-    stroke-dashoffset: -50;
-  }
-  100% {
-    stroke-dasharray: 0 200;
-    stroke-dashoffset: -200;
-  }
-}
-
-.animate-infinity path {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 0;
-  animation: infinity-draw 1.6s ease-in-out infinite;
-}
-
 section[id] {
   scroll-margin-top: 96px; /* header height + breathing space */
 }
