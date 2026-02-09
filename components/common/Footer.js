@@ -11,7 +11,7 @@ export default function Footer() {
           {/* BRAND */}
           <div className="col-span-1 md:col-span-2">
             <div className="p-3 bg-bg-section w-3/4 rounded-3xl mb-5">
-              <img src="/megica-logo1.png" alt="Megica Group" />
+              <img src="/megica-logo1.png" alt="Megica Group" width={180} height={48} className="max-w-full h-auto" />
             </div>
 
             <p className="mt-4 text-sm text-bg-light leading-relaxed">

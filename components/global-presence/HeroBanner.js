@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,6 +15,8 @@ const slides = [
     subtitle:
       "Precision-engineered sanitaryware manufactured in India and supplied to global distributors, developers, and OEM partners.",
     primary: "/sanitaryware",
+    image: "https://images.unsplash.com/photo-1587527901949-ab0341697c1e?w=1920&q=80",
+    imageAlt: "Modern sanitaryware",
   },
   {
     eyebrow: "Design & Engineering",
@@ -21,6 +24,8 @@ const slides = [
     subtitle:
       "High-performance fittings built to international standards with durability, elegance, and scale in mind.",
     primary: "/bathroom-fittings",
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1920&q=80",
+    imageAlt: "Bathroom fittings",
   },
   {
     eyebrow: "Trusted Worldwide",
@@ -28,10 +33,14 @@ const slides = [
     subtitle:
       "Consistent quality, compliance-ready production, and long-term export partnerships across 30+ countries.",
     primary: "/product-portfolio",
+    image: "https://images.unsplash.com/photo-1593617761943-9099951a0769?w=1920&q=80",
+    imageAlt: "Global delivery",
   },
 ];
 
 const INTERVAL = 7000;
+
+const imageTransition = { duration: 0.8, ease: [0.22, 0.61, 0.36, 1] };
 
 /* --------------------------------
    ANIMATION
@@ -63,20 +72,38 @@ export default function HeroBanner() {
 
   return (
     <section className="relative h-svh overflow-hidden bg-bg-dark text-text-inverse">
-      {/* ================= VIDEO BACKGROUND ================= */}
-      <video
-        className="absolute inset-0 h-full w-full object-cover"
-        src="https://www.pexels.com/download/video/8403602/"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-      />
+      {/* Background images – smooth crossfade per slide */}
+      <div className="absolute inset-0">
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={active}
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={imageTransition}
+          >
+            <Image
+              src={slides[active].image}
+              alt={slides[active].imageAlt}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* ================= DEPTH OVERLAYS ================= */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(105deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.6) 45%, rgba(0,0,0,0.35) 100%)",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/10 pointer-events-none" />
 
       {/* ================= GOLD GLOW ================= */}
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full bg-brand-accent/20 blur-[160px]" />
@@ -177,9 +204,8 @@ export default function HeroBanner() {
                   <button
                     key={i}
                     onClick={() => setActive(i)}
-                    className={`h-[3px] transition-all ${
-                      i === active ? "w-14 bg-brand-accent" : "w-8 bg-white/30"
-                    }`}
+                    className={`h-[3px] transition-all ${i === active ? "w-14 bg-brand-accent" : "w-8 bg-white/30"
+                      }`}
                     aria-label={`Show slide ${i + 1}`}
                     aria-pressed={i === active}
                   />

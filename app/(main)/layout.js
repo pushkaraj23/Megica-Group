@@ -1,10 +1,21 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
-import InfinityLoader from "@/components/common/InfinityLoader";
-import CustomCursor from "@/components/common/CustomPointer";
-import SiteSwitcher from "@/components/common/SiteSwitcher";
+
+const InfinityLoader = dynamic(
+  () => import("@/components/common/InfinityLoader"),
+  { ssr: false }
+);
+const CustomCursor = dynamic(
+  () => import("@/components/common/CustomPointer"),
+  { ssr: false }
+);
+const SiteSwitcher = dynamic(
+  () => import("@/components/common/SiteSwitcher"),
+  { ssr: false }
+);
 
 export default function MainLayout({ children }) {
   return (

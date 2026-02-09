@@ -59,22 +59,9 @@ export default function ProductUSPSection() {
               aesthetics, and export-ready performance — delivering long-term
               value for distributors, dealers, and project partners.
             </p>
-            {/* Replace video src with your actual product/factory video */}
-            <div className="relative rounded-3xl overflow-hidden shadow-card mt-6 border border-white/10">
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source
-                  src="https://www.pexels.com/download/video/4036034/"
-                  type="video/mp4"
-                />
-              </video>
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-linear-to-tr from-black/60 via-black/20 to-transparent" />
+            {/* Static visual (no video) for fast LCP; gradient only */}
+            <div className="relative rounded-3xl overflow-hidden shadow-card mt-6 border border-white/10 aspect-video min-h-[240px] bg-gradient-to-br from-brand-accent/20 via-bg-dark to-brand-primary/30">
+              <div className="absolute inset-0 bg-linear-to-tr from-black/60 via-black/20 to-transparent" aria-hidden="true" />
             </div>
             {/* Floating Label */}
             <div className="absolute bottom-5 left-5 rounded-full bg-bg-main/90 backdrop-blur px-4 py-1.5 text-xs font-semibold text-brand-primary shadow-soft">

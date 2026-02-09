@@ -72,6 +72,8 @@ export default function Header() {
           <img
             src="/megica-logo1.png"
             alt="Megica Group"
+            width={140}
+            height={32}
             className="h-8 w-auto"
           />
           <span className="text-brand-accent text-xl leading-none">•</span>
