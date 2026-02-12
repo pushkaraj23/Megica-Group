@@ -7,174 +7,11 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { fetchGalleryAlbumsByWebsite } from "@/data/galleriesFirebase";
 
 /**
- * ✅ NEXT.JS (JS) GALLERY PAGE
- * - Dark themed, premium UI
- * - Albums + sticky sidebar navigation
- * - Photos + Videos
- * - Framer Motion animations
- * - Horizontal parallax rows (vertical scroll → horizontal motion)
- * - Lightbox modal with image/video preview
- *
- * NOTE:
- * - Use local assets for best performance:
- *   /public/gallery/<album>/<file>.jpg
- *   /public/gallery/<album>/<file>.mp4
- * - If you use remote URLs, use <img> and <video> OR add domains in next.config.js for next/image
+ * Bathroom Fittings gallery page. Fetches albums and media from Firebase (dynamic).
  */
-
-/* ----------------------------
-   DUMMY DATA (REPLACE LATER)
----------------------------- */
-const ALBUMS = [
-  {
-    id: "factory",
-    label: "Factory & Production",
-    subtitle: "Workshop floors • machinery • day-to-day operations",
-    items: [
-      {
-        type: "image",
-        src: "/gallery/factory/1.jpg",
-        title: "Production Line",
-      },
-      { type: "image", src: "/gallery/factory/2.jpg", title: "Assembly Zone" },
-      {
-        type: "video",
-        src: "/gallery/factory/3.mp4",
-        title: "Facility Walkthrough",
-      },
-      {
-        type: "image",
-        src: "/gallery/factory/4.jpg",
-        title: "Finishing Station",
-      },
-      { type: "image", src: "/gallery/factory/5.jpg", title: "Packaging Area" },
-      { type: "image", src: "/gallery/factory/6.jpg", title: "Quality Check" },
-      {
-        type: "video",
-        src: "/gallery/factory/7.mp4",
-        title: "Machine Operation",
-      },
-      {
-        type: "image",
-        src: "/gallery/factory/8.jpg",
-        title: "Material Handling",
-      },
-    ],
-  },
-  {
-    id: "quality",
-    label: "Quality & Testing",
-    subtitle: "Inspection • tests • compliance readiness",
-    items: [
-      {
-        type: "image",
-        src: "/gallery/quality/1.jpg",
-        title: "Inspection Desk",
-      },
-      {
-        type: "video",
-        src: "/gallery/quality/2.mp4",
-        title: "Testing Process",
-      },
-      {
-        type: "image",
-        src: "/gallery/quality/3.jpg",
-        title: "Finish Uniformity",
-      },
-      {
-        type: "image",
-        src: "/gallery/quality/4.jpg",
-        title: "Dimensional Checks",
-      },
-      {
-        type: "image",
-        src: "/gallery/quality/5.jpg",
-        title: "Batch Verification",
-      },
-      { type: "video", src: "/gallery/quality/6.mp4", title: "QC Tour" },
-    ],
-  },
-  {
-    id: "export",
-    label: "Export Packing & Dispatch",
-    subtitle: "Packaging • container loading • logistics",
-    items: [
-      {
-        type: "image",
-        src: "/gallery/export/1.jpg",
-        title: "Export Packaging",
-      },
-      { type: "image", src: "/gallery/export/2.jpg", title: "Labeling & Docs" },
-      {
-        type: "video",
-        src: "/gallery/export/3.mp4",
-        title: "Container Loading",
-      },
-      { type: "image", src: "/gallery/export/4.jpg", title: "Dispatch Bay" },
-      { type: "image", src: "/gallery/export/5.jpg", title: "Shipment Prep" },
-      {
-        type: "video",
-        src: "/gallery/export/6.mp4",
-        title: "Logistics Handling",
-      },
-    ],
-  },
-  {
-    id: "applications",
-    label: "Installed Applications",
-    subtitle: "Residential • commercial • hospitality projects",
-    items: [
-      {
-        type: "image",
-        src: "/gallery/applications/1.jpg",
-        title: "Modern Bathroom",
-      },
-      {
-        type: "image",
-        src: "/gallery/applications/2.jpg",
-        title: "Hotel Fit-Out",
-      },
-      {
-        type: "image",
-        src: "/gallery/applications/3.jpg",
-        title: "Project Supply",
-      },
-      {
-        type: "video",
-        src: "/gallery/applications/4.mp4",
-        title: "Site Showcase",
-      },
-      {
-        type: "image",
-        src: "/gallery/applications/5.jpg",
-        title: "Retail Display",
-      },
-      {
-        type: "image",
-        src: "/gallery/applications/6.jpg",
-        title: "Premium Setup",
-      },
-    ],
-  },
-  {
-    id: "team",
-    label: "Teams & Operations",
-    subtitle: "People • planning • coordination",
-    items: [
-      { type: "image", src: "/gallery/team/1.jpg", title: "Operations Team" },
-      { type: "image", src: "/gallery/team/2.jpg", title: "Planning Board" },
-      { type: "video", src: "/gallery/team/3.mp4", title: "Team Walkthrough" },
-      {
-        type: "image",
-        src: "/gallery/team/4.jpg",
-        title: "Dispatch Coordination",
-      },
-      { type: "image", src: "/gallery/team/5.jpg", title: "Meeting Room" },
-    ],
-  },
-];
 
 /* ----------------------------
    MOTION PRESETS
@@ -189,11 +26,40 @@ const fadeUp = {
 };
 
 export default function GalleryPage() {
-  const [activeAlbum, setActiveAlbum] = useState(ALBUMS[0].id);
+  const [albums, setAlbums] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [activeAlbum, setActiveAlbum] = useState("");
   const [filter, setFilter] = useState("all"); // all | image | video
   const [lightbox, setLightbox] = useState(null);
 
   const albumRefs = useRef({});
+
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError("");
+    fetchGalleryAlbumsByWebsite("bathroom-fittings")
+      .then((list) => {
+        if (!cancelled) {
+          setAlbums(list);
+          if (list.length > 0) setActiveAlbum(list[0].id);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setError("Unable to load gallery. Please try again.");
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    const ids = new Set(albums.map((a) => a.id));
+    if (activeAlbum && !ids.has(activeAlbum))
+      setActiveAlbum(albums[0]?.id ?? "");
+  }, [albums, activeAlbum]);
 
   // Track which album is in view (simple + reliable)
   useEffect(() => {
@@ -215,15 +81,17 @@ export default function GalleryPage() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [albums, filter]);
 
   const filteredAlbums = useMemo(() => {
-    if (filter === "all") return ALBUMS;
-    return ALBUMS.map((a) => ({
-      ...a,
-      items: a.items.filter((it) => it.type === filter),
-    })).filter((a) => a.items.length > 0);
-  }, [filter]);
+    if (filter === "all") return albums;
+    return albums
+      .map((a) => ({
+        ...a,
+        items: a.items.filter((it) => it.type === filter),
+      }))
+      .filter((a) => a.items.length > 0);
+  }, [filter, albums]);
 
   const scrollToAlbum = (id) => {
     const node = albumRefs.current[id];
@@ -298,62 +166,78 @@ export default function GalleryPage() {
 
       {/* BODY GRID: TOPBAR + CONTENT */}
       <section className="relative px-5">
-        <nav className="sticky top-5 mb-8">
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-card p-5">
-            <p className="text-xs tracking-[0.35em] uppercase text-brand-soft">
-              Albums
-            </p>
+        {loading ? (
+          <div className="flex flex-col items-center justify-center py-24 text-text-inverse/70">
+            <p className="text-sm">Loading gallery…</p>
+          </div>
+        ) : error ? (
+          <div className="rounded-2xl border border-red-500/30 bg-red-500/10 px-6 py-8 text-center text-sm text-red-200">
+            {error}
+          </div>
+        ) : filteredAlbums.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-24 text-text-inverse/70">
+            <p className="text-sm">No albums yet.</p>
+            <p className="mt-1 text-xs">Gallery content will appear here once added from the admin.</p>
+          </div>
+        ) : (
+          <>
+            <nav className="sticky top-5 mb-8">
+              <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-card p-5">
+                <p className="text-xs tracking-[0.35em] uppercase text-brand-soft">
+                  Albums
+                </p>
 
-            <div className="mt-4 space-y-1 grid grid-cols-5 max-sm:grid-cols-2 gap-3">
-              {filteredAlbums.map((a) => (
-                <button
-                  key={a.id}
-                  onClick={() => scrollToAlbum(a.id)}
-                  className={[
-                    "w-full text-left rounded-2xl px-4 py-3 transition",
-                    activeAlbum === a.id
-                      ? "bg-brand-accent text-brand-deep shadow-soft"
-                      : "hover:bg-white/10 text-text-inverse",
-                  ].join(" ")}
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="uppercase tracking-wider text-sm">
-                      {a.label}
-                    </span>
-                    <span
+                <div className="mt-4 space-y-1 grid grid-cols-5 max-sm:grid-cols-2 gap-3">
+                  {filteredAlbums.map((a) => (
+                    <button
+                      key={a.id}
+                      onClick={() => scrollToAlbum(a.id)}
                       className={[
-                        "text-[11px] rounded-full px-2 py-1 border",
+                        "w-full text-left rounded-2xl px-4 py-3 transition",
                         activeAlbum === a.id
-                          ? "border-black/20 bg-black/10"
-                          : "border-white/10 bg-white/5",
+                          ? "bg-brand-accent text-brand-deep shadow-soft"
+                          : "hover:bg-white/10 text-text-inverse",
                       ].join(" ")}
                     >
-                      {a.items.length}
-                    </span>
-                  </div>
-                </button>
-              ))}
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="uppercase tracking-wider text-sm">
+                          {a.label}
+                        </span>
+                        <span
+                          className={[
+                            "text-[11px] rounded-full px-2 py-1 border",
+                            activeAlbum === a.id
+                              ? "border-black/20 bg-black/10"
+                              : "border-white/10 bg-white/5",
+                          ].join(" ")}
+                        >
+                          {a.items.length}
+                        </span>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </nav>
+            <div className="px-5 pb-24">
+              <div className="gap-10">
+                <div className="space-y-16">
+                  {filteredAlbums.map((album, idx) => (
+                    <AlbumSection
+                      key={album.id}
+                      album={album}
+                      index={idx}
+                      registerRef={(node) => (albumRefs.current[album.id] = node)}
+                      onOpen={(item) =>
+                        setLightbox({ ...item, album: album.label })
+                      }
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-        </nav>
-        <div className="px-5 pb-24">
-          <div className="gap-10">
-            {/* MAIN CONTENT */}
-            <div className="space-y-16">
-              {filteredAlbums.map((album, idx) => (
-                <AlbumSection
-                  key={album.id}
-                  album={album}
-                  index={idx}
-                  registerRef={(node) => (albumRefs.current[album.id] = node)}
-                  onOpen={(item) =>
-                    setLightbox({ ...item, album: album.label })
-                  }
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+          </>
+        )}
       </section>
 
       {/* LIGHTBOX */}

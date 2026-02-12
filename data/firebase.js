@@ -1,5 +1,6 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 /* =========================
@@ -26,6 +27,11 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
 /* =========================
+   CLOUD STORAGE
+========================= */
+const storage = getStorage(app);
+
+/* =========================
    ANALYTICS (CLIENT ONLY)
 ========================= */
 let analytics = null;
@@ -41,4 +47,4 @@ if (typeof window !== "undefined") {
 /* =========================
    EXPORTS
 ========================= */
-export { app, db, analytics };
+export { app, db, analytics, storage };

@@ -30,6 +30,7 @@ export default function ContactEnquirySection() {
     try {
       await addDoc(collection(db, "sanitaryware"), {
         ...formData,
+        checked: false,
         createdAt: serverTimestamp(),
         source: "Sanitaryware Enquiry",
       });

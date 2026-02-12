@@ -32,6 +32,7 @@ export default function FullEnquirySection() {
     try {
       await addDoc(collection(db, "enquiries"), {
         ...formData,
+        checked: false,
         createdAt: serverTimestamp(),
         source: "Website Enquiry",
       });

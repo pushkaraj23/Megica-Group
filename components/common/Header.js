@@ -10,12 +10,12 @@ const categorySites = [
   {
     label: "Sanitaryware",
     href: "/sanitaryware",
-    image: "/catalogues/sanitaryware-p1.jpg",
+    image: "https://images.unsplash.com/photo-1587527901949-ab0341697c1e",
   },
   {
     label: "Bathroom Fittings",
     href: "/bathroom-fittings",
-    image: "/catalogues/export-p1.jpg",
+    image: "https://images.unsplash.com/photo-1769356814886-abdadde25ea7",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function Header() {
           MOBILE MENU
       ========================== */}
       <AnimatePresence>
-            {mobileOpen && (
+        {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -286,12 +286,11 @@ function NavPill({ href, children, accent, isActive }) {
       href={href}
       className={`
         px-4 py-2 text-sm tracking-wide rounded-full transition-all duration-200 border
-        ${
-          accent
-            ? "bg-brand-accent text-black shadow-sm hover:brightness-110 border-brand-accent"
-            : isActive
-              ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft"
-              : "text-text-primary border-transparent hover:bg-bg-section hover:text-brand-primary"
+        ${accent
+          ? "bg-brand-accent text-black shadow-sm hover:brightness-110 border-brand-accent"
+          : isActive
+            ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft"
+            : "text-text-primary border-transparent hover:bg-bg-section hover:text-brand-primary"
         }
       `}
     >
@@ -317,10 +316,9 @@ function HoverDropdown({ label, href, children, isActive }) {
           rounded-full
           flex items-center gap-1 border
           transition-all duration-200
-          ${
-            isActive
-              ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft hover:text-brand-primary hover:bg-bg-section"
-              : "text-text-primary border-transparent hover:text-brand-primary hover:bg-brand-accent/30"
+          ${isActive
+            ? "bg-bg-section text-brand-primary border-brand-accent/60 shadow-soft hover:text-brand-primary hover:bg-bg-section"
+            : "text-text-primary border-transparent hover:text-brand-primary hover:bg-brand-accent/30"
           }
         `}
       >

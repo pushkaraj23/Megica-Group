@@ -35,6 +35,7 @@ export default function DealershipEnquirySection() {
     try {
       await addDoc(collection(db, "dealershipEnquiries"), {
         ...formData,
+        checked: false,
         createdAt: serverTimestamp(),
         source: "Dealership Enquiry",
       });

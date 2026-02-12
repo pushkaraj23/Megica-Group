@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2",
     "@studio-freight/lenis": "^1.0.42",
     "d3-geo": "^3.1.1",
     "echarts": "^6.0.0",

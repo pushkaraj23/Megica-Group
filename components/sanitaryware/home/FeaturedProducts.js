@@ -29,7 +29,7 @@ const featuredProducts = [
     description:
       "Premium table top basin that elevates vanity aesthetics and presentation.",
     image:
-      "https://ruheindia.com/cdn/shop/files/02_4b186c57-691c-4144-9aa0-e637126e966f.png?v=1753091717&width=1214",
+      "https://images.unsplash.com/photo-1747227830516-b9643cc377fb",
   },
   {
     id: 4,

@@ -7,12 +7,12 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { fetchGalleryAlbumsByWebsite } from "@/data/galleriesFirebase";
 
 /**
  * Main Megica Group Gallery Page
- * - Same structure as sub-website gallery pages
+ * - Loads albums from Firestore when available; falls back to static ALBUMS
  * - Dark themed, albums, photos + videos, parallax rows, lightbox
- * - Assets: /public/gallery/<album>/<file>.jpg | .mp4
  */
 
 const ALBUMS = [
@@ -174,11 +174,37 @@ const fadeUp = {
 };
 
 export default function GalleryPage() {
-  const [activeAlbum, setActiveAlbum] = useState(ALBUMS[0].id);
+  const [albumsFromFirestore, setAlbumsFromFirestore] = useState([]);
+  const [albumsLoading, setAlbumsLoading] = useState(true);
+  const sourceAlbums = useMemo(
+    () => (albumsFromFirestore.length > 0 ? albumsFromFirestore : ALBUMS),
+    [albumsFromFirestore],
+  );
+  const [activeAlbum, setActiveAlbum] = useState(sourceAlbums[0]?.id ?? "");
   const [filter, setFilter] = useState("all");
   const [lightbox, setLightbox] = useState(null);
 
   const albumRefs = useRef({});
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchGalleryAlbumsByWebsite("main")
+      .then((list) => {
+        if (!cancelled && list.length > 0) setAlbumsFromFirestore(list);
+      })
+      .catch(() => {})
+      .finally(() => {
+        if (!cancelled) setAlbumsLoading(false);
+      });
+    return () => { cancelled = true; };
+  }, []);
+
+  useEffect(() => {
+    if (sourceAlbums.length && !activeAlbum) setActiveAlbum(sourceAlbums[0].id);
+    const ids = new Set(sourceAlbums.map((a) => a.id));
+    if (activeAlbum && !ids.has(activeAlbum))
+      setActiveAlbum(sourceAlbums[0]?.id ?? "");
+  }, [sourceAlbums, activeAlbum]);
 
   useEffect(() => {
     const sections = Object.values(albumRefs.current).filter(Boolean);
@@ -199,15 +225,17 @@ export default function GalleryPage() {
 
     sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
-  }, []);
+  }, [sourceAlbums, filter]);
 
   const filteredAlbums = useMemo(() => {
-    if (filter === "all") return ALBUMS;
-    return ALBUMS.map((a) => ({
-      ...a,
-      items: a.items.filter((it) => it.type === filter),
-    })).filter((a) => a.items.length > 0);
-  }, [filter]);
+    if (filter === "all") return sourceAlbums;
+    return sourceAlbums
+      .map((a) => ({
+        ...a,
+        items: a.items.filter((it) => it.type === filter),
+      }))
+      .filter((a) => a.items.length > 0);
+  }, [filter, sourceAlbums]);
 
   const scrollToAlbum = (id) => {
     const node = albumRefs.current[id];
