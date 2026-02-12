@@ -5,15 +5,18 @@ import { getAnalytics, isSupported } from "firebase/analytics";
 
 /* =========================
    FIREBASE CONFIG
+   NOTE: These values are public client-side keys. They are
+   safe to embed for the frontend, but do not use this pattern
+   for server-only secrets.
 ========================= */
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+  apiKey: "AIzaSyCbJCA3tsmJnNXliJSzLid5Q7VkJCPTJ68",
+  authDomain: "megica-group.firebaseapp.com",
+  projectId: "megica-group",
+  storageBucket: "megica-group.firebasestorage.app",
+  messagingSenderId: "930235634682",
+  appId: "1:930235634682:web:1a8a1e2922cd0a881b4a43",
+  measurementId: "G-T3834EK09D",
 };
 
 /* =========================
