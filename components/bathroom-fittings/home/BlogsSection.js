@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import blogs from "@/data/blogs.json";
+import { fetchBlogsByWebsite } from "@/data/blogsFirebase";
 
 /* =========================
    MOTION VARIANTS
@@ -16,14 +17,41 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0, y: 18 },
   show: {
     opacity: 1,
+    y: 0,
     transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
 export default function BlogsSection() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      try {
+        setLoading(true);
+        setError("");
+        const list = await fetchBlogsByWebsite("bathroom-fittings");
+        if (!cancelled) setBlogs(list.slice(0, 3));
+      } catch (err) {
+        console.error("Home fetch blogs error (bathroom-fittings)", err);
+        if (!cancelled)
+          setError("Unable to load latest articles. Please try again.");
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section className="relative bg-(--color-bg-main) overflow-hidden">
       {/* Soft background accent */}
@@ -55,74 +83,88 @@ export default function BlogsSection() {
           </p>
         </motion.div>
 
-        {/* =========================
-            BLOG GRID (JSON DRIVEN)
-        ========================== */}
-        <motion.div
-          className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          {blogs.map((blog) => (
-            <motion.article
-              key={blog.id}
-              variants={itemVariants}
-              className="
-                group overflow-hidden
-                rounded-xl
-                bg-white
-                shadow-card
-                border border-border-light
-                will-change-opacity
-              "
-            >
-              <Link
-                href={`/bathroom-fittings/blogs/${blog.slug}`}
-                className="block h-full"
+        {error && (
+          <p className="mt-8 text-sm text-red-600">{error}</p>
+        )}
+
+        {loading ? (
+          <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="h-72 rounded-xl bg-white/40 border border-border-light shadow-soft animate-pulse"
+              />
+            ))}
+          </div>
+        ) : blogs.length === 0 ? (
+          <p className="mt-16 text-center text-sm text-text-muted">
+            No blog posts yet. New articles will appear here once published.
+          </p>
+        ) : (
+          <motion.div
+            className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            {blogs.map((blog) => (
+              <motion.article
+                key={blog.id}
+                variants={itemVariants}
+                className="
+                  group overflow-hidden
+                  rounded-xl
+                  bg-white
+                  shadow-card
+                  border border-border-light
+                  will-change-opacity
+                "
               >
-                {/* IMAGE */}
-                <div className="relative aspect-16/10 overflow-hidden bg-gray-100">
-                  <img
-                    src={blog.listingImage}
-                    alt={blog.title}
-                    loading="lazy"
-                    decoding="async"
-                    className="
-                      h-full w-full object-cover
-                      transition-transform duration-700
-                      group-hover:scale-105
-                    "
-                  />
-                </div>
+                <Link
+                  href={`/bathroom-fittings/blogs/${blog.slug}`}
+                  className="block h-full"
+                >
+                  <div className="relative aspect-16/10 overflow-hidden bg-gray-100">
+                    <img
+                      src={blog.listingImage || "/images/placeholder-blog.jpg"}
+                      alt={blog.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="
+                        h-full w-full object-cover
+                        transition-transform duration-700
+                        group-hover:scale-105
+                      "
+                    />
+                  </div>
 
-                {/* CONTENT */}
-                <div className="p-7">
-                  <h3 className="text-lg font-semibold leading-snug text-[var(--color-text-secondary)]">
-                    {blog.title}
-                  </h3>
+                  <div className="p-7">
+                    <h3 className="text-lg font-semibold leading-snug text-[var(--color-text-secondary)]">
+                      {blog.title}
+                    </h3>
 
-                  <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                    {blog.excerpt}
-                  </p>
+                    <p className="mt-4 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                      {blog.excerpt}
+                    </p>
 
-                  <span
-                    className="
-                      mt-6 inline-flex items-center
-                      text-xs uppercase tracking-widest
-                      text-[var(--color-brand-accent)]
-                      transition-colors
-                      group-hover:text-[var(--color-brand-muted)]
-                    "
-                  >
-                    Read Article →
-                  </span>
-                </div>
-              </Link>
-            </motion.article>
-          ))}
-        </motion.div>
+                    <span
+                      className="
+                        mt-6 inline-flex items-center
+                        text-xs uppercase tracking-widest
+                        text-[var(--color-brand-accent)]
+                        transition-colors
+                        group-hover:text-[var(--color-brand-muted)]
+                      "
+                    >
+                      Read Article →
+                    </span>
+                  </div>
+                </Link>
+              </motion.article>
+            ))}
+          </motion.div>
+        )}
 
         {/* =========================
             VIEW ALL CTA

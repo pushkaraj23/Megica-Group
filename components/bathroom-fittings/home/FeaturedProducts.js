@@ -13,7 +13,7 @@ const featuredProducts = [
     description:
       "Rain-style overhead shower designed for immersive, spa-like bathing.",
     image:
-      "https://images.unsplash.com/photo-1600566753151-384129cf4e3d?w=1400&auto=format&fit=crop&q=60",
+      "https://media.istockphoto.com/id/1282901987/photo/metal-shower-with-water-on-on-a-black-background-3d-rendering.jpg?s=612x612&w=0&k=20&c=hAOznpNt_770n1zFUUFnU4Nf1djKiQQsxg-gArQUDzU=",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const featuredProducts = [
     description:
       "Smooth single-lever mixer with refined finish and precise flow control.",
     image:
-      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&auto=format&fit=crop&q=60",
+      "https://m.media-amazon.com/images/I/518tIK+DBYL._AC_UF1000,1000_QL80_.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const featuredProducts = [
     description:
       "Versatile wall mixer with L-bend for coordinated bath and shower areas.",
     image:
-      "https://images.unsplash.com/photo-1600566752734-2a0e1a0af9d6?w=1400&auto=format&fit=crop&q=60",
+      "https://hindware.com/_next/image?url=https%3A%2F%2Fhindwarestg.blob.core.windows.net%2Fcontainer1%2Fproducts%2FF570020CP.jpg&w=3840&q=75",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const featuredProducts = [
     description:
       "Durable health faucet set engineered for daily heavy-duty performance.",
     image:
-      "https://images.unsplash.com/photo-1600566752547-33b4181b61f8?w=1400&auto=format&fit=crop&q=60",
+      "https://bathoutlet.in/cdn/shop/files/Hc233835a8b0b4b50a638929382d146f6D.jpg?v=1722666391",
   },
 ];
 
