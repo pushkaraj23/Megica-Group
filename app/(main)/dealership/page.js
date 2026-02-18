@@ -14,6 +14,27 @@ const fadeUp = {
   },
 };
 
+const PROPOSAL_PDF = "/downloads/Dealership%20Proposal.pdf";
+
+function DownloadProposalButton({ className = "", variant = "primary" }) {
+  const base =
+    "inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition ";
+  const styles =
+    variant === "primary"
+      ? "bg-brand-accent text-brand-deep shadow-soft hover:opacity-90"
+      : "border border-white/30 text-inverse hover:bg-white/10";
+  return (
+    <a
+      href={PROPOSAL_PDF}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={base + styles + " " + className}
+    >
+      Download Dealership Proposal
+    </a>
+  );
+}
+
 export default function MegicaDealershipPage() {
   return (
     <main className="w-full overflow-x-hidden bg-bg-main">
@@ -67,6 +88,7 @@ export default function MegicaDealershipPage() {
               >
                 Apply for Dealership
               </Link>
+              <DownloadProposalButton variant="outline" className="rounded-xl px-6 py-3 border-white/30" />
               <Link
                 href="/products"
                 className="rounded-xl border border-white/30 px-6 py-3 font-semibold hover:bg-white/10 transition"
@@ -125,12 +147,91 @@ export default function MegicaDealershipPage() {
               desc="Manufacturing-backed dispatch reliability."
               img="https://images.unsplash.com/photo-1507235071172-438ca6950a8e"
             />
-            <BenefitImageCard
-              title="No Advance Deposit"
-              desc="Simple onboarding without financial pressure."
-              img="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf"
-            />
           </div>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <DownloadProposalButton />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* =========================
+          DEALERSHIP PROPOSAL CARD
+      ========================== */}
+      <section className="py-24 bg-bg-section">
+        <div className="mx-auto max-w-7xl px-6">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="
+              relative overflow-hidden
+              rounded-3xl
+              bg-gradient-to-br from-brand-deep via-brand-deep to-brand-primary
+              border border-white/10
+              shadow-card
+              flex flex-col lg:flex-row lg:items-center lg:justify-between
+              gap-10 lg:gap-16
+              p-8 sm:p-10 lg:p-14
+            "
+          >
+            {/* Decorative glow */}
+            <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-accent/20 blur-[80px]" />
+            <div className="pointer-events-none absolute bottom-0 left-0 h-40 w-60 rounded-full bg-brand-accent/10 blur-[60px]" />
+
+            <div className="relative flex-1 max-w-xl">
+              <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-accent/20 text-brand-accent mb-6">
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625a2.25 2.25 0 00-2.25 2.25v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V4.875A2.25 2.25 0 0018.375 2.5H15.75M12 4.5v12m0 0l-3-3m3 3l3-3" />
+                </svg>
+              </div>
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl uppercase text-white tracking-tight">
+                Dealership Proposal
+              </h2>
+              <p className="mt-4 text-bg-light/90 text-base sm:text-lg leading-relaxed">
+                Our full proposal outlines territory rights, commercial terms, support structure, and the application process. Download the document to review at your convenience.
+              </p>
+              <div className="mt-8">
+                <a
+                  href={PROPOSAL_PDF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    inline-flex items-center gap-2
+                    rounded-xl bg-brand-accent px-6 py-3.5
+                    text-sm font-semibold text-brand-deep
+                    shadow-soft
+                    hover:opacity-90 transition
+                  "
+                >
+                  <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  Download Dealership Proposal
+                </a>
+              </div>
+            </div>
+
+            {/* Right-side visual: stacked document mockup */}
+            <div className="relative hidden lg:flex items-center justify-center flex-shrink-0">
+              <div className="relative">
+                <div className="h-48 w-36 rounded-lg bg-white/10 backdrop-blur border border-white/20 shadow-xl transform rotate-[-6deg] translate-x-2" />
+                <div className="absolute inset-0 h-48 w-36 rounded-lg bg-white/15 backdrop-blur border border-white/25 shadow-2xl transform rotate-[4deg] translate-x-1" />
+                <div className="absolute inset-0 h-48 w-36 rounded-lg bg-white/5 border border-white/15 transform rotate-0 flex items-center justify-center">
+                  <svg className="h-16 w-16 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -181,6 +282,16 @@ export default function MegicaDealershipPage() {
               </div>
             </div>
           </motion.h2>
+
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <DownloadProposalButton />
+          </motion.div>
         </div>
       </section>
 
@@ -213,6 +324,7 @@ export default function MegicaDealershipPage() {
             >
               Send Dealership Enquiry
             </Link>
+            <DownloadProposalButton variant="outline" className="rounded-xl px-6 py-3" />
             <Link
               href="/products"
               className="rounded-xl border border-white/30 px-6 py-3 font-semibold hover:bg-white/10 transition"
