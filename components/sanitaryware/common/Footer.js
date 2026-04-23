@@ -165,14 +165,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-3">
           <span>© 2026 Megica Sanitaryware. All rights reserved.</span>
           <span>
-            Powered by{" "}
+            Designed & Developed by{" "}
             <a
-              href="https://fibonce.com"
+              href="https://www.fibonce.com"
               target="_blank"
               rel="noreferrer noopener"
               className="font-semibold hover:text-brand-accent transition"
             >
-              Fibonce Tech Solutions
+              Fibonce Tech Solutions Pvt. Ltd.
             </a>
           </span>
         </div>

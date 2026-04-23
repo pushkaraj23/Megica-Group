@@ -146,13 +146,26 @@ export default function Footer() {
             reserved.
           </p>
 
-          <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-brand-accent">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-brand-accent">
-              Terms & Conditions
-            </Link>
+          <div className="flex flex-col md:items-end gap-2">
+            <span>
+              Designed & Developed by{" "}
+              <a
+                href="https://www.fibonce.com"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="font-semibold hover:text-brand-accent transition"
+              >
+                Fibonce Tech Solutions Pvt. Ltd.
+              </a>
+            </span>
+            <div className="flex gap-4">
+              <Link href="/privacy-policy" className="hover:text-brand-accent">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-brand-accent">
+                Terms & Conditions
+              </Link>
+            </div>
           </div>
         </div>
       </div>

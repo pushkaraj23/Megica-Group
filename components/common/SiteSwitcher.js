@@ -34,7 +34,7 @@ export default function SiteSwitcher({ currentSite }) {
   return (
     <motion.div
       ref={containerRef}
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end"
+      className="fixed bottom-8 right-4 sm:bottom-16 sm:right-6 z-40 flex flex-col items-end"
       initial={{ opacity: 0, y: 20, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
